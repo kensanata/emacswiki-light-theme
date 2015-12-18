@@ -1,6 +1,7 @@
 
 /* emacswiki light theme */
 /* a combination of existing themes on the emacswiki at emacswiki.org */
+/* base theme is the cali2.css theme - other sources are specified in comments */
 /* public domain */
 
 
@@ -70,6 +71,7 @@ span.bar a { margin-right: 1ex; }
 
 
 /* headers */
+
 h1, h2, h3 {
     margin: 0px;
     padding: 0px;
@@ -93,6 +95,7 @@ h1, h2, h3 {
 
 
 /* dashed line and whitespace after the title */
+
 div.header h1 {
     font-size: 28pt;
     font-family: "Century Gothic", "Gill Sans", Helvetica, sans-serif;
@@ -113,6 +116,7 @@ div.header h1 a {
 
 
 /* add a dashed line and whitespace before subheadings */
+
 h2 {
     margin-top: 2em;
     padding-top: 2em;
@@ -121,6 +125,7 @@ h2 {
 
 
 /* after a subheading, no whitespace */
+
 h2 + p, h3 + p, h2 + div p, h3 + div p  {
     margin-top: 0;
 }
@@ -128,6 +133,7 @@ h2 + p, h3 + p, h2 + div p, h3 + div p  {
 
 /* when the subheading starts the page, no dashed line and whitespace,
    because that is already added by the header. */
+
 h2:first-child {
     padding-top: 0;
     border: none;
@@ -188,6 +194,7 @@ div.commentshown hr {
 
 
 /* cal */
+
 div.month {
     padding: 0;
     margin: 0 2ex;
@@ -196,7 +203,9 @@ div.month a {
     text-decoration: none;
 }
 
+
 /* pre gets different colors below */
+
 div.month pre {
     color: inherit;
     background-color: inherit;
@@ -242,6 +251,36 @@ pre {
 }
 
 
+/* highlighting */
+/* highlighting source code */
+/* from emacs.css */
+
+span.builtin      { color: #483d8b; } /* DarkSlateBlue */
+span.comment      { color: #b22222; } /* Firebrick */
+span.constant     { color: #008b8b; } /* DarkCyan */
+span.function     { color: #0000ff; } /* Blue1 */
+span.keyword      { color: #7f007f; } /* Purple */
+span.string       { color: #8b475d; } /* VioletRed4 */
+span.type         { color: #228b22; } /* ForestGreen */
+span.warning      { color: #ff0000; font-weight: bold; } /* Red1 */
+span.comment span,
+span.string  span { color: inherit; }
+span.comment span.important.constant,
+span.string  span.important.constant { color: #008b8b; }
+
+/* old: Equivalent to Output::HTML */
+
+span.linecomment  { color: green; }
+span.blockcomment { color: green; }
+span.prepro       { color: purple; }
+span.select       { font-weight: bold; }
+span.quote        { color: blue; }
+span.category_1   { color: teal; }
+span.category_2   { color: blue; }
+span.category_3   { color: blue; }
+
+
+
 /* diff */
 
 div.diff { padding-left: 5%; padding-right: 5%; }
@@ -255,7 +294,6 @@ div.message { background-color: #FEE; color: #000; }
 
 
 /* footer stuff */
-
 
 div.footer {
     clear: both;
@@ -299,6 +337,7 @@ div.refer {
 
 
 /* center lower menu items and add border*/
+
 span.translation.bar {display: block;text-align: center;} 
 .time, .edit.bar {display: block;text-align: center;} 
 .footer .translation.bar {border-top: 1px dashed #aaa;}
@@ -306,6 +345,7 @@ span.translation.bar {display: block;text-align: center;}
 
 
 /* display buttons */
+
 .edit.bar a {
     display:inline-block;
     zoom:1;
