@@ -1,0 +1,253 @@
+/* Public Domain */
+/* original source: http://www.emacswiki.org/css/pedia.css */
+
+body {
+    font-family: sans-serif;
+    font-size: 0.8em;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0;
+    background: #fafafa repeat-y url(/css/emacs_sidebar_pedia.png)
+}
+/* Google Search Box */
+div.header form {
+    position: absolute;
+    top: 0;
+    right: 1em;
+}
+/* Logo */
+img.logo {
+    display: none;
+}
+a.logo {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 196px;
+    height: 150px;
+    background:transparent url(/css/emacs_logo_pedia.png);
+}
+
+/* Side Bar */
+span.gotobar {
+    position: absolute;
+    top: 150px;
+    left: 0pt;
+    width: 196px;
+}
+span.gotobar a {
+    display: block;
+    font-size: 100%;
+    margin-left: 1.5em;
+    margin-top: 0.5em;
+}
+/* Links */
+a {
+    color: #55b;
+    text-decoration: none;
+}
+a:visited {
+    color: #31b;
+}
+/* Header */
+div.header {
+    margin-left: 196px;
+    height: 110px;
+    background-color: white;
+    padding: 10px;
+}
+div.header .specialdays {
+    display: block;
+    position: absolute;
+    top: 10px;
+}
+div.header h1 {
+    font-weight: normal;
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 7px;
+    border-top: 1px solid #aaccff;
+    border-bottom: 1px solid #aaaaaa;
+    width: auto;
+    white-space: nowrap;
+}    
+div.header h1 a {
+    color: black;
+}
+/* Top Link Bar */
+div.footer span.edit {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 206px;
+    white-space: nowrap;
+}
+div.footer span.edit br {
+    display: none;
+}
+div.footer span.edit a {
+    padding-right: 1em;
+}
+/* But the talk link goes elsewhere */
+body.top div.footer span.edit a.original,
+body.top div.footer span.edit a.comment {
+    position: absolute;
+    top: 25px; 
+}
+/* On the edit page, the buttons (6th paragraph) go up */
+body.top div.edit {
+    margin-top: 30px;
+}
+body.top div.edit {
+    margin-top: 30px;
+}
+body.top p + p + p + p + p + p {
+    position: absolute;
+    top: 140px;
+}
+body.top p + p + p + p + p + p + p { 
+    position: static;
+}
+/* Messages */
+div.message {
+    position: absolute;
+    top: 1px;
+    left: 206px;
+    color: red;
+}
+/* Content */
+div.content, div.rc, div.diff, div.comment {
+    margin-left: 196px; /* see gotobar */
+    padding: 1em;
+    border-bottom: 1px solid #aaccff;
+    background: white;
+}
+pre {
+    border: 1pt dashed black;
+    font-size: 8pt;
+    overflow: auto;
+    padding: 1em;
+    white-space: pre;
+}
+p {
+    margin-top: 0.4em;
+    margin-right: 0pt;
+    margin-bottom: 0.5em;
+    margin-left: 0pt;
+}
+ul {
+    list-style-type: square;
+}
+li {
+    margin-bottom: 0.1em;
+}
+/* Table of Contents */
+div.toc {
+    width: 50%;
+    font-size: 90%;
+    padding: 0 1em;
+    margin: 2em 0;
+    border: 1px solid #ddd;
+}
+/* Diff */
+div.diff {
+    font-size: 90%;
+}
+div.diff p b {
+    font-size: 150%;
+    font-weight: normal;
+}
+div.old {
+    background-color:#FFFFAF;
+}
+div.new {
+    background-color:#CFFFCF;
+}
+div.wrapper div.diff + hr {
+    display: none;
+}
+/* portrait support */
+div.color {
+    clear:left;
+}
+div.one {
+    background-color:#eee;
+    padding: 0.1ex 0;
+}
+img.portrait {
+    float:left;
+    clear:left;
+    background-color:#fff;
+    border: 1px solid #999;
+    padding:10px;
+    margin:10px;
+}
+li {
+    margin-left:1em;
+}
+div.portrait {
+    float:     left;
+    clear:     left;
+    font-size: xx-small;
+    padding-left: 10px;
+}
+div.portrait + p {
+    min-height:70px;
+}
+div.portrait img.portrait {
+    float:none;
+    margin:10px 10px 0 0;
+}
+div.portrait a {
+    text-decoration:none;
+    color:#999;
+}
+/* IRC */
+dl.irc dt {
+    width:15ex;
+    float:left;
+    text-align:right;
+    clear:left;
+}
+dl.irc dt span.time { display:none; }
+dl.irc dd {
+    margin-left:17ex;
+}
+/* Category Convention */
+hr {
+    border: none;
+    color: #aaccff;
+    background-color: #aaccff;
+    height: 1px;
+    padding: 0px;
+    margin: 1em 0;
+}
+hr + p:last-child {
+    background-color: #fafafa;
+    padding: 1em;
+    border: 1px solid #aaaaaa;
+}
+/* Comment Pages */
+form.comment span {
+    display: block;
+    padding: 0.2em 0;
+}  
+form.comment span label {
+    display: inline-block;
+    width: 10em;
+}  
+form.comment span input {
+    display: inline-block;
+    width: 20em;
+}  
+/* Footer */
+div.footer {
+    font-size: 0.9em;
+    margin: 0;
+    padding: 1ex 1em 1ex 206px;
+    background: #fafafa;
+}
+div.footer span.gotobar, div.footer hr {
+    display: none;
+}
