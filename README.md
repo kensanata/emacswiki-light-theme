@@ -15,7 +15,7 @@ This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.
  [x] gray links  
  [ ] larger `function references' text  
 * Planet CSS  
- [ ] code block font  
+ [x] code block font  
  [x] colored syntax highlighting  
 * Wikipedia  
  [x] large logo on left  

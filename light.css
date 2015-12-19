@@ -123,7 +123,7 @@ div.header h1 a {
 }
 
 
-/* add a dotted line and whitespace before subheadings */
+/* dotted line and whitespace before subheadings */
 
 h2 {
     margin-top: 2em;
@@ -201,7 +201,7 @@ div.commentshown hr {
 .comment { font-size: x-small; }
 
 
-/* cal */
+/* calendar */
 
 div.month {
     padding: 0;
@@ -210,10 +210,7 @@ div.month {
 div.month a {
     text-decoration: none;
 }
-
-
-/* pre gets different colors below */
-
+/* (pre gets different colors below) */
 div.month pre {
     color: inherit;
     background-color: inherit;
@@ -233,7 +230,7 @@ div.month a.edit {
 }
 
 
-/* images, styles to use for the image extension */
+/* images */
 
 a.image img { 
     border: none;
@@ -249,18 +246,21 @@ a.right {
 
 
 /* code */
+/* face from planet.css */
 
 pre {
-    font-family: "Andale Mono", Monaco, "Courier New", monospace;
+    font-family: 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
+    font-size: 87.5%;
     margin: 1em 0;
     padding: 1em 2em;
     color: #000;
-    background-color: #ddd;
+    background-color: #edeae8;
+    border: 1px solid #ccc;
 }
 
 
 /* highlighting */
-/* highlighting source code */
+/* syntax highlighting source code */
 /* from emacs.css */
 
 span.builtin      { color: #483d8b; } /* DarkSlateBlue */
