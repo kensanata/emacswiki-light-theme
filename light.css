@@ -55,15 +55,17 @@ a[class="url outside"]:before { content: "\2197"; }
 span.bar a { margin-right: 1ex; }
 
 
-/* logo on the right */
+/* logo */
 
-.logo {
+img.logo {
     float: left;
     padding: 0 2.5em .7em 0;
-    height: 50px;
+    height: 80px;
     border: none;
 }
 
+
+/* menu */
 
 .header .menu {
     float: right;

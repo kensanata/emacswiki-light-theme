@@ -6,7 +6,7 @@ This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.
 
 * Cali+  
  [x] use as a base  
- [ ] have section separators but lighter dots  
+ [x] have section separators but lighter dots  
  [ ] headings  
  [ ] box around table of contents  
  [ ] buttons at bottom  
@@ -17,7 +17,7 @@ This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.
  [ ] code block font  
  [x] colored syntax highlighting  
 * Wikipedia  
- [ ] large logo on left  
+ [x] large logo on left  
  [ ] maybe try a vertical sidebar  
 
 There is an image gallery with screenshots of some of the existing themes at http://imgur.com/a/czk9D. 
