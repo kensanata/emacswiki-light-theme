@@ -15,6 +15,7 @@ body {
 }
 
 
+/* links */
 /* grey underlined links that turn black as you are about to click */
 
 a {
@@ -87,6 +88,9 @@ h1, h2, h3 {
     background-color: #f4f4f4;
 }
 
+
+/* table of contents */
+
 .toc {
     width: 50%;
     font-size: 90%;
@@ -101,14 +105,15 @@ h1, h2, h3 {
 
 div.header h1 {
     font-size: 28pt;
-    font-family: "Century Gothic", "Gill Sans", Helvetica, sans-serif;
+    /* font-family: "Century Gothic", "Gill Sans", Helvetica, sans-serif; */
     font-weight: 100;
     letter-spacing: 0.07em;
     margin-top: 10px;
     padding-top: 10px;
     margin-bottom: 10px;
     padding-bottom: 15px;
-    border-top: 1px dotted #aaa;
+    /* border-top: 1px dotted #aaa; */
+    border-top: 1px dotted #777;
     border-bottom: 1px dotted #333;
 }
 

@@ -6,19 +6,20 @@ This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.
 
 * Cali+  
  [x] use as a base  
- [x] have section separators but lighter dots  
+ [x] have section separators but lighter dots
+ [x] headline text in normal font
  [ ] headings  
  [ ] box around table of contents  
  [ ] buttons at bottom  
 * Made in California  
- [ ] gray links  
+ [x] gray links  
  [ ] larger `function references' text  
 * Planet CSS  
  [ ] code block font  
  [x] colored syntax highlighting  
 * Wikipedia  
  [x] large logo on left  
- [ ] maybe try a vertical sidebar  
+ [ ] try a vertical sidebar  
 
 There is an image gallery with screenshots of some of the existing themes at http://imgur.com/a/czk9D. 
 
