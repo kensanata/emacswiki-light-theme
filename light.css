@@ -1,5 +1,6 @@
 
 /* emacswiki light theme */
+/* ---------------------------------------------------------------------------- */
 /* a combination of existing themes on the emacswiki at emacswiki.org */
 /* base theme is the cali2.css theme - other sources are specified in comments */
 /* public domain */
@@ -94,7 +95,7 @@ h1, h2, h3 {
 }
 
 
-/* dashed line and whitespace after the title */
+/* dotted line and whitespace after the title */
 
 div.header h1 {
     font-size: 28pt;
@@ -105,8 +106,8 @@ div.header h1 {
     padding-top: 10px;
     margin-bottom: 10px;
     padding-bottom: 15px;
-    border-top: 1px dashed #aaa;
-    border-bottom: 1px dashed #333;
+    border-top: 1px dotted #aaa;
+    border-bottom: 1px dotted #333;
 }
 
 div.header h1 a {
@@ -115,12 +116,12 @@ div.header h1 a {
 }
 
 
-/* add a dashed line and whitespace before subheadings */
+/* add a dotted line and whitespace before subheadings */
 
 h2 {
     margin-top: 2em;
     padding-top: 2em;
-    border-top: 1px dashed #333;
+    border-top: 1px dotted #333;
 }
 
 
@@ -243,7 +244,7 @@ a.right {
 /* code */
 
 pre {
-    font-family: "Andale Mono", Monaco, "Courrier New", monospace;
+    font-family: "Andale Mono", Monaco, "Courier New", monospace;
     margin: 1em 0;
     padding: 1em 2em;
     color: #000;
@@ -340,7 +341,7 @@ div.refer {
 
 span.translation.bar {display: block;text-align: center;} 
 .time, .edit.bar {display: block;text-align: center;} 
-.footer .translation.bar {border-top: 1px dashed #aaa;}
+.footer .translation.bar {border-top: 1px dotted #aaa;}
 .footer .edit.bar {padding: 5px 0px 15px 0;}
 
 
