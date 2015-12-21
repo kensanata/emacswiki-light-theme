@@ -7,13 +7,16 @@
 
 
 body {
-    margin: 0px 0px 1.5em 0px;
-    padding: .7em 2.5em;
+    margin: 0 0 1.5em 0;
+    padding: 1em 1em;
     /* color: #2d2a28; */
     color: #222;
-    background: #fff;
-    font-family: "Lucida Grande", Verdana, Geneva, Arial, sans-serif;
-    font-size: small;
+    background: #fafafa;
+    /* font-family: "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
+    font-family: Garamond, "Bookman Old Style", Cochin, Baskerville, serif;
+    /* font-size: small; */
+    /* font-size: 100%; */
+    font-size: 1.1em;
 }
 
 
@@ -21,7 +24,7 @@ body {
 /* grey underlined links that turn black as you are about to click */
 
 a {
-    color: #707070;
+    color: #777;
     background-color: inherit;
     text-decoration: none;
 }
@@ -29,19 +32,19 @@ a {
     text-decoration: underline;
 }
 a:link {
-    color: #707070;
+    color: #777;
     background-color: inherit;
 }
 a:visited {
-    color: #707070;
+    color: #777;
     background-color: inherit;
 }
 a:active {
-    color: #000000;
+    color: #000;
     background-color: inherit;
 }
 a:hover {
-    color: #000000;
+    color: #000;
     background-color: inherit;
 }
 a.near:link { color: #036; background-color: inherit; }
@@ -55,33 +58,108 @@ a[class="url outside"]:before { content: "\2197"; }
 
 /* goto bar, navigation bar, etc. */
 
-span.bar a { margin-right: 1ex; }
+span.bar a { 
+    font-size: smaller;
+    margin-right: 1ex;
+}
 
 
 /* logo */
 
 img.logo {
-    float: left;
-    padding: 0 2.5em .7em 0;
-    height: 80px;
-    border: none;
+    display: none;
+    /* float: left; */
+    /* padding: 0 2.5em .7em 0; */
+    /* height: 80px; */
+    /* border: none; */
 }
+
+a.logo {
+    display: block;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    width: 196px;
+    height: 112px;
+    background:transparent url(./images/emacs_logo2_transparent.png);
+}
+
+
+
+/* Side Bar */
+span.gotobar {
+    position: absolute;
+    top: 150px;
+    left: 0pt;
+    width: 196px;
+}
+span.gotobar a {
+    display: block;
+    /* font-size: 100%; */
+    font-size: 110%;
+    margin-left: 1.5em;
+    margin-top: 0.5em;
+}
+
 
 
 /* menu */
 
 .header .menu {
     float: right;
-    text-align: right;
+    /* text-align: right; */
 }
+
+
+/* Header */
+div.header {
+    margin-left: 196px;
+    height: 110px;
+    background-color: white;
+    padding: 10px;
+    border-left: 1px solid #ccc;
+}
+div.header .specialdays {
+    display: block;
+    position: absolute;
+    top: 10px;
+}
+
+/* Top Link Bar */
+div.footer span.edit {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 206px;
+    white-space: nowrap;
+}
+
+/* Messages */
+div.message {
+    position: absolute;
+    top: 1px;
+    left: 206px;
+    color: red;
+}
+
+/* Content */
+div.content, div.rc, div.diff, div.comment {
+    margin-left: 196px; /* see gotobar */
+    padding: 1em;
+    background: white;
+    border-left: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
+    /* border-right: 1px solid #ccc; */
+}
+
 
 
 /* headers */
 
 h1, h2, h3 {
-    margin: 0px;
-    padding: 0px;
-    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
     line-height: normal;
     clear: both;
 }
@@ -98,7 +176,7 @@ h1, h2, h3 {
     font-size: 90%;
     padding: 0 1em;
     margin: 2em 0;
-    line-height: 1.5em;
+    line-height: 1.4em;
     border: 1px solid #ddd;
 }
 
@@ -106,15 +184,14 @@ h1, h2, h3 {
 /* dotted line and whitespace after the title */
 
 div.header h1 {
-    font-size: 28pt;
-    font-weight: 100;
+    /* font-size: 28pt; */
+    font-size: 2em;
     /* letter-spacing: 0.07em; */
     /* margin-top: 10px; */
     /* padding-top: 10px; */
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     /* padding-bottom: 15px; */
     /* border-top: 1px dotted #777; */
-    /* border-bottom: 1px dotted #333; */
     border-bottom: 1px solid #666;
 }
 
@@ -127,6 +204,7 @@ div.header h1 a {
 /* dotted line and whitespace before subheadings */
 
 h2 {
+    font-size: 1.5em;
     /* font-size: 14pt; */
     /* font-weight: normal; */
     margin-top: 1.5em;
@@ -170,9 +248,9 @@ h2:first-child {
 /* } */
 
 h3, div.journal h1 a {
-/*     color: #009; */
-/*     background-color: inherit; */
+    font-size: 1.2em;
     text-decoration: none;
+    border-bottom: 1px solid #ccc;
 }
 
 hr {
@@ -260,33 +338,24 @@ a.right {
 /* code */
 /* used for keysequences, function references (anything in `...') */
 code {
-    font-family: 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
-    /* font-size: normal; */
-    font-size: smaller;
-    /* font-weight: bold; */
-    /* color: #000; */
-    /* color: orange; */
+    font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
+    font-size: 0.8em;
+    padding: 2px;
     color: #444;
-    /* color: #2d2a28; */
-    /* background-color: #edeae8; */
     background-color: #f2eeec;
     border: 1px solid #ccc;
-    padding: 2px;
 }
-
 
 
 /* pre */
 /* face from planet.css */
 
 pre {
-    font-family: 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
-    font-size: 87.5%;
-    /* font-weight: normal; */
+    font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
+    font-size: 0.8em;
     margin: 1em 0;
     padding: 1em 2em;
-    color: #000;
-    background-color: #edeae8;
+    background-color: #f0ecea;
     border: 1px solid #ccc;
 }
 

@@ -23,7 +23,9 @@ This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.
 * Other  
  [ ] try dotted underline for links  
  [ ] try orange text for links  
- [ ] test with 2nd level headers, h3  
+ [ ] test with 2nd level headers, h3
+ [ ] add a favicon
+ [ ] change menu items from "SiteMap" to "Site Map", etc
  
 There is an image gallery with screenshots of some of the existing themes at http://imgur.com/a/czk9D. 
 
