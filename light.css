@@ -10,43 +10,52 @@ body {
     margin: 0 0 1.5em 0;
     padding: 1em 1em;
     /* color: #2d2a28; */
-    color: #222;
-    background: #fafafa;
-    /* font-family: "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
-    font-family: Garamond, "Bookman Old Style", Cochin, Baskerville, serif;
+    /* color: #222; */
+    /* color: #111; */
+    color: black;
+    /* background: #fafafa; */
+    background: #faf8f6;
+    font-family: "Lucida Grande", Verdana, Geneva, Arial, sans-serif;
+    /* font-family: Garamond, "Bookman Old Style", Cochin, Baskerville, serif; */
     /* font-size: small; */
     /* font-size: 100%; */
     font-size: 1.1em;
 }
 
 
-/* links */
+/* Links */
 /* grey underlined links that turn black as you are about to click */
-
 a {
     color: #777;
+    /* color: orange; */
+    /* color: brown; */
     background-color: inherit;
     text-decoration: none;
+    /* border-bottom: 1px dotted orange; */
+    /* border-bottom: 1px dotted green; */
+    border-bottom: 1px dotted blue;
 }
 .content a {
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    text-decoration: none;
 }
-a:link {
-    color: #777;
+a:link, a:visited {
+    /* color: #777; */
+    /* color: orange; */
+    /* color: brown; */
     background-color: inherit;
 }
-a:visited {
-    color: #777;
+a:active, a:hover {
+    /* color: orange; */
+    /* color: red; */
+    color: #88f;
+    /* color: green; */
     background-color: inherit;
 }
-a:active {
-    color: #000;
-    background-color: inherit;
-}
-a:hover {
-    color: #000;
-    background-color: inherit;
-}
+/* a:hover { */
+/*     color: #000; */
+/*     background-color: inherit; */
+/* } */
 a.near:link { color: #036; background-color: inherit; }
 a.near:visited { color: #69c; background-color: inherit; }
 a.near:active { color: #390; background-color: inherit; }
@@ -56,24 +65,23 @@ a[class="url outside"]:before { content: "\2197"; }
 .safari a[class="url outside"]:before { content: url(http://www.emacswiki.org/alex/pics/arrow.png); }
 
 
-/* goto bar, navigation bar, etc. */
-
+/* Goto bar (SiteMap, HowTo, etc) */
 span.bar a { 
     font-size: smaller;
     margin-right: 1ex;
+    color: #444;
 }
 
 
-/* logo */
-
+/* Logo */
 img.logo {
     display: none;
     /* float: left; */
     /* padding: 0 2.5em .7em 0; */
     /* height: 80px; */
     /* border: none; */
+    border-bottom: none
 }
-
 a.logo {
     display: block;
     position: absolute;
@@ -81,9 +89,11 @@ a.logo {
     left: 1em;
     width: 196px;
     height: 112px;
-    background:transparent url(./images/emacs_logo2_transparent.png);
+    background:transparent url(./images/emacs_logo_transparent.png);
+    /* background:transparent url(./images/emacs_logo2_transparent.png); */
+    /* background:transparent url(./images/emacs_logo3_transparent.png); */
+    border-bottom: none
 }
-
 
 
 /* Side Bar */
@@ -92,6 +102,7 @@ span.gotobar {
     top: 150px;
     left: 0pt;
     width: 196px;
+    border-bottom: none
 }
 span.gotobar a {
     display: block;
@@ -99,12 +110,11 @@ span.gotobar a {
     font-size: 110%;
     margin-left: 1.5em;
     margin-top: 0.5em;
+    border-bottom: none
 }
 
 
-
-/* menu */
-
+/* Menu */
 .header .menu {
     float: right;
     /* text-align: right; */
@@ -125,6 +135,7 @@ div.header .specialdays {
     top: 10px;
 }
 
+
 /* Top Link Bar */
 div.footer span.edit {
     display: block;
@@ -134,6 +145,7 @@ div.footer span.edit {
     white-space: nowrap;
 }
 
+
 /* Messages */
 div.message {
     position: absolute;
@@ -142,35 +154,24 @@ div.message {
     color: red;
 }
 
+
+
 /* Content */
 div.content, div.rc, div.diff, div.comment {
     margin-left: 196px; /* see gotobar */
     padding: 1em;
     background: white;
     border-left: 1px solid #ccc;
-    /* border-bottom: 1px solid #ccc; */
-    /* border-right: 1px solid #ccc; */
 }
 
 
-
-/* headers */
-
-h1, h2, h3 {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-    line-height: normal;
-    clear: both;
-}
-
-.color.one {
-    background-color: #f4f4f4;
-}
+/* ? */
+/* .color.one { */
+/*     background-color: #f4f4f4; */
+/* } */
 
 
-/* table of contents */
-
+/* Table of contents */
 .toc {
     width: 50%;
     font-size: 90%;
@@ -181,78 +182,73 @@ h1, h2, h3 {
 }
 
 
-/* dotted line and whitespace after the title */
-
-div.header h1 {
-    /* font-size: 28pt; */
-    font-size: 2em;
-    /* letter-spacing: 0.07em; */
-    /* margin-top: 10px; */
-    /* padding-top: 10px; */
-    /* margin-bottom: 10px; */
-    /* padding-bottom: 15px; */
-    /* border-top: 1px dotted #777; */
-    border-bottom: 1px solid #666;
+/* Headers */
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    /* font-weight: normal; */
+    line-height: normal;
+    clear: both;
 }
 
+/* h1 */
+/* dotted line and whitespace after the title */
+div.header h1 {
+    font-size: 2em;
+    /* letter-spacing: 0.05em; */
+    /* margin-top: 10px; */
+    padding-top: 20px;
+    /* margin-bottom: 10px; */
+    /* padding-bottom: 15px; */
+    border-top: 1px dotted #777;
+    /* border-bottom: 1px solid #666; */
+}
 div.header h1 a {
     color: inherit;
     background-color: inherit;
+    border-bottom: none
 }
 
-
+/* h2 */
 /* dotted line and whitespace before subheadings */
-
 h2 {
     font-size: 1.5em;
-    /* font-size: 14pt; */
-    /* font-weight: normal; */
     margin-top: 1.5em;
-    /* padding-top: 2em; */
-    /* margin-top: 1em; */
-    /* padding-top: 1em; */
-    /* border-top: 1px dotted #333; */
+    padding-top: 1em;
+    border-top: 1px dotted #333;
     margin-bottom: 1em;
-    /* margin-bottom: 1.5em; */
-    /* padding-bottom: 2em; */
-    /* padding-bottom: 0; */
-    /* border-bottom: 1px dotted #333; */
-    /* border-bottom: 1px dotted #777; */
-    border-bottom: 1px solid #aaa;
+}
+/* /\* when the subheading starts the page, no dashed line and whitespace, */
+/*    because that is already added by the header. *\/ */
+/* h2:first-child { */
+/*     padding-top: 0; */
+/*     border: none; */
+/* } */
+
+/* underline */
+/* h2 { */
+/*     font-size: 1.5em; */
+/*     margin-top: 1.5em; */
+/*     margin-bottom: 1em; */
+/*     border-bottom: 1px solid #888; */
+/* } */
+
+/* h3 */
+h3 {
+    /* font-weight: bold; */
+    font-size: 1.2em;
+    padding-top: 0.5em;
+    /* padding-bottom: .5em; */
+    /* border-bottom: 1px solid #ccc; */
 }
 
-
 /* after a subheading, no whitespace */
-
 h2 + p, h3 + p, h2 + div p, h3 + div p  {
     margin-top: 0;
 }
 
 
-/* when the subheading starts the page, no dashed line and whitespace,
-   because that is already added by the header. */
-
-h2:first-child {
-    padding-top: 0;
-    border: none;
-}
-
-
-/* major subtitles blue and not underlined, both for journals and normal pages.
-   within journals, do not use a horizontal line to separate entries. */
-
-/* h2, div.journal h1 { */
-/*     font-weight: bold; */
-/*     padding-top: 1.5em; */
-/*     padding-bottom: .5em; */
-/* } */
-
-h3, div.journal h1 a {
-    font-size: 1.2em;
-    text-decoration: none;
-    border-bottom: 1px solid #ccc;
-}
-
+/* hr */
 hr {
     border: none;
     margin: 2em;
@@ -260,19 +256,16 @@ hr {
 
 
 /* table on the new page */
-
 p.table a { float: left; width: 20ex; }
 p.table + p { clear: both; padding-top: 10px; }
 
 
 /* edit pages */
-
 textarea[name="text"] { width: 100%; height: 80%; }
 textarea[name="summary"] { width: 100%; height: 3em; }
 
 
 /* comments */
-
 textarea[name="aftertext"] {
     width: 100%;
     height: 10em;
@@ -285,14 +278,13 @@ div.commentshown {
 div.commentshown hr {
     margin: 1em;
 }
-
 .commenthidden { display: none; }
 .commentshown { display: block; }
 .comment { font-size: x-small; }
 
 
 /* calendar */
-
+/* (pre gets different colors below) */
 div.month {
     padding: 0;
     margin: 0 2ex;
@@ -300,7 +292,6 @@ div.month {
 div.month a {
     text-decoration: none;
 }
-/* (pre gets different colors below) */
 div.month pre {
     color: inherit;
     background-color: inherit;
@@ -321,7 +312,6 @@ div.month a.edit {
 
 
 /* images */
-
 a.image img { 
     border: none;
 }
@@ -349,7 +339,6 @@ code {
 
 /* pre */
 /* face from planet.css */
-
 pre {
     font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
     font-size: 0.8em;
@@ -362,7 +351,6 @@ pre {
 
 /* syntax highlighting */
 /* from emacs.css */
-
 span.builtin      { color: #483d8b; } /* DarkSlateBlue */
 span.comment      { color: #b22222; } /* Firebrick */
 span.constant     { color: #008b8b; } /* DarkCyan */
@@ -377,7 +365,6 @@ span.comment span.important.constant,
 span.string  span.important.constant { color: #008b8b; }
 
 /* old: Equivalent to Output::HTML */
-
 span.linecomment  { color: green; }
 span.blockcomment { color: green; }
 span.prepro       { color: purple; }
@@ -390,19 +377,16 @@ span.category_3   { color: blue; }
 
 
 /* diff */
-
 div.diff { padding-left: 5%; padding-right: 5%; }
 div.old { background-color: #FFFFAF; color: #000; }
 div.new { background-color: #CFFFCF; color: #000; }
 
 
 /* header stuff */
-
 div.message { background-color: #FEE; color: #000; }
 
 
 /* footer stuff */
-
 div.footer {
     clear: both;
     font-size: smaller;
@@ -445,7 +429,6 @@ div.refer {
 
 
 /* center lower menu items and add border*/
-
 span.translation.bar {display: block;text-align: center;} 
 .time, .edit.bar {display: block;text-align: center;} 
 .footer .translation.bar {border-top: 1px dotted #aaa;}
@@ -453,7 +436,6 @@ span.translation.bar {display: block;text-align: center;}
 
 
 /* display buttons */
-
 .edit.bar a {
     display:inline-block;
     zoom:1;
@@ -496,7 +478,6 @@ span.translation.bar {display: block;text-align: center;}
 
 
 /* sidebar */
-
 div.sidebar {
     float: right;
     border: 1px dotted #000;
@@ -508,7 +489,6 @@ div.sidebar ul {
 
 
 /* printing */
-
 @media print {
     div.diff, div.diff+hr, div.refer, div.near, div.sister, div.cal, div.footer,
     span.specialdays, span.gotobar, a.edit, a.number span,

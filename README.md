@@ -10,22 +10,27 @@ This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.
  [x] headline text in normal font  
  [x] box around table of contents  
  [x] buttons at bottom  
+ 
 * Made in California  
  [x] gray links  
  [x] larger `function references' text (had been too small on my system)  
+ 
 * Planet CSS  
  [x] code block font  
  [x] colored syntax highlighting  
+ 
 * Wikipedia  
  [x] large logo on left  
  [x] try headings with underlines instead of section separators  
- [ ] try a vertical sidebar  
+ [x] try a vertical sidebar  
+ 
 * Other  
+ [x] test with 2nd level headers, h3  
  [ ] try dotted underline for links  
+ [ ] try sanserif font
  [ ] try orange text for links  
- [ ] test with 2nd level headers, h3
- [ ] add a favicon
- [ ] change menu items from "SiteMap" to "Site Map", etc
+ [ ] change menu items from "SiteMap" to "Site Map", etc  
+ [ ] update the favicon  
  
 There is an image gallery with screenshots of some of the existing themes at http://imgur.com/a/czk9D. 
 
