@@ -373,6 +373,16 @@ div.new { background-color: #CFFFCF; color: #000; }
 
 
 
+/* Footer */
+div.footer {
+    clear: both;
+    font-size: smaller;
+}
+div.footer + hr {
+    border: none;
+    margin: 10px;
+}
+
 /* Footer edit bar */
 div.footer span.edit {
     display: block;
@@ -382,16 +392,24 @@ div.footer span.edit {
     white-space: nowrap;
 }
 
+/* Last edit */
+div.time {
+    margin-bottom: 2em;
+}
 
-/* footer stuff */
-div.footer {
-    clear: both;
-    font-size: smaller;
+/* Legal */
+p.legal {
+    /* float: left; */
+    margin: 0;
+    padding: 0;
+    font-style: italic;
 }
-div.footer + hr {
-    border: none;
-    margin: 10px;
+/* also has <div style="float:right; margin-left:1ex;"> */
+a.license {
+    /* margin-top: 2em; */
+    border-bottom: none;
 }
+
 
 div.sister {
     font-size: smaller;
