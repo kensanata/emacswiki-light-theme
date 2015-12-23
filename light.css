@@ -9,11 +9,14 @@
 body {
     margin: 0 0 1.5em 0;
     padding: 1em 1em;
-    color: black;
-    background: #fefdfd;
+    /* color: black; */
+    color: #242323;
+    /* background: #fefdfd; */
+    background: white;
     /* font-family: "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
     /* font-family: Garamond, "Bookman Old Style", Cochin, Baskerville, serif; */
-    font-family: Georgia, Garamond, "Baskerville Old Face", "Book Antiqua", Palatino, serif;
+    /* font-family: Georgia, Garamond, "Baskerville Old Face", "Book Antiqua", Palatino, serif; */
+    font-family: Constantia, Georgia, Garamond, Palatino, Baskerville, "Book Antiqua", Georgia, serif;
     font-size: 1.1em;
 }
 
@@ -23,11 +26,14 @@ a {
     /* color: #777; */
     /* color: orange; */
     /* color: brown; */
-    color: #09c;
+    /* color: #09c; */
+    color: gray;
     background-color: inherit;
     text-decoration: none;
+    padding-bottom: 1px;
     /* border-bottom: 1px dotted orange; */
-    border-bottom: 1px dashed #09c;
+    /* border-bottom: 1px dashed #09c; */
+    border-bottom: 1px dotted #09c;
 }
 .content a {
     /* text-decoration: underline; */
@@ -44,8 +50,9 @@ a:active, a:hover {
     /* color: red; */
     /* color: #88f; */
     /* color: green; */
+    color: #069;
     /* background-color: inherit; */
-    background-color: #adf;
+    /* background-color: #adf; */
 }
 a.near:link { color: #036; background-color: inherit; }
 a.near:visited { color: #69c; background-color: inherit; }
@@ -137,9 +144,11 @@ div.header h1 {
     /* margin-bottom: 10px; */
     /* padding-bottom: 15px; */
     /* border-top: 1px dotted #777; */
-    border-top: 1px solid #ddd;
+    
     border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+    /* border-top: 1px solid #ddd; */
+    /* border-right: 1px solid #ddd; */
+    
     /* border-bottom: 1px solid #666; */
     background-color: white;
 }
@@ -156,9 +165,10 @@ div.content, div.rc, div.diff, div.comment {
     margin-left: 196px; /* see gotobar */
     padding: 1em;
     background: white;
+    
     border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    /* border-right: 1px solid #ddd; */
+    /* border-bottom: 1px solid #ddd; */
 }
 
 
@@ -183,7 +193,7 @@ div.content, div.rc, div.diff, div.comment {
 h1, h2, h3 {
     margin: 0;
     padding: 0;
-    /* font-weight: normal; */
+    font-weight: normal;
     line-height: normal;
     clear: both;
 }
@@ -305,30 +315,27 @@ a.right {
 
 
 
+/* Code and Pre */
+code, pre {
+    font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
+    font-size: 0.8em;
+    color: #444;
+    background-color: #fdfcfc;
+    border: 1px solid #eee;
+}
+
 /* Code */
 /* used for keysequences, function references (anything in `...') */
 code {
-    font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
-    font-size: 0.8em;
     padding: 2px;
-    color: #444;
-    /* background-color: #f2eeec; */
-    background-color: #faf9f9;
-    border: 1px solid #ccc;
 }
 
 
 /* Pre */
-/* face from planet.css */
+/* used for blocks of code. face from planet.css */
 pre {
-    font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
-    font-size: 0.8em;
     margin: 1em 0;
     padding: 1em 2em;
-    /* background-color: #f0ecea; */
-    /* background-color: #f2f1f1; */
-    background-color: #faf9f9;
-    border: 1px solid #ccc;
 }
 
 
