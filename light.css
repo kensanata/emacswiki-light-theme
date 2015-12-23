@@ -22,35 +22,16 @@ body {
 
 /* Links */
 a {
-    /* color: #777; */
-    /* color: orange; */
-    /* color: brown; */
-    /* color: #09c; */
     color: gray;
     background-color: inherit;
     text-decoration: none;
-    padding-bottom: 1px;
-    /* border-bottom: 1px dotted orange; */
-    /* border-bottom: 1px dashed #09c; */
     border-bottom: 1px dotted #09c;
 }
-.content a {
-    /* text-decoration: underline; */
-    text-decoration: none;
-}
 a:link, a:visited {
-    /* color: #777; */
-    /* color: orange; */
-    /* color: brown; */
     background-color: inherit;
 }
 a:active, a:hover {
-    /* color: orange; */
-    /* color: red; */
-    /* color: #88f; */
-    /* color: green; */
     color: #069;
-    /* background-color: inherit; */
     /* background-color: #adf; */
 }
 a.near:link { color: #036; background-color: inherit; }
@@ -110,20 +91,22 @@ a.logo {
 a.logo:after {
     display: block;
     margin-left: 56px;
+    /* font-family: Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
     content: "EmacsWiki";
     font-size: 1.4em;
     margin-top: 0.6em;
-    color: #333;
+    /* color: #333; */
+    color: #555;
 }
 
 
-/* Menu - includes search bar */
+/* Menu (includes Search bar) */
 .header .menu {
     float: right;
 }
 
 
-/* Bars (goto bar, translation bar, edit bar) */
+/* Bars (Goto bar, Translation bar, Edit bar) */
 span.bar a { 
     font-size: smaller;
     /* margin-right: 1ex; */
@@ -146,12 +129,13 @@ span.gotobar {
 }
 span.gotobar a {
     display: block;
-    /* font-size: 100%; */
-    /* font-size: 110%; */
     font-size: 100%;
     margin-left: 1.5em;
     margin-top: 0.5em;
     border-bottom: none
+}
+span.gotobar a:hover {
+    color: #069;
 }
 
 
@@ -183,6 +167,7 @@ div.header h1 {
     
     /* border-bottom: 1px solid #666; */
     background-color: white;
+    /* font-style: italic; */
 }
 div.header h1 a {
     color: inherit;
