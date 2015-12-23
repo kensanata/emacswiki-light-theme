@@ -15,7 +15,6 @@ body {
     background: white;
     /* font-family: "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
     /* font-family: Garamond, "Bookman Old Style", Cochin, Baskerville, serif; */
-    /* font-family: Georgia, Garamond, "Baskerville Old Face", "Book Antiqua", Palatino, serif; */
     font-family: Constantia, Georgia, Garamond, Palatino, Baskerville, "Book Antiqua", Georgia, serif;
     font-size: 1.1em;
 }
@@ -84,11 +83,26 @@ a.logo {
     position: absolute;
     top: 1em;
     left: 1em;
-    width: 196px;
-    height: 112px;
+    /* width: 196px; */
+    /* height: 112px; */
     /* background:transparent url(./images/emacs_logo_transparent.png); */
-    background:transparent url(./images/emacs_logo2_transparent.png);
+    /* background:transparent url(./images/emacs_logo2_transparent.png); */
+    /* background:transparent url(./images/leaf.png); */
+    /* background:transparent url(./images/emacswiki.png); */
+    /* background:transparent url(./images/emacswiki_green.png); */
+    background:transparent url(./images/emacswiki_green_leaf.png);
+    width: 128px;
+    height: 128px;
     border-bottom: none
+}
+a.logo:after {
+    display: block;
+    content: "Emacs\A Wiki";
+    font-size: 2.5em;
+    margin-top: 0.5em;
+    white-space: pre;
+    color: rgba(0,0,0,0.7);
+    line-height: 0.8em;
 }
 
 
