@@ -45,7 +45,9 @@ a[class="url outside"]:before { content: "\2197"; }
 
 /* Header */
 div.header {
-    margin-left: 196px;
+    /* margin-left: 196px; */
+    /* margin-left: 186px; */
+    margin-left: 150px;
     /* height: 110px; */
 }
 div.header .specialdays {
@@ -62,9 +64,12 @@ img.logo {
 a.logo {
     display: block;
     position: absolute;
-    top: 16px;
-    left: 16px;
+    /* top: 16px; */
+    /* left: 16px; */
+    top: 10px;
+    left: 10px;
     /* width: 196px; */
+    width: 150px;
     /* height: 112px; */
     /* width: 128px; */
     /* height: 128px; */
@@ -83,6 +88,7 @@ a.logo {
 /*     display: block; */
 /*     content: "Emacs\A Wiki"; */
 /*     font-size: 2.5em; */
+/*     font-size: 1.4em; */
 /*     margin-top: 0.5em; */
 /*     white-space: pre; */
 /*     color: rgba(0,0,0,0.7); */
@@ -92,9 +98,10 @@ a.logo:after {
     display: block;
     margin-left: 56px;
     /* font-family: Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
-    content: "EmacsWiki";
+    /* content: "EmacsWiki"; */
+    content: "Emacs\A Wiki";
     font-size: 1.4em;
-    margin-top: 0.6em;
+    /* margin-top: 0.6em; */
     /* color: #333; */
     color: #555;
 }
@@ -121,16 +128,20 @@ span.gotobar {
     top: 0;
     left: 0;
     /* width: 196px; */
-    padding-top: 90px;
+    /* padding-top: 90px; */
+    padding-top: 100px;
     /* width: 220px; */
-    width: 196px;
+    /* width: 196px; */
+    /* width: 186px; */
+    width: 150px;
+    text-align: right;
     /* border-top: 1px dotted #ccc; */
     /* border-right: 1px dotted #ccc; */
 }
 span.gotobar a {
     display: block;
     font-size: 100%;
-    margin-left: 1.5em;
+    /* margin-left: 1.5em; */
     margin-top: 0.5em;
     border-bottom: none
 }
@@ -179,7 +190,9 @@ div.header h1 a {
 
 /* Content */
 div.content, div.rc, div.diff, div.comment {
-    margin-left: 196px; /* see gotobar */
+    /* margin-left: 196px; /\* see gotobar *\/ */
+    /* margin-left: 186px; /\* see gotobar *\/ */
+    margin-left: 150px; /* see gotobar */
     padding: 1em;
     background: white;
     

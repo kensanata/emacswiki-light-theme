@@ -28,16 +28,17 @@ This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.
  [x] test with 2nd level headers, h3  
  [x] try dotted underline for links  
  [x] try sanserif font - like serif a bit better  
- [x] try orange text for links - too garish
- [x] make gotobar text smaller
- [ ] make new logo with 'emacswiki' in it
- [ ] make a menu bar along top for the search box and logo/sitetitle
+ [x] try orange text for links - too garish  
+ [x] make gotobar text smaller  
+ [ ] make new logo with 'emacswiki' in it  
+ [ ] make a menu bar along top for the search box and logo/sitetitle  
+ [ ] make logo and gotobar narrower to use less space  
  
 * Other  
  [ ] change menu items from "SiteMap" to "Site Map", etc  
- [ ] update the favicon
- [ ] add links to emacs main page, manuals, twitter, rss
- [ ] add a back to top link at bottom
+ [ ] update the favicon  
+ [ ] add links to emacs main page, manuals, twitter, rss  
+ [ ] add a back to top link at bottom  
  
 There is an image gallery with screenshots of some of the existing themes at http://imgur.com/a/czk9D. 
 
