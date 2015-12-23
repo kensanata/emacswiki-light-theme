@@ -65,7 +65,7 @@ a[class="url outside"]:before { content: "\2197"; }
 /* Header */
 div.header {
     margin-left: 196px;
-    height: 110px;
+    /* height: 110px; */
 }
 div.header .specialdays {
     display: block;
@@ -81,35 +81,52 @@ img.logo {
 a.logo {
     display: block;
     position: absolute;
-    top: 1em;
-    left: 1em;
+    top: 16px;
+    left: 16px;
     /* width: 196px; */
     /* height: 112px; */
+    /* width: 128px; */
+    /* height: 128px; */
     /* background:transparent url(./images/emacs_logo_transparent.png); */
     /* background:transparent url(./images/emacs_logo2_transparent.png); */
     /* background:transparent url(./images/leaf.png); */
     /* background:transparent url(./images/emacswiki.png); */
     /* background:transparent url(./images/emacswiki_green.png); */
-    background:transparent url(./images/emacswiki_green_leaf.png);
-    width: 128px;
-    height: 128px;
+    /* background:transparent url(./images/emacswiki_green_leaf.png); */
+    background:transparent url(./images/emacswiki_green_leaf64x64.png);
+    width: 64px;
+    height: 64px;
     border-bottom: none
 }
+/* a.logo:after { */
+/*     display: block; */
+/*     content: "Emacs\A Wiki"; */
+/*     font-size: 2.5em; */
+/*     margin-top: 0.5em; */
+/*     white-space: pre; */
+/*     color: rgba(0,0,0,0.7); */
+/*     line-height: 0.8em; */
+/* } */
 a.logo:after {
     display: block;
-    content: "Emacs\A Wiki";
-    font-size: 2.5em;
-    margin-top: 0.5em;
-    white-space: pre;
-    color: rgba(0,0,0,0.7);
-    line-height: 0.8em;
+    margin-left: 56px;
+    content: "EmacsWiki";
+    font-size: 1.4em;
+    margin-top: 0.6em;
+    color: #333;
+}
+
+
+/* Menu - includes search bar */
+.header .menu {
+    float: right;
 }
 
 
 /* Bars (goto bar, translation bar, edit bar) */
 span.bar a { 
     font-size: smaller;
-    margin-right: 1ex;
+    /* margin-right: 1ex; */
     color: #444;
 }
 
@@ -117,23 +134,24 @@ span.bar a {
 /* Goto bar (SiteMap, HowTo, etc) - on left side */
 span.gotobar {
     position: absolute;
-    top: 150px;
-    left: 0pt;
+    /* top: 90px; */
+    top: 0;
+    left: 0;
+    /* width: 196px; */
+    padding-top: 90px;
+    /* width: 220px; */
     width: 196px;
+    /* border-top: 1px dotted #ccc; */
+    /* border-right: 1px dotted #ccc; */
 }
 span.gotobar a {
     display: block;
     /* font-size: 100%; */
-    font-size: 110%;
+    /* font-size: 110%; */
+    font-size: 100%;
     margin-left: 1.5em;
     margin-top: 0.5em;
     border-bottom: none
-}
-
-
-/* Menu - includes search bar */
-.header .menu {
-    float: right;
 }
 
 
@@ -157,7 +175,7 @@ div.header h1 {
     /* padding-top: 20px; */
     /* margin-bottom: 10px; */
     /* padding-bottom: 15px; */
-    /* border-top: 1px dotted #777; */
+    border-top: 1px dotted #ddd;
     
     border-left: 1px solid #ddd;
     /* border-top: 1px solid #ddd; */
@@ -184,6 +202,10 @@ div.content, div.rc, div.diff, div.comment {
     /* border-right: 1px solid #ddd; */
     /* border-bottom: 1px solid #ddd; */
 }
+div.content {
+    padding-top: 0.5em;
+}
+
 
 
 /* ? */

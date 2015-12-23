@@ -6,7 +6,7 @@ This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.
 
 * Cali+  
  [x] use as a base  
- [ ] have section separators but lighter dots (like it a bit more than underlined headers)  
+ [x] have section separators but lighter dots (like it a bit more than underlined headers)  
  [x] headline text in normal font  
  [x] box around table of contents  
  [x] buttons at bottom  
@@ -24,13 +24,19 @@ This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.
  [x] try headings with underlines instead of section separators  
  [x] try a vertical sidebar  
  
-* Other  
+* Ideas  
  [x] test with 2nd level headers, h3  
- [ ] try dotted underline for links  
- [ ] try sanserif font
- [ ] try orange text for links  
+ [x] try dotted underline for links  
+ [x] try sanserif font - like serif a bit better  
+ [x] try orange text for links - too garish
+ [ ] make new logo with 'emacswiki' in it
+ [ ] make gotobar text smaller
+ [ ] make a menu bar along top for the search box and logo/sitetitle
+ 
+* Other  
  [ ] change menu items from "SiteMap" to "Site Map", etc  
- [ ] update the favicon  
+ [ ] update the favicon
+ [ ] add links to emacs main page, manuals, twitter, rss
  
 There is an image gallery with screenshots of some of the existing themes at http://imgur.com/a/czk9D. 
 
