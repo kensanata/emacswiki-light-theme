@@ -64,36 +64,41 @@ div.header .specialdays {
 
 
 /* Logo */
+/* hide the existing logo... */
 img.logo {
     display: none;
     /* border-bottom: 1px dotted #ccc; */
 }
+/* and override it with a different image */
 a.logo {
     display: block;
     position: absolute;
-    /* top: 16px; */
-    /* left: 16px; */
-    /* top: 10px; */
     top: 6px;
     left: 10px;
+    /* background:transparent url(./images/emacswiki.png); */
     /* width: 196px; */
-    width: 150px;
     /* height: 112px; */
     /* background:transparent url(./images/emacs_logo_transparent.png); */
     /* background:transparent url(./images/emacs_logo2_transparent.png); */
     /* background:transparent url(./images/leaf.png); */
     /* background:transparent url(./images/leaf_light.png); */
-    background:transparent url(./images/leaf_light64x64.png);
-    /* width: 128px; */
-    /* height: 128px; */
-    /* background:transparent url(./images/emacswiki.png); */
     /* background:transparent url(./images/emacswiki_green.png); */
     /* background:transparent url(./images/emacswiki_green_leaf.png); */
+    /* width: 128px; */
+    /* height: 128px; */
     /* background:transparent url(./images/emacswiki_green_leaf64x64.png); */
-    width: 64px;
-    height: 64px;
+    /* background:transparent url(./images/leaf_light64x64.png); */
+    /* background:transparent url(./images/blacksquares64.png); */
+    /* width: 64px; */
+    /* height: 64px; */
+    background:transparent url(./images/coloreddots32.png);
+    top: 20px;
+    left: 16px;
+    width: 32px;
+    height: 32px;
     border-bottom: none
 }
+/* and add some text next to the logo */
 /* a.logo:after { */
 /*     display: block; */
 /*     content: "Emacs\A Wiki"; */
@@ -104,35 +109,20 @@ a.logo {
 /*     color: rgba(0,0,0,0.7); */
 /*     line-height: 0.8em; */
 /* } */
-a.logo:before {
-    display: block;
-    /* margin-left: 56px; */
-    /* font-family: Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
-    font-family: "Century Gothic", Arial, sans-serif;
-    content: "EmacsWiki";
-    /* content: "Emacs\A Wiki"; */
-    font-size: 2em;
-    /* font-size: 1.4em; */
-    line-height: 0.9em;
-    /* margin-top: 0.6em; */
-    /* color: #333; */
-    margin-left: 10px;
-    /* margin-left: 1.6em; */
-    /* margin-top: 20px; */
-    margin-top: 10px;
-    color: #555;
-}
 a.logo:after {
     display: block;
-    font-family: "Century Gothic", Arial, sans-serif;
-    content: "Since 2008";
-    /* content: "The encyclopedia of Emacs"; */
-    font-size: 0.5em;
-    margin-top: 1px;
-    margin-left: 13px;
-    /* margin-top: 10px; */
-    color: #555;
+    font-family: "Century Gothic", Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif;
+    content: "EmacsWiki";
+    font-size: 2em;
+    /* font-size: 1.6em; */
+    margin-top: -9px;
+    /* margin-top: 0; */
+    margin-left: 36px;
+    padding: 0;
+    /* color: #555; */
+    color: #777;
 }
+
 
 
 /* Search bar */
