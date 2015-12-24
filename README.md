@@ -2,7 +2,7 @@
 EmacsWiki Light Theme
 =====================
 
-This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.org), combining elements from various other [existing themes](http://emacswiki.org/emacs/CSS) (included in the originals subfolder) - suggestions and pull requests are welcome. :)
+This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.org), combining elements from various other [existing themes](http://emacswiki.org/emacs/CSS) (included in the originals subfolder) - suggestions and pull requests are welcome!
 
 * Cali+  
  [x] use as a base  
@@ -30,9 +30,10 @@ This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.
  [x] try sanserif font - like serif a bit better  
  [x] try orange text for links - too garish  
  [x] make gotobar text smaller  
+ [x] make logo and gotobar narrower to use less space  
  [ ] make new logo with 'emacswiki' in it  
  [ ] make a menu bar along top for the search box and logo/sitetitle  
- [ ] make logo and gotobar narrower to use less space  
+ [ ] logo with E/macs/ W/iki/  
  
 * Other  
  [ ] change menu items from "SiteMap" to "Site Map", etc  

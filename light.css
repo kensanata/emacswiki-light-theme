@@ -43,12 +43,17 @@ a[class="url outside"]:before { content: "\2197"; }
 .safari a[class="url outside"]:before { content: url(http://www.emacswiki.org/alex/pics/arrow.png); }
 
 
-/* Header */
+
+/* Header - includes logo, search bar, goto bar, and article title */
+
 div.header {
     /* margin-left: 196px; */
     /* margin-left: 186px; */
     margin-left: 150px;
     /* height: 110px; */
+    /* border-bottom: 1px dotted #ccc; */
+    /* border-top: 1px dotted #ccc; */
+    /* border: 1px dotted green; */
 }
 div.header .specialdays {
     display: block;
@@ -60,6 +65,7 @@ div.header .specialdays {
 /* Logo */
 img.logo {
     display: none;
+    /* border-bottom: 1px dotted #ccc; */
 }
 a.logo {
     display: block;
@@ -79,7 +85,7 @@ a.logo {
     /* background:transparent url(./images/emacswiki.png); */
     /* background:transparent url(./images/emacswiki_green.png); */
     /* background:transparent url(./images/emacswiki_green_leaf.png); */
-    background:transparent url(./images/emacswiki_green_leaf64x64.png);
+    /* background:transparent url(./images/emacswiki_green_leaf64x64.png); */
     width: 64px;
     height: 64px;
     border-bottom: none
@@ -96,21 +102,35 @@ a.logo {
 /* } */
 a.logo:after {
     display: block;
-    margin-left: 56px;
+    /* margin-left: 56px; */
     /* font-family: Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
-    /* content: "EmacsWiki"; */
-    content: "Emacs\A Wiki";
-    font-size: 1.4em;
+    font-family: "Century Gothic", Arial, sans-serif;
+    content: "EmacsWiki";
+    /* content: "Emacs\A Wiki"; */
+    font-size: 2em;
+    /* font-size: 1.4em; */
+    line-height: 0.9em;
     /* margin-top: 0.6em; */
     /* color: #333; */
+    margin-left: 10px;
+    /* margin-top: 20px; */
+    margin-top: 10px;
     color: #555;
 }
 
 
-/* Menu (includes Search bar) */
+/* Search bar */
 .header .menu {
     float: right;
+    /* border: 1px solid yellow; */
+    height: 2.5em;
 }
+.menu p {
+    margin: 0.5em;
+    padding: 0;
+    /* border: 1px solid orange; */
+}
+
 
 
 /* Bars (Goto bar, Translation bar, Edit bar) */
@@ -121,22 +141,33 @@ span.bar a {
 }
 
 
+
 /* Goto bar (SiteMap, HowTo, etc) - on left side */
 span.gotobar {
     position: absolute;
     /* top: 90px; */
-    top: 0;
-    left: 0;
+    /* top: 3em; */
+    /* top: 4em; */
+    top: 3.5em;
+    /* top: 2.5em; */
+    /* top: 0; */
+    left: 1em;
+    /* margin-right: 1em; */
+    padding-top: 30px;
+    padding-right: 1em;
+    /* padding-right: 1px; */
     /* width: 196px; */
     /* padding-top: 90px; */
-    padding-top: 100px;
+    /* padding-top: 100px; */
     /* width: 220px; */
     /* width: 196px; */
     /* width: 186px; */
-    width: 150px;
+    /* width: 150px; */
     text-align: right;
-    /* border-top: 1px dotted #ccc; */
+    /* border: 1px dotted red; */
+    border-top: 1px dotted #ccc;
     /* border-right: 1px dotted #ccc; */
+    /* border-bottom: 1px dotted #ccc; */
 }
 span.gotobar a {
     display: block;
@@ -163,21 +194,24 @@ div.message {
 /* h1 */
 div.header h1 {
     font-size: 2em;
+    /* background-color: white; */
     /* letter-spacing: 0.05em; */
     /* margin-top: 10px; */
     margin: 0;
-    padding: 20px;
+    padding-left: 20px;
+    /* padding: 20px; */
     /* padding-top: 20px; */
+    padding-top: 30px;
     /* margin-bottom: 10px; */
     /* padding-bottom: 15px; */
-    border-top: 1px dotted #ddd;
     
-    border-left: 1px solid #ddd;
-    /* border-top: 1px solid #ddd; */
-    /* border-right: 1px solid #ddd; */
-    
+    /* border: 1px dotted blue; */
+    border-top: 1px dotted #ccc;
+    border-left: 1px solid #ccc;
+    /* border-top: 1px solid #ccc; */
+    /* border-right: 1px solid #ccc; */
     /* border-bottom: 1px solid #666; */
-    background-color: white;
+    
     /* font-style: italic; */
 }
 div.header h1 a {
@@ -248,13 +282,6 @@ h2 {
 /*     border: none; */
 /* } */
 
-/* underline */
-/* h2 { */
-/*     font-size: 1.5em; */
-/*     margin-top: 1.5em; */
-/*     margin-bottom: 1em; */
-/*     border-bottom: 1px solid #888; */
-/* } */
 
 /* h3 */
 h3 {
@@ -276,6 +303,7 @@ hr {
     border: none;
     margin: 2em;
 }
+
 
 
 /* Table on the new page */
@@ -354,8 +382,10 @@ code, pre {
     font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
     font-size: 0.8em;
     color: #444;
-    background-color: #fdfcfc;
-    border: 1px solid #eee;
+    /* background-color: #fdfcfc; */
+    /* border: 1px solid #eee; */
+    background-color: #fcfbfb;
+    border: 1px solid #ddd;
 }
 
 /* Code */
