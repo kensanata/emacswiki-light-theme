@@ -31,7 +31,8 @@ a:link, a:visited {
     background-color: inherit;
 }
 a:active, a:hover {
-    color: #069;
+    /* color: #069; */
+    color: #079;
     /* background-color: #adf; */
 }
 a.near:link { color: #036; background-color: inherit; }
@@ -103,7 +104,7 @@ a.logo {
 /*     color: rgba(0,0,0,0.7); */
 /*     line-height: 0.8em; */
 /* } */
-a.logo:after {
+a.logo:before {
     display: block;
     /* margin-left: 56px; */
     /* font-family: Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
@@ -119,6 +120,17 @@ a.logo:after {
     /* margin-left: 1.6em; */
     /* margin-top: 20px; */
     margin-top: 10px;
+    color: #555;
+}
+a.logo:after {
+    display: block;
+    font-family: "Century Gothic", Arial, sans-serif;
+    content: "Since 2008";
+    /* content: "The encyclopedia of Emacs"; */
+    font-size: 0.5em;
+    margin-top: 1px;
+    margin-left: 13px;
+    /* margin-top: 10px; */
     color: #555;
 }
 
@@ -236,9 +248,9 @@ div.content, div.rc, div.diff, div.comment {
     padding: 1em;
     background: white;
     
-    border-left: 1px solid #ddd;
-    /* border-right: 1px solid #ddd; */
-    /* border-bottom: 1px solid #ddd; */
+    border-left: 1px solid #ccc;
+    /* border-right: 1px solid #ccc; */
+    /* border-bottom: 1px solid #ccc; */
 }
 div.content {
     padding-top: 0.5em;
@@ -259,7 +271,7 @@ div.content {
     padding: 0 1em;
     margin: 2em 0;
     line-height: 1.4em;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
 }
 
 
