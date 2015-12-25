@@ -91,7 +91,10 @@ a.logo {
     /* background:transparent url(./images/blacksquares64.png); */
     /* width: 64px; */
     /* height: 64px; */
-    background:transparent url(./images/coloreddots32.png);
+    /* background:transparent url(./images/coloreddots32.png); */
+    /* background:transparent url(./images/coloreddots2_32.png); */
+    background:transparent url(./images/coloreddots3_32.png);
+    /* background:transparent url(./images/graydots32.png); */
     top: 20px;
     left: 16px;
     width: 32px;
@@ -102,26 +105,43 @@ a.logo {
 /* a.logo:after { */
 /*     display: block; */
 /*     content: "Emacs\A Wiki"; */
-/*     font-size: 2.5em; */
-/*     font-size: 1.4em; */
-/*     margin-top: 0.5em; */
-/*     white-space: pre; */
-/*     color: rgba(0,0,0,0.7); */
-/*     line-height: 0.8em; */
+/*     font-family: "Century Gothic", Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
+/*     font-size: 1.1em; */
+/*     margin-top: -5px; */
+/*     margin-left: 38px; */
+/*     /\* white-space: pre; *\/ */
+/*     /\* color: rgba(0,0,0,0.7); *\/ */
+/*     line-height: 0.9em; */
+/*     color: #777; */
 /* } */
 a.logo:after {
     display: block;
     font-family: "Century Gothic", Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif;
     content: "EmacsWiki";
     font-size: 2em;
-    /* font-size: 1.6em; */
     margin-top: -9px;
-    /* margin-top: 0; */
     margin-left: 36px;
-    padding: 0;
-    /* color: #555; */
-    color: #777;
+    color: #555;
 }
+
+/* a title with subtitle */
+/* a.logo:before { */
+/*     display: block; */
+/*     font-family: "Century Gothic", Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
+/*     content: "EmacsWiki"; */
+/*     font-size: 1.6em; */
+/*     margin-top: 0; */
+/*     margin-left: 36px; */
+/*     color: #777; */
+/* } */
+/* a.logo:after { */
+/*     display: block; */
+/*     font-family: "Century Gothic", Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
+/*     content: "All_things_Emacs"; */
+/*     font-size: 0.6em; */
+/*     margin-left: 36px; */
+/*     color: #777; */
+/* } */
 
 
 
