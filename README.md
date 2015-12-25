@@ -31,11 +31,10 @@ This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.
  [x] try orange text for links - too garish  
  [x] make gotobar text smaller  
  [x] make logo and gotobar narrower to use less space  
- [ ] make new logo with 'emacswiki' in it  
- [ ] make a menu bar along top for the search box and logo/sitetitle  
- [ ] logo with E/macs/ W/iki/  
+ [x] make a menu bar along top for the search box and logo/sitetitle  
  
 * Other  
+ [ ] make new logo with 'emacswiki' in it  
  [ ] change menu items from "SiteMap" to "Site Map", etc  
  [ ] update the favicon  
  [ ] add links to emacs main page, manuals, twitter, rss  
