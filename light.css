@@ -30,10 +30,10 @@ body {
 /* Code and Pre */
 /* more code/pre settings further down in file */
 code, pre {
-    /* These fonts are all pretty similar, except Courier and monospace */
+    /* These fonts are all pretty similar, except Courier and monospace, */
+    /* and for some reason, using a different font than the default monospace */
+    /* increases the size of the text, so need to counteract that here. */
     font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
-    /* For some reason, using a different font than the default 'monospace'
-       increases the size of the text, so need to counteract that here */
     font-size: 0.8em;
     color: #444;
     background-color: #fcfbfb;
@@ -229,6 +229,7 @@ h2 {
     border-top: 1px dotted #333;
     margin-bottom: 1em;
 }
+/* ? */
 /* /\* when the subheading starts the page, no dashed line and whitespace, */
 /*    because that is already added by the header. *\/ */
 /* h2:first-child { */
@@ -244,6 +245,7 @@ h3 {
     padding-bottom: .5em;
 }
 
+/* ? */
 /* after a subheading, no whitespace */
 h2 + p, h3 + p, h2 + div p, h3 + div p  {
     margin-top: 0;
@@ -264,15 +266,21 @@ p.table + p { clear: both; padding-top: 10px; }
 
 
 /* Edit pages */
+/* test */
 textarea[name="text"] { width: 100%; height: 80%; }
 textarea[name="summary"] { width: 100%; height: 3em; }
 
 
 /* Comments */
+span.time {
+    /* The default Constantia doesn't have monospace numbers, so use one of these */
+    font-family: "Lucida Grande", Geneva, Arial, sans-serif;
+    font-size: 0.8em;
+}
 textarea[name="aftertext"] {
     width: 100%;
     height: 10em;
-    margin: .5em 0;
+    margin: 0.5em 0;
 }
 div.commentshown {
     font-size: smaller;
@@ -397,10 +405,6 @@ div.footer span.edit {
     white-space: nowrap;
 }
 
-/* Last edit */
-div.time {
-    margin-bottom: 2em;
-}
 
 /* Legal */
 p.legal {
@@ -416,6 +420,7 @@ a.license {
 }
 
 
+/* ? */
 div.sister {
     font-size: smaller;
     margin-right: 1ex;
@@ -432,10 +437,12 @@ div.sister img {
     margin-right: 20px;
 }
 
+/* ? */
 div.near, div.definition {
     font-size: smaller;
 }
 
+/* ? */
 div.refer hr {
     display: none; 
 }
@@ -448,14 +455,29 @@ div.refer {
 }
 
 
-/* center lower menu items and add border*/
-span.translation.bar {display: block;text-align: center;} 
-.time, .edit.bar {display: block;text-align: center;} 
-.footer .translation.bar {border-top: 1px dotted #aaa;}
-.footer .edit.bar {padding: 5px 0px 15px 0;}
+/* Center lower menu items and add border*/
+
+/* Translation bar */
+.footer span.translation.bar {
+    display: block; 
+    text-align: center;
+    border-top: 1px dotted #aaa;
+} 
+/* Edit bar (buttons) */
+.footer .edit.bar {
+    display: block; 
+    text-align: center;
+    padding: 5px 0px 15px 0;
+}
+/* Last edit */
+.footer div.time {
+    display: block; 
+    text-align: center;
+    margin-bottom: 2em;
+}
 
 
-/* display buttons */
+/* Display buttons */
 .edit.bar a {
     display:inline-block;
     zoom:1;
@@ -497,7 +519,7 @@ span.translation.bar {display: block;text-align: center;}
 .edit.bar a:active, .edit.bar a.active {background-color:#cccccc;}
 
 
-/* sidebar */
+/* Sidebar */
 div.sidebar {
     float: right;
     border: 1px dotted #000;
@@ -508,7 +530,7 @@ div.sidebar ul {
 }
 
 
-/* printing */
+/* Printing */
 @media print {
     div.diff, div.diff+hr, div.refer, div.near, div.sister, div.cal, div.footer,
     span.specialdays, span.gotobar, a.edit, a.number span,
