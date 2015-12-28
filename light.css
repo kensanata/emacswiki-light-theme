@@ -12,13 +12,32 @@ This file is in the public domain.
 body {
     margin: 0 0 1.5em 0;
     padding: 1em 1em;
-    color: #242323;
+    color: #242323; /* dark gray */
     background: white;
-    /* font-family: "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
-    /* font-family: Garamond, "Bookman Old Style", Cochin, Baskerville, serif; */
-    /* what's mac/linux equivalent of Constantia? */
-    font-family: Constantia, Georgia, Garamond, Palatino, Baskerville, "Book Antiqua", Georgia, serif;
+    
+    /* serif fonts */
+    /* Hoefler Text is an Apple font since 1991 */ 
+    /* Constantia is a freely available Microsoft font */
+    font-family: "Hoefler Text", Constantia, Garamond, Palatino, Baskerville, "Book Antiqua", Cochin, Georgia, serif;
     font-size: 1.1em;
+    
+    /* sans-serif fonts */
+    /* font-family: "Lucida Grande", Geneva, Arial, sans-serif; */
+    /* font-size: 1em; */
+}
+
+
+/* Code and Pre */
+/* more code/pre settings further down in file */
+code, pre {
+    /* These fonts are all pretty similar, except Courier and monospace */
+    font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
+    /* For some reason, using a different font than the default 'monospace'
+       increases the size of the text, so need to counteract that here */
+    font-size: 0.8em;
+    color: #444;
+    background-color: #fcfbfb;
+    border: 1px solid #ddd;
 }
 
 
@@ -35,6 +54,7 @@ a:link, a:visited {
 a:active, a:hover {
     color: #079;
 }
+/* not sure what these are for */
 a.near:link { color: #036; background-color: inherit; }
 a.near:visited { color: #69c; background-color: inherit; }
 a.near:active { color: #390; background-color: inherit; }
@@ -46,7 +66,6 @@ a[class="url outside"]:before { content: "\2197"; }
 
 
 /* Header - includes logo, search bar, goto bar, and article title */
-
 div.header {
     margin-left: 150px;
 }
@@ -71,12 +90,10 @@ a.logo {
     /* background:transparent url(./images/emacswiki.png); */
     /* width: 196px; */
     /* height: 112px; */
-    /* background:transparent url(./images/emacs_logo_transparent.png); */
-    /* width: 128px; */
-    /* height: 128px; */
     /* background:transparent url(./images/leaf_light64x64.png); */
     /* width: 64px; */
     /* height: 64px; */
+    /* just a placeholder for the moment */
     background:transparent url(./images/dottriangles32a.png);
     top: 20px;
     left: 16px;
@@ -87,7 +104,8 @@ a.logo {
 /* and add some text next to the logo */
 a.logo:after {
     display: block;
-    font-family: "Century Gothic", Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif;
+    /* just a placeholder for now */
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     content: "EmacsWiki";
     font-size: 2em;
     margin-top: -9px;
@@ -108,13 +126,11 @@ a.logo:after {
 }
 
 
-
 /* Bars (Goto bar, Translation bar, Edit bar) */
 span.bar a { 
     font-size: smaller;
     color: #444;
 }
-
 
 
 /* Goto bar (SiteMap, HowTo, etc) - on left side */
@@ -312,15 +328,6 @@ a.right {
 }
 
 
-
-/* Code and Pre */
-code, pre {
-    font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
-    font-size: 0.8em;
-    color: #444;
-    background-color: #fcfbfb;
-    border: 1px solid #ddd;
-}
 
 /* Code */
 /* used for keysequences, function references (anything in `...') */
