@@ -1,20 +1,22 @@
 
-/* emacswiki light theme */
-/* ---------------------------------------------------------------------------- */
-/* a combination of existing themes on the emacswiki at emacswiki.org */
-/* base theme is the cali2.css theme - other sources are specified in comments */
-/* public domain */
+/* 
+EmacsWiki light theme
+----------------------------------------------------------------------------
+A combination of some of the existing themes on the EmacsWiki at
+http://emacswiki.org, with various other additions. 
+The base theme was the cali2.css theme. 
+This file is in the public domain. 
+*/
 
 
 body {
     margin: 0 0 1.5em 0;
     padding: 1em 1em;
-    /* color: black; */
     color: #242323;
-    /* background: #fefdfd; */
     background: white;
     /* font-family: "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
     /* font-family: Garamond, "Bookman Old Style", Cochin, Baskerville, serif; */
+    /* what's mac/linux equivalent of Constantia? */
     font-family: Constantia, Georgia, Garamond, Palatino, Baskerville, "Book Antiqua", Georgia, serif;
     font-size: 1.1em;
 }
@@ -31,9 +33,7 @@ a:link, a:visited {
     background-color: inherit;
 }
 a:active, a:hover {
-    /* color: #069; */
     color: #079;
-    /* background-color: #adf; */
 }
 a.near:link { color: #036; background-color: inherit; }
 a.near:visited { color: #69c; background-color: inherit; }
@@ -48,13 +48,7 @@ a[class="url outside"]:before { content: "\2197"; }
 /* Header - includes logo, search bar, goto bar, and article title */
 
 div.header {
-    /* margin-left: 196px; */
-    /* margin-left: 186px; */
     margin-left: 150px;
-    /* height: 110px; */
-    /* border-bottom: 1px dotted #ccc; */
-    /* border-top: 1px dotted #ccc; */
-    /* border: 1px dotted green; */
 }
 div.header .specialdays {
     display: block;
@@ -67,7 +61,6 @@ div.header .specialdays {
 /* hide the existing logo... */
 img.logo {
     display: none;
-    /* border-bottom: 1px dotted #ccc; */
 }
 /* and override it with a different image */
 a.logo {
@@ -79,27 +72,12 @@ a.logo {
     /* width: 196px; */
     /* height: 112px; */
     /* background:transparent url(./images/emacs_logo_transparent.png); */
-    /* background:transparent url(./images/emacs_logo2_transparent.png); */
-    /* background:transparent url(./images/leaf.png); */
-    /* background:transparent url(./images/leaf_light.png); */
-    /* background:transparent url(./images/emacswiki_green.png); */
-    /* background:transparent url(./images/emacswiki_green_leaf.png); */
     /* width: 128px; */
     /* height: 128px; */
-    /* background:transparent url(./images/emacswiki_green_leaf64x64.png); */
     /* background:transparent url(./images/leaf_light64x64.png); */
-    /* background:transparent url(./images/blacksquares64.png); */
     /* width: 64px; */
     /* height: 64px; */
-    /* background:transparent url(./images/coloreddots32.png); */
-    /* background:transparent url(./images/coloreddots2_32.png); */
-    /* background:transparent url(./images/coloreddots3_32.png); */
-    /* background:transparent url(./images/graydots32.png); */
-    /* background:transparent url(./images/dots32.png); */
-    /* background:transparent url(./images/dots32a.png); */
-    /* background:transparent url(./images/dottriangle32.png); */
     background:transparent url(./images/dottriangles32a.png);
-    /* background:transparent url(./images/triangles32.png); */
     top: 20px;
     left: 16px;
     width: 32px;
@@ -107,18 +85,6 @@ a.logo {
     border-bottom: none
 }
 /* and add some text next to the logo */
-/* a.logo:after { */
-/*     display: block; */
-/*     content: "Emacs\A Wiki"; */
-/*     font-family: "Century Gothic", Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
-/*     font-size: 1.1em; */
-/*     margin-top: -5px; */
-/*     margin-left: 38px; */
-/*     /\* white-space: pre; *\/ */
-/*     /\* color: rgba(0,0,0,0.7); *\/ */
-/*     line-height: 0.9em; */
-/*     color: #777; */
-/* } */
 a.logo:after {
     display: block;
     font-family: "Century Gothic", Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif;
@@ -129,39 +95,16 @@ a.logo:after {
     color: #555;
 }
 
-/* a title with subtitle */
-/* a.logo:before { */
-/*     display: block; */
-/*     font-family: "Century Gothic", Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
-/*     content: "EmacsWiki"; */
-/*     font-size: 1.6em; */
-/*     margin-top: 0; */
-/*     margin-left: 36px; */
-/*     color: #777; */
-/* } */
-/* a.logo:after { */
-/*     display: block; */
-/*     font-family: "Century Gothic", Futura, "Lucida Grande", Verdana, Geneva, Arial, sans-serif; */
-/*     content: "All_things_Emacs"; */
-/*     font-size: 0.6em; */
-/*     margin-left: 36px; */
-/*     color: #777; */
-/* } */
-
-
 
 /* Search bar */
 .header .menu {
     float: right;
-    /* border: 1px solid yellow; */
     height: 2.5em;
 }
 .menu p {
-    /* margin: 0.5em; */
     margin: 0;
     margin-top: 0.1em;
     padding: 0;
-    /* border: 1px solid orange; */
 }
 
 
@@ -169,7 +112,6 @@ a.logo:after {
 /* Bars (Goto bar, Translation bar, Edit bar) */
 span.bar a { 
     font-size: smaller;
-    /* margin-right: 1ex; */
     color: #444;
 }
 
@@ -178,34 +120,16 @@ span.bar a {
 /* Goto bar (SiteMap, HowTo, etc) - on left side */
 span.gotobar {
     position: absolute;
-    /* top: 90px; */
-    /* top: 3em; */
-    /* top: 4em; */
     top: 3.5em;
-    /* top: 2.5em; */
-    /* top: 0; */
     left: 1em;
-    /* margin-right: 1em; */
     padding-top: 30px;
     padding-right: 1em;
-    /* padding-right: 1px; */
-    /* width: 196px; */
-    /* padding-top: 90px; */
-    /* padding-top: 100px; */
-    /* width: 220px; */
-    /* width: 196px; */
-    /* width: 186px; */
-    /* width: 150px; */
     text-align: right;
-    /* border: 1px dotted red; */
     border-top: 1px dotted #ccc;
-    /* border-right: 1px dotted #ccc; */
-    /* border-bottom: 1px dotted #ccc; */
 }
 span.gotobar a {
     display: block;
     font-size: 100%;
-    /* margin-left: 1.5em; */
     margin-top: 0.5em;
     border-bottom: none
 }
@@ -224,28 +148,15 @@ div.message {
 }
 
 
-/* h1 */
+/* h1 (title) */
 div.header h1 {
     font-size: 2em;
-    /* background-color: white; */
     /* letter-spacing: 0.05em; */
-    /* margin-top: 10px; */
     margin: 0;
     padding-left: 20px;
-    /* padding: 20px; */
-    /* padding-top: 20px; */
     padding-top: 30px;
-    /* margin-bottom: 10px; */
-    /* padding-bottom: 15px; */
-    
-    /* border: 1px dotted blue; */
     border-top: 1px dotted #ccc;
     border-left: 1px solid #ccc;
-    /* border-top: 1px solid #ccc; */
-    /* border-right: 1px solid #ccc; */
-    /* border-bottom: 1px solid #666; */
-    
-    /* font-style: italic; */
 }
 div.header h1 a {
     color: inherit;
@@ -257,20 +168,14 @@ div.header h1 a {
 
 /* Content */
 div.content, div.rc, div.diff, div.comment {
-    /* margin-left: 196px; /\* see gotobar *\/ */
-    /* margin-left: 186px; /\* see gotobar *\/ */
     margin-left: 150px; /* see gotobar */
     padding: 1em;
     background: white;
-    
     border-left: 1px solid #ccc;
-    /* border-right: 1px solid #ccc; */
-    /* border-bottom: 1px solid #ccc; */
 }
 div.content {
     padding-top: 0.5em;
 }
-
 
 
 /* ? */
@@ -318,11 +223,9 @@ h2 {
 
 /* h3 */
 h3 {
-    /* font-weight: bold; */
     font-size: 1.2em;
     padding-top: 0.5em;
     padding-bottom: .5em;
-    /* border-bottom: 1px solid #ccc; */
 }
 
 /* after a subheading, no whitespace */
@@ -415,8 +318,6 @@ code, pre {
     font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
     font-size: 0.8em;
     color: #444;
-    /* background-color: #fdfcfc; */
-    /* border: 1px solid #eee; */
     background-color: #fcfbfb;
     border: 1px solid #ddd;
 }
