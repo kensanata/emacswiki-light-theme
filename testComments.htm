@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+EmacsWiki: Comments on SiteMap</title>
+<link rel="alternate" type="application/wiki" title="Edit this page" href="http://www.emacswiki.org/emacs?action=edit;id=Comments_on_SiteMap" />
+<!-- <link type="text/css" rel="stylesheet" href="https://rawgit.com/bburns/emacswiki-light-theme/master/light.css" /> -->
+<link type="text/css" rel="stylesheet" href="light.css" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="alternate" type="application/rss+xml" title="EmacsWiki" href="http://www.emacswiki.org/emacs?action=rss" />
+<link rel="alternate" type="application/rss+xml" title="EmacsWiki: Comments_on_SiteMap" href="http://www.emacswiki.org/emacs?action=rss;rcidonly=Comments_on_SiteMap" />
+<link rel="alternate" type="application/rss+xml" title="Follow-ups for BrianBurns" href="http://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content"
+      href="http://www.emacswiki.org/full.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content and diff"
+      href="http://www.emacswiki.org/full-diff.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki including minor differences"
+      href="http://www.emacswiki.org/minor-edits.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Changes for Comments on SiteMap only"
+      href="http://www.emacswiki.org/emacs?action=rss;rcidonly=Comments_on_SiteMap" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Follow-ups to BrianBurns"
+      href="http://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+
+<meta name="viewport" content="width=device-width" />
+
+<script type="text/javascript" src="/outliner.0.5.0.62-toc.js">
+</script>
+
+<script type="text/javascript">
+
+
+  function addOnloadEvent(fnc) {
+    if ( typeof window.addEventListener != "undefined" )
+      window.addEventListener( "load", fnc, false );
+    else if ( typeof window.attachEvent != "undefined" ) {
+      window.attachEvent( "onload", fnc );
+    }
+    else {
+      if ( window.onload != null ) {
+	var oldOnload = window.onload;
+	window.onload = function ( e ) {
+	  oldOnload( e );
+	  window[fnc]();
+	};
+      }
+      else
+	window.onload = fnc;
+    }
+  }
+
+  // https://stackoverflow.com/questions/280634/endswith-in-javascript
+  if (typeof String.prototype.endsWith !== 'function') {
+    String.prototype.endsWith = function(suffix) {
+      return this.indexOf(suffix, this.length - suffix.length) !== -1;
+    };
+  }
+
+  var initToc=function() {
+
+    var outline = HTML5Outline(document.body);
+    if (outline.sections.length == 1) {
+      outline.sections = outline.sections[0].sections;
+    }
+
+    if (outline.sections.length >
+ 1
+	|| outline.sections.length == 1
+           && outline.sections[0].sections.length >
+ 0) {
+
+      var toc = document.getElementById('toc');
+
+      if (!toc) {
+	var divs = document.getElementsByTagName('div');
+	for (var i = 0; i < divs.length; i++) {
+	  if (divs[i].getAttribute('class') == 'toc') {
+	    toc = divs[i];
+	    break;
+	  }
+	}
+      }
+
+      if (!toc) {
+	var h2 = document.getElementsByTagName('h2')[0];
+	if (h2) {
+	  toc = document.createElement('div');
+	  toc.setAttribute('class', 'toc');
+	  h2.parentNode.insertBefore(toc, h2);
+	}
+      }
+
+      if (toc) {
+        var html = outline.asHTML(true);
+        toc.innerHTML = html;
+
+	items = toc.getElementsByTagName('a');
+	for (var i = 0; i < items.length; i++) {
+	  while (items[i].textContent.endsWith('✎')) {
+            var text = items[i].childNodes[0].nodeValue;
+	    items[i].childNodes[0].nodeValue = text.substring(0, text.length - 1);
+	  }
+	}
+      }
+    }
+  }
+
+  addOnloadEvent(initToc);
+  </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body class="default">
+<div class="header">
+<a href="http://www.emacswiki.org/emacs/SiteMap" class="logo">
+<img src="/emacs_logo.png" class="logo" alt="[Home]" />
+</a>
+<div class="menu">
+<span class="gotobar bar">
+<a class="local" href="http://www.emacswiki.org/emacs/SiteMap">
+SiteMap</a>
+ <a href="http://www.emacswiki.org/emacs/Search" class="local">
+Search</a>
+ <a href="http://www.emacswiki.org/emacs/ElispArea" class="local">
+ElispArea</a>
+ <a href="http://www.emacswiki.org/emacs/HowTo" class="local">
+HowTo</a>
+ <a href="http://www.emacswiki.org/emacs/Glossary" class="local">
+Glossary</a>
+ <a class="local" href="http://www.emacswiki.org/emacs/RecentChanges">
+RecentChanges</a>
+ <a href="http://www.emacswiki.org/emacs/News" class="local">
+News</a>
+ <a href="http://www.emacswiki.org/emacs/Problems" class="local">
+Problems</a>
+ <a class="local" href="http://www.emacswiki.org/emacs/Suggestions">
+Suggestions</a>
+ </span>
+<form method="get" action="http://www.emacswiki.org/emacs" enctype="multipart/form-data" class="search" accept-charset="utf-8">
+<p>
+<label for="search">
+Search:</label>
+ <input type="text" name="search"  size="20" accesskey="f" id="search" />
+ <label for="searchlang">
+Language:</label>
+ <input type="text" name="lang"  size="10" id="searchlang" />
+ <input type="submit" name="dosearch" value="Go!" />
+</p>
+</form>
+</div>
+
+
+<h1>
+<a href="http://www.emacswiki.org/emacs?search=%22Comments+on+SiteMap%22" rel="nofollow" title="Click to search for references to this page">
+Comments on <span style="padding-right: 0.5ex;"> Site</span> <span style="padding-right: 0.5ex;"> Map</span>
+</a>
+</h1>
+
+</div>
+
+
+<div class="wrapper">
+<div class="content browse">
+<p>
+This page discusses how the front page, <a href="http://www.emacswiki.org/emacs/SiteMap" class="local"> SiteMap</a>
+, should look. The bottom half of this page lists decided issues, the top half is for discussion of open issues.</p>
+
+<p>
+Here&#x2019;s what <a href="http://www.emacswiki.org/emacs/SiteMap" class="local"> SiteMap</a> does:</p>
+<ul>
+<li>
+It has a short introduction for newbies, pointing them to some pages with more information.</li>
+<li>
+It lists all the major categories; a category is a tag attached to pages in order to classify them. The category pages offer a list of pages belonging to the category, and they offer a search for these tags (by searching for backlinks &#x2013; click on the title of the category page).</li>
+<li>
+It has a small number of maintenance functions for interested users.</li>
+</ul>
+
+<h2> Past Decisions</h2>
+<p>
+These are some conclusions from past discussions.</p>
+<ul>
+<li>
+&#x201c;Emacs Community&#x201d; does not belong at the top. People come to this site primarily to obtain information and secondarily to offer information &#x2013; about Emacs. All the rest is a third-level concern.</li>
+<li>
+<a href="http://www.emacswiki.org/emacs/EmacsNewbie" class="local">
+EmacsNewbie</a>
+ and <a class="local" href="http://www.emacswiki.org/emacs/CategoryPorts">
+Ports</a>
+ are important info on how to get started with Emacs.</li>
+<li>
+<a class="local" href="http://www.emacswiki.org/emacs/News">
+News</a>
+ just collects the last few date pages. If you read <a href="http://www.emacswiki.org/emacs/RecentChanges" class="local">
+RecentChanges</a>
+, you&#x2019;ll get links to these pages anyway, so you don&#x2019;t need to look at the News page. The News page is for people that don&#x2019;t follow <a href="http://www.emacswiki.org/emacs/RecentChanges" class="local">
+RecentChanges</a>
+. Date pages are for important events, bugs on the wiki, and links to interesting threads on Emacs mailing-lists or newsgroups.</li>
+<li>
+The header of this wiki usually shows national days. This includes messages such as &#x201c;Iran, Victory of the Islamic Revolution in Iran.&#x201d; This is not a statement on current events. It just reminds us of the vast diversity of culture on this planet &#x2013; language, government, religion.</li>
+<li>
+We won&#x2019;t be adding a sidebar to the wiki.</li>
+</ul>
+</div>
+
+
+<div class="comment">
+    
+<form method="post" action="http://www.emacswiki.org/emacs" enctype="multipart/form-data" accept-charset="utf-8" class="comment">
+    
+ <p>
+<input name="title" value="Comments_on_SiteMap" type="hidden" />
+<label accesskey="c" for="aftertext"> Add your comment here:</label>
+<br />
+<textarea name="aftertext"  rows="10" cols="78" id="aftertext"> </textarea>
+</p>
+ 
+<p>
+Please make sure you contribute only your own work. IP numbers are made available via the page history. If you want to keep it a secret, you need to use <a href="http://www.torproject.org/"> Tor</a> . 
+See <a href="/emacs/TextFormattingRules"> TextFormattingRules</a> for how to format text. 
+See <a href="/emacs/StyleGuide"> StyleGuide</a> for the suggested writing style on this wiki.
+</p>
+
+<p>
+<span class="username">
+<label for="username"> Username:</label>
+<input type="text" name="username" value="BrianBurns" size="20" maxlength="50" id="username" />
+</span>
+<span class="homepage">
+<label for="homepage"> Homepage URL:</label>
+<input type="text" name="homepage"  size="40" maxlength="100" id="homepage" />
+</span>
+</p>
+
+ <p>
+<input type="submit" name="Save" value="Save" accesskey="s" />
+<input type="submit" name="Preview" value="Preview" accesskey="p" />
+</p>
+ 
+ </form>
+
+</div>
+
+<div class="wrapper close">
+</div>
+
+</div>
+
+
+<div class="footer">
+<hr />
+<span class="translation bar">
+<br />
+  <a class="translation new" rel="nofollow" href="http://www.emacswiki.org/emacs?action=translate;id=Comments_on_SiteMap;missing=de_es_fr_it_ja_ko_pt_ru_se_uk_zh">
+Add Translation</a>
+</span>
+<div class="edit bar">
+<a class="original local" href="http://www.emacswiki.org/emacs/SiteMap" accesskey="a" accesskey="a">
+Article</a>
+ <a accesskey="e" href="http://www.emacswiki.org/emacs?action=edit;id=Comments_on_SiteMap" class="edit" title="Click to edit this page" rel="nofollow">
+Edit this page</a>
+ <a href="http://www.emacswiki.org/emacs?action=history;id=Comments_on_SiteMap" class="history" rel="nofollow">
+View other revisions</a>
+ <a class="admin" rel="nofollow" href="http://www.emacswiki.org/emacs?action=admin;id=Comments_on_SiteMap">
+Administration</a>
+</div>
+
+<div class="time">
+Last edited 2015-06-09 15:23 UTC by <a class="author" title="209.6.36.110" href="http://www.emacswiki.org/emacs/MikeAbrahams">
+MikeAbrahams</a>
+ <a class="diff" rel="nofollow" href="http://www.emacswiki.org/emacs?action=browse;diff=2;id=Comments_on_SiteMap">
+(diff)</a>
+</div>
+
+<div style="float:right; margin-left:1ex;">
+<!-- Creative Commons License -->
+<a class="licence" href="http://creativecommons.org/licenses/GPL/2.0/">
+<img alt="CC-GNU GPL" style="border:none" src="/pics/cc-GPL-a.png" />
+</a>
+<!-- /Creative Commons License -->
+</div>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <license rdf:resource="http://creativecommons.org/licenses/GPL/2.0/" />
+  <dc:type rdf:resource="http://purl.org/dc/dcmitype/Software" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/GPL/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+   <requires rdf:resource="http://web.resource.org/cc/SourceCode" />
+</License>
+</rdf:RDF>
+-->
+
+<p class="legal">
+This work is licensed to you under version 2 of the <a href="http://www.gnu.org/"> GNU</a> <a href="/GPL"> General Public License</a> .
+Alternatively, you may choose to receive this work under any other
+license that grants the right to use, copy, modify, and/or distribute
+the work, as long as that license imposes the restriction that
+derivative works have to grant the same rights and impose the same
+restriction. For example, you may choose to receive this work under
+the <a href="http://www.gnu.org/"> GNU</a> <a href="/FDL"> Free Documentation License</a> , the <a href="http://creativecommons.org/"> CreativeCommons</a> <a href="http://creativecommons.org/licenses/sa/1.0/"> ShareAlike</a> License, the XEmacs manual license, or <a href="/OLD"> similar licenses</a> . 
+</p>
+</div>
+</body>
+</html>
+
