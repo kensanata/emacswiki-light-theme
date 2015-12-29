@@ -288,10 +288,8 @@ div.comment form {
     border-top: 1px solid #ccc;
 }
 span.time {
-    /* The default Constantia doesn't have monospace numbers, so use one of these. */
-    /* try to find a better looking number font though. */
-    font-family: "Lucida Grande", Geneva, Arial, sans-serif;
-    font-size: 0.8em;
+    /* The default Constantia doesn't have monospace numbers, so use this. */
+    font-family: Times, "Times Roman", "Times New Roman", serif;
 }
 textarea[name="aftertext"] {
     width: 100%;
