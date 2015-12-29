@@ -42,7 +42,7 @@ This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.
  
 There is an image gallery with screenshots of some of the existing themes at http://imgur.com/a/czk9D. 
 
-To test the theme you can either download the project and open the '''index.htm''' file or visit  http://www.emacswiki.org/emacs?action=browse;bootstrap=0;id=CSSPreview;css=https://rawgit.com/bburns/emacswiki-light-theme/master/light.css - this uses a service provided by http://rawgit.com to serve github files with the appropriate content headers, though it will change to a more permanent location later. 
+To test the theme you can either download the project and open one of the '''test*.htm''' files or visit  http://www.emacswiki.org/emacs?action=browse;bootstrap=0;id=CSSPreview;css=https://rawgit.com/bburns/emacswiki-light-theme/master/light.css - this uses a service provided by http://rawgit.com to serve github files with the appropriate content headers, though it will change to a more permanent location later. 
 
 To reset your theme go to http://www.emacswiki.org/emacs/CSS/ and choose one of the existing themes. 
 
