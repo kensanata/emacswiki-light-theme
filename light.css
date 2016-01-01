@@ -13,7 +13,7 @@ body {
     margin: 0 0 1.5em 0;
     padding: 1em 1em;
     color: #242323; /* dark gray */
-    background: white;
+    background-color: white;
     
     /* serif fonts */
     /* Hoefler Text is an Apple font since 1991 */ 
@@ -195,11 +195,6 @@ div.content {
 }
 
 
-/* ? */
-.color.one {
-    background-color: #f4f4f4;
-}
-
 
 /* Table of contents */
 .toc {
@@ -309,6 +304,76 @@ div.commentshown hr {
 }
 .commenthidden { display: none; }
 .commentshown { display: block; }
+
+
+
+
+/* News page */
+/* headings */
+div.page {
+    /* margin-top: 1em; */
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+    /* border: 1px solid red; */
+    padding-bottom: 1em;
+}
+h1 a.local {
+    color: #222;
+    font-size: 0.8em;
+    border-bottom: none;
+}
+div.color {
+    clear: both;
+    padding: 1ex 1em;
+}
+div.color.one {
+    color: #444;
+    background-color: #fcfbfb;
+    border: 1px solid #ddd;
+}
+
+/* Portraits */
+/* These show when start post with [new::] and have a portrait image on homepage */
+div.portrait {
+    margin: 0;
+    float: left;
+    font-size: 0.75em;
+    margin-right: 2em;
+}
+div.portrait p {
+    margin: 0;
+    padding-top: 1ex;
+}
+img.portrait {
+    margin: 0;
+    float: left;
+    clear: left;
+    /* picture frame */
+    padding: 1ex; 
+    border:#999 1px solid;
+    /* scale the image */
+    width: 100%;
+    max-width: 18ex;
+}
+/* portrait caption */
+div.portrait a.local {
+    display: block;
+    text-decoration: none;
+    border-bottom: none;
+    /* picture frame */
+    color: #999;
+    width: 100%;
+    max-width: 20ex;
+}
+div.comment {
+    clear: both;
+}
+
+/* News text */
+/* make text match the top margin of the portrait */
+div.page div.portrait + p {
+    margin-top: 0.5ex;
+}
 
 
 
@@ -567,3 +632,7 @@ div.sidebar ul {
 
 
 
+
+/* Local Variables: */
+/* css-indent-offset: 4 */
+/* End: */
