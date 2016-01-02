@@ -31,7 +31,7 @@ body {
 
 
 /* Code and Pre */
-/* more code/pre settings further down in file */
+/* note: syntax highlighting is at EOF */
 code, pre {
     color: #444;
     background-color: #fcfbfb;
@@ -43,6 +43,15 @@ code, pre {
     /* for some reason, using a different font than the default monospace */
     /* increases the size of the text, so need to counteract that here */
     font-size: 0.8em;
+}
+/* Code - used for keysequences, function references (anything in `...') */
+code {
+    padding: 2px;
+}
+/* Pre - used for blocks of code */
+pre {
+    margin: 1em 0;
+    padding: 1em 2em;
 }
 
 
@@ -73,6 +82,95 @@ a.near:link { color: #036; background-color: inherit; }
 a.near:visited { color: #69c; background-color: inherit; }
 a.near:active { color: #390; background-color: inherit; }
 a.near:hover { color: #390; background-color: inherit; }
+
+
+/* Images */
+a.image img { 
+    border: none;
+}
+a.left {
+    float: left;
+    margin: 20px;
+}
+a.right {
+    float: right;
+    margin: 20px;
+}
+
+
+/* Headers */
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    line-height: normal;
+    clear: both;
+}
+
+/* h2 */
+/* dotted line and whitespace before subheadings */
+h2 {
+    font-size: 1.5em;
+    margin-top: 1.5em;
+    padding-top: 1em;
+    border-top: 1px dotted #333;
+    margin-bottom: 1em;
+}
+
+
+/* h3 */
+h3 {
+    font-size: 1.2em;
+    padding-top: 0.5em;
+    padding-bottom: .5em;
+}
+
+/* after a subheading, no whitespace */
+h2 + p, h3 + p, h2 + div p, h3 + div p  {
+    margin-top: 0;
+}
+
+
+/* hr */
+hr {
+    border: none;
+    margin: 2em;
+}
+
+
+/* Tables */
+table { 
+    border-collapse: collapse; /* otherwise leaves gaps in between cell outlines */
+}
+table th {
+    font-weight: bold;
+}
+table td,th { 
+    padding: 0 1ex;
+    text-align: left;
+    border: solid 1px #bbb;
+}
+/* odd/even rows */
+/* table tr.odd { */
+/*     background-color: #fcfbfb; */
+/* } */
+
+
+/* ? */
+/* Table on the new page */
+p.table a { float: left; width: 20ex; }
+p.table + p { clear: both; padding-top: 10px; }
+
+
+/* Definition lists */
+dt {
+    font-weight: bold;
+}
+
+
+
+
+/* ---------------------------------------------------------------------- */
 
 
 /* Header - includes logo, search bar, goto bar, and article title */
@@ -208,7 +306,6 @@ div.content {
 }
 
 
-
 /* Table of contents */
 .toc {
     width: 50%;
@@ -218,78 +315,6 @@ div.content {
     line-height: 1.4em;
     border: 1px solid #ccc;
 }
-
-
-/* Headers */
-h1, h2, h3 {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-    line-height: normal;
-    clear: both;
-}
-
-/* h2 */
-/* dotted line and whitespace before subheadings */
-h2 {
-    font-size: 1.5em;
-    margin-top: 1.5em;
-    padding-top: 1em;
-    border-top: 1px dotted #333;
-    margin-bottom: 1em;
-}
-
-
-/* h3 */
-h3 {
-    font-size: 1.2em;
-    padding-top: 0.5em;
-    padding-bottom: .5em;
-}
-
-/* after a subheading, no whitespace */
-h2 + p, h3 + p, h2 + div p, h3 + div p  {
-    margin-top: 0;
-}
-
-
-/* hr */
-hr {
-    border: none;
-    margin: 2em;
-}
-
-
-/* Definition lists */
-dt {
-    font-weight: bold;
-}
-
-
-/* Tables */
-table { 
-    border-collapse: collapse; /* otherwise leaves gaps in between cell outlines */
-}
-table th {
-    font-weight: bold;
-}
-table td,th { 
-    padding: 0 1ex;
-    text-align: left;
-    border: solid 1px #bbb;
-}
-/* odd/even rows */
-/* table tr.odd { */
-/*     background-color: #fcfbfb; */
-/* } */
-
-
-/* ? */
-/* Table on the new page */
-p.table a { float: left; width: 20ex; }
-p.table + p { clear: both; padding-top: 10px; }
-
-
 
 
 /* Edit page */
@@ -439,61 +464,6 @@ div.month a.edit {
     font-weight: inherit;
 }
 
-
-/* Images */
-a.image img { 
-    border: none;
-}
-a.left {
-    float: left;
-    margin: 20px;
-}
-a.right {
-    float: right;
-    margin: 20px;
-}
-
-
-
-/* Code */
-/* used for keysequences, function references (anything in `...') */
-/* see also top of file */
-code {
-    padding: 2px;
-}
-
-/* Pre */
-/* used for blocks of code. face from planet.css */
-/* see also top of file */
-pre {
-    margin: 1em 0;
-    padding: 1em 2em;
-}
-
-/* Syntax highlighting */
-/* from emacs.css */
-span.builtin      { color: #483d8b; } /* DarkSlateBlue */
-span.comment      { color: #b22222; } /* Firebrick */
-span.constant     { color: #008b8b; } /* DarkCyan */
-span.function     { color: #0000ff; } /* Blue1 */
-span.keyword      { color: #7f007f; } /* Purple */
-span.string       { color: #8b475d; } /* VioletRed4 */
-span.type         { color: #228b22; } /* ForestGreen */
-span.warning      { color: #ff0000; font-weight: bold; } /* Red1 */
-span.comment span,
-span.string  span { color: inherit; }
-span.comment span.important.constant,
-span.string  span.important.constant { color: #008b8b; }
-
-/* old: Equivalent to Output::HTML */
-span.linecomment  { color: green; }
-span.blockcomment { color: green; }
-span.prepro       { color: purple; }
-span.select       { font-weight: bold; }
-span.quote        { color: blue; }
-span.category_1   { color: teal; }
-span.category_2   { color: blue; }
-span.category_3   { color: blue; }
 
 
 
@@ -665,6 +635,31 @@ div.sidebar ul {
     a[class="near"]:after { content: " [" attr(title) "]"; }
 }
 
+
+/* Syntax highlighting */
+/* from emacs.css */
+span.builtin      { color: #483d8b; } /* DarkSlateBlue */
+span.comment      { color: #b22222; } /* Firebrick */
+span.constant     { color: #008b8b; } /* DarkCyan */
+span.function     { color: #0000ff; } /* Blue1 */
+span.keyword      { color: #7f007f; } /* Purple */
+span.string       { color: #8b475d; } /* VioletRed4 */
+span.type         { color: #228b22; } /* ForestGreen */
+span.warning      { color: #ff0000; font-weight: bold; } /* Red1 */
+span.comment span,
+span.string  span { color: inherit; }
+span.comment span.important.constant,
+span.string  span.important.constant { color: #008b8b; }
+
+/* old: Equivalent to Output::HTML */
+span.linecomment  { color: green; }
+span.blockcomment { color: green; }
+span.prepro       { color: purple; }
+span.select       { font-weight: bold; }
+span.quote        { color: blue; }
+span.category_1   { color: teal; }
+span.category_2   { color: blue; }
+span.category_3   { color: blue; }
 
 
 
