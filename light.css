@@ -9,35 +9,37 @@ This file is in the public domain.
 */
 
 
+/* Body */
+
 body {
     margin: 0 0 1.5em 0;
     padding: 1em 1em;
     color: #242323; /* dark gray */
     background-color: white;
-    
+    /* line-height: 1.3em; */
+    /* font-size: 1em; */
+    /* padding-bottom: -2px; */
     /* serif fonts */
     /* Hoefler Text is an Apple font since 1991 */ 
     /* Constantia is a freely available Microsoft font */
     font-family: "Hoefler Text", Constantia, Garamond, Palatino, Baskerville, "Book Antiqua", Cochin, Georgia, serif;
-    /* font-size: 1.1em; */
     
     /* sans-serif fonts */
     /* font-family: "Lucida Grande", Geneva, Arial, sans-serif; */
-    /* font-size: 1em; */
 }
 
 
 /* Code and Pre */
 /* more code/pre settings further down in file */
 code, pre {
-    /* These fonts are all pretty similar, except Courier and monospace, */
-    /* and for some reason, using a different font than the default monospace */
-    /* increases the size of the text, so need to counteract that here. */
-    font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
-    font-size: 0.8em;
     color: #444;
     background-color: #fcfbfb;
     border: 1px solid #ddd;
+    /* These fonts are all pretty similar, except Courier and monospace */
+    font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
+    /* for some reason, using a different font than the default monospace */
+    /* increases the size of the text, so need to counteract that here */
+    font-size: 0.8em;
 }
 
 
@@ -45,8 +47,10 @@ code, pre {
 a {
     color: gray;
     background-color: inherit;
-    text-decoration: none;
-    border-bottom: 1px dotted #09c;
+    /* text-decoration: none; */
+    /* border-bottom: 1px dotted #09c; */
+    /* this works on firefox, just shows as a plain underline in chrome */
+    text-decoration: underline dotted #09c;
 }
 a:link, a:visited {
     background-color: inherit;
@@ -54,14 +58,14 @@ a:link, a:visited {
 a:active, a:hover {
     color: #079;
 }
-/* not sure what these are for */
+/* external links */
+a[class="url outside"]:before { content: "\2197"; }
+.safari a[class="url outside"]:before { content: url(http://www.emacswiki.org/alex/pics/arrow.png); }
+/* not sure what these are for... */
 a.near:link { color: #036; background-color: inherit; }
 a.near:visited { color: #69c; background-color: inherit; }
 a.near:active { color: #390; background-color: inherit; }
 a.near:hover { color: #390; background-color: inherit; }
-
-a[class="url outside"]:before { content: "\2197"; }
-.safari a[class="url outside"]:before { content: url(http://www.emacswiki.org/alex/pics/arrow.png); }
 
 
 
@@ -81,7 +85,7 @@ div.header .specialdays {
 img.logo {
     display: none;
 }
-/* and override it with a different image */
+/* ...and override it with a different image */
 a.logo {
     display: block;
     position: absolute;
@@ -99,7 +103,8 @@ a.logo {
     left: 16px;
     width: 32px;
     height: 32px;
-    border-bottom: none
+    /* border-bottom: none; */
+    text-decoration: none;
 }
 /* and add some text next to the logo */
 a.logo:after {
@@ -148,7 +153,8 @@ span.gotobar a {
     display: block;
     font-size: 100%;
     margin-top: 0.5em;
-    border-bottom: none
+    /* border-bottom: none; */
+    text-decoration: none;
 }
 span.gotobar a:hover {
     color: #069;
@@ -168,17 +174,18 @@ div.message {
 /* h1 (title) */
 div.header h1 {
     font-size: 2em;
-    /* letter-spacing: 0.05em; */
     margin: 0;
     padding-left: 20px;
     padding-top: 30px;
     border-top: 1px dotted #ccc;
     border-left: 1px solid #ccc;
+    /* letter-spacing: 0.05em; */
 }
 div.header h1 a {
     color: inherit;
     background-color: inherit;
-    border-bottom: none
+    /* border-bottom: none; */
+    text-decoration: none;
 }
 
 
@@ -225,13 +232,6 @@ h2 {
     border-top: 1px dotted #333;
     margin-bottom: 1em;
 }
-/* ? */
-/* /\* when the subheading starts the page, no dashed line and whitespace, */
-/*    because that is already added by the header. *\/ */
-/* h2:first-child { */
-/*     padding-top: 0; */
-/*     border: none; */
-/* } */
 
 
 /* h3 */
@@ -241,7 +241,6 @@ h3 {
     padding-bottom: .5em;
 }
 
-/* ? */
 /* after a subheading, no whitespace */
 h2 + p, h3 + p, h2 + div p, h3 + div p  {
     margin-top: 0;
@@ -255,11 +254,9 @@ hr {
 }
 
 
-
 /* Table on the new page */
 p.table a { float: left; width: 20ex; }
 p.table + p { clear: both; padding-top: 10px; }
-
 
 
 /* Edit page */
@@ -306,21 +303,24 @@ div.commentshown hr {
 .commentshown { display: block; }
 
 
-
-
 /* News page */
 /* headings */
+div.journal {
+    padding-top: 1em;
+}
 div.page {
     /* margin-top: 1em; */
     padding-top: 1em;
-    border-top: 1px solid #ccc;
+    /* border-top: 1px solid #ccc; */
+    border-top: 1px dotted #333;
     /* border: 1px solid red; */
     padding-bottom: 1em;
 }
 h1 a.local {
     color: #222;
     font-size: 0.8em;
-    border-bottom: none;
+    /* border-bottom: none; */
+    text-decoration: none;
 }
 div.color {
     clear: both;
@@ -334,6 +334,7 @@ div.color.one {
 
 /* Portraits */
 /* These show when start post with [new::] and have a portrait image on homepage */
+/* see https://oddmuse.org/wiki/Portraits_Support_Extension */
 div.portrait {
     margin: 0;
     float: left;
@@ -344,6 +345,7 @@ div.portrait p {
     margin: 0;
     padding-top: 1ex;
 }
+/* for the image inside a.newauthor */
 img.portrait {
     margin: 0;
     float: left;
@@ -359,7 +361,7 @@ img.portrait {
 div.portrait a.local {
     display: block;
     text-decoration: none;
-    border-bottom: none;
+    /* border-bottom: none; */
     /* picture frame */
     color: #999;
     width: 100%;
@@ -499,7 +501,8 @@ p.legal {
 /* also has <div style="float:right; margin-left:1ex;"> */
 a.license {
     /* margin-top: 2em; */
-    border-bottom: none;
+    /* border-bottom: none; */
+    text-decoration: none;
 }
 
 
