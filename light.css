@@ -205,7 +205,8 @@ a.logo {
     /* width: 64px; */
     /* height: 64px; */
     /* just a placeholder for the moment */
-    background:transparent url(./images/dottriangles32a.png);
+    /* background:transparent url(./images/dottriangles32a.png); */
+    background:transparent url(./images/leaves32blue.png);
     top: 20px;
     left: 16px;
     width: 32px;
@@ -220,7 +221,7 @@ a.logo:after {
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     content: "EmacsWiki";
     font-size: 2em;
-    margin-top: -9px;
+    margin-top: 5px;
     margin-left: 36px;
     color: #555;
 }
