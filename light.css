@@ -34,7 +34,8 @@ body {
 /* note: syntax highlighting is at EOF */
 code, pre {
     color: #444;
-    background-color: #fcfbfb;
+    /* background-color: #fcfbfb; */
+    background-color: #faf9f9;
     border: 1px solid #ddd;
 
     /* These fonts are all pretty similar, except Courier and monospace */
@@ -381,9 +382,11 @@ div.color {
     clear: both;
     padding: 1ex 1em;
 }
+/* alternate conversations with .one/.two */
 div.color.one {
     color: #444;
-    background-color: #fcfbfb;
+    /* background-color: #fcfbfb; */
+    background-color: #f4f3f2;
     border: 1px solid #ddd;
 }
 
