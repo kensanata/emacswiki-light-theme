@@ -134,8 +134,10 @@ h2 + p, h3 + p, h2 + div p, h3 + div p  {
 
 /* hr */
 hr {
-    border: none;
-    margin: 2em;
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    width: 100%;
 }
 
 
@@ -566,7 +568,7 @@ div.refer {
 .footer span.translation.bar {
     display: block;
     text-align: center;
-    border-top: 1px dotted #aaa;
+    /* border-top: 1px dotted #aaa; */
 }
 /* Edit bar (buttons) */
 .footer .edit.bar {
