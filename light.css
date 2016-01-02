@@ -20,12 +20,12 @@ body {
     background-color: white;
     line-height: 1.3em;
 
-    /* serif fonts */
+    /* Serif fonts */
     /* Hoefler Text is an Apple font since 1991 */
     /* Constantia is a freely available Microsoft font */
     font-family: "Hoefler Text", Constantia, Garamond, Palatino, Baskerville, "Book Antiqua", Cochin, Georgia, serif;
 
-    /* sans-serif fonts */
+    /* Sans-serif fonts */
     /* font-family: "Lucida Grande", Geneva, Arial, sans-serif; */
 }
 
@@ -40,7 +40,7 @@ code, pre {
     /* These fonts are all pretty similar, except Courier and monospace */
     font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
 
-    /* for some reason, using a different font than the default monospace */
+    /* For some reason, using a different font than the default monospace */
     /* increases the size of the text, so need to counteract that here */
     font-size: 0.8em;
 }
@@ -60,10 +60,10 @@ a {
     color: gray;
     background-color: inherit;
 
-    /* this works on firefox, just shows as a plain underline in chrome */
+    /* This works on firefox, just shows as a plain underline in chrome */
     text-decoration: underline dotted #09c;
 
-    /* faking a dotted underline, works on all browsers but can't adjust position */
+    /* Faking a dotted underline, works on all browsers but can't adjust position */
     /* text-decoration: none; */
     /* border-bottom: 1px dotted #09c; */
 }
@@ -73,7 +73,7 @@ a:link, a:visited {
 a:active, a:hover {
     color: #079;
 }
-/* external links */
+/* External links */
 a[class="url outside"]:before { content: "\2197"; }
 .safari a[class="url outside"]:before { content: url(http://www.emacswiki.org/alex/pics/arrow.png); }
 
@@ -367,11 +367,8 @@ div.journal {
     padding-top: 1em;
 }
 div.page {
-    /* margin-top: 1em; */
     padding-top: 1em;
-    /* border-top: 1px solid #ccc; */
     border-top: 1px dotted #333;
-    /* border: 1px solid red; */
     padding-bottom: 1em;
 }
 h1 a.local {

@@ -970,9 +970,7 @@ Use headings, horizontal lines or even new pages to separate threads of discussi
 Source Code</h2>
 <ul>
 <li>
-Pages starting with three semicolons (<code>
-;;;</code>
-) are formatted as code. No other rules are applied.</li>
+Pages starting with three semicolons (<code>;;;</code>) are formatted as code. No other rules are applied.</li>
 <li>
 Lines starting with one or more spaces are formatted as code. We suggest four (4) spaces.</li>
 <li>
@@ -1030,6 +1028,10 @@ Using two or three equals signs is recommended (<code>
 ). Nothing beyond a level 4 heading is supported by the <a class="local" href="http://www.emacswiki.org/emacs/CSS">
 CSS</a>
  stylesheet. After level 4, they are not displayed differently. Overuse of headings is poor style, as short Wiki pages are preferred to long ones. Consider splitting the page into two or more pages.</p>
+
+
+
+
 <p>
 <a class="anchor" name="images">
 </a>
@@ -1038,66 +1040,49 @@ CSS</a>
 Images</h2>
 <p>
 To put an image on a page, insert the URL with an image suffix.</p>
-<p>
-Example:</p>
-<pre>
-  http://www.emacswiki.org/emacs_logo.png</pre>
-<p>
-Result:</p>
+<p>Example:</p>
+<pre>http://www.emacswiki.org/emacs_logo.png</pre>
+<p>Result:</p>
 <p>
 <img class="url http" src="http://www.emacswiki.org/emacs_logo.png" alt="http://www.emacswiki.org/emacs_logo.png" />
 </p>
-<p>
-Alternatively, put <strong>
-image:</strong>
- and a page name inside double square brackets to insert inline images. The images must exist on the Wiki, or be uploaded to a page on the Wiki. See <a class="local" href="http://www.emacswiki.org/emacs/UploadingImages">
-UploadingImages</a>
-.</p>
-<p>
-Example:</p>
-<pre>
-  [[image<span class="builtin">
-:AngryFruitSaladTwo</span>
-_Screenshot]]</pre>
-<p>
-Result:</p>
+<p> Alternatively, put <strong>image:</strong> and a page name inside double square brackets to insert inline images. The images must exist on the Wiki, or be uploaded to a page on the Wiki. See <a class="local" href="http://www.emacswiki.org/emacs/UploadingImages">UploadingImages</a>.</p>
+<p>Example:</p>
+<pre>[[image<span class="builtin">:AngryFruitSaladTwo</span>_Screenshot]]</pre>
+<p>Result:</p>
 <p>
 <a class="image" href="http://www.emacswiki.org/emacs/AngryFruitSaladTwo_Screenshot">
 <img class="upload" alt="AngryFruitSaladTwo_Screenshot" src="http://www.emacswiki.org/pics/static/AngryFruitSaladTwo_Screenshot.png" />
 </a>
 </p>
+
+
+
+
 <p>
 <a class="anchor" name="irc">
 </a>
  </p>
-<h2>
-IRC Quotes</h2>
-<p>
-Discussions in the <a href="http://www.emacswiki.org/emacs/EmacsChannel" class="local">
-EmacsChannel</a>
- can be copied directly to the Wiki.</p>
-<p>
-Example:</p>
+<h2>IRC Quotes</h2>
+<p>Discussions in the <a href="http://www.emacswiki.org/emacs/EmacsChannel" class="local">EmacsChannel</a> can be copied directly to the Wiki.</p>
+
+<p>Example:</p>
 <pre>
 &lt;hybrid&gt; emacs has a text adventure game in it
 &lt;PyroMithrandir&gt; emacs IS a text adventure game
 </pre>
-<p>
-Result:</p>
+
+<p>Result:</p>
 <dl class="irc">
-<dt>
-<b>
-hybrid</b>
-</dt>
-<dd>
-emacs has a text adventure game in it </dd>
-<dt>
-<b>
-PyroMithrandir</b>
-</dt>
-<dd>
-emacs IS a text adventure game</dd>
+<dt><b>hybrid</b></dt>
+<dd>emacs has a text adventure game in it </dd>
+<dt><b>PyroMithrandir</b></dt>
+<dd>emacs IS a text adventure game</dd>
 </dl>
+
+
+
+
 <p>
 <a name="transclusion" class="anchor">
 </a>
