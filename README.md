@@ -44,6 +44,8 @@ There is an image gallery with screenshots of some of the existing themes at htt
 
 To test the theme you can either download the project and open one of the '''test*.htm''' files or visit  http://www.emacswiki.org/emacs?action=browse;bootstrap=0;id=CSSPreview;css=https://rawgit.com/bburns/emacswiki-light-theme/master/light.css - this uses a service provided by http://rawgit.com to serve github files with the appropriate content headers, though it will change to a more permanent location later. 
 
+Note: some of the test* files may have extra whitespace here and there - this is just due to globally adding a linefeed after '>' characters to make the HTML more readable. 
+
 To reset your theme go to http://www.emacswiki.org/emacs/CSS/ and choose one of the existing themes. 
 
 
