@@ -1,0 +1,1277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+EmacsWiki: Text Formatting Rules</title>
+<link rel="alternate" type="application/wiki" title="Edit this page" href="http://www.emacswiki.org/emacs?action=edit;id=TextFormattingRules" />
+<!-- <link type="text/css" rel="stylesheet" href="https://rawgit.com/bburns/emacswiki-light-theme/master/light.css" /> -->
+<link type="text/css" rel="stylesheet" href="light.css" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="alternate" type="application/rss+xml" title="EmacsWiki" href="http://www.emacswiki.org/emacs?action=rss" />
+<link rel="alternate" type="application/rss+xml" title="EmacsWiki: TextFormattingRules" href="http://www.emacswiki.org/emacs?action=rss;rcidonly=TextFormattingRules" />
+<link rel="alternate" type="application/rss+xml" title="Follow-ups for BrianBurns" href="http://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content"
+      href="http://www.emacswiki.org/full.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content and diff"
+      href="http://www.emacswiki.org/full-diff.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki including minor differences"
+      href="http://www.emacswiki.org/minor-edits.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Changes for TextFormattingRules only"
+      href="http://www.emacswiki.org/emacs?action=rss;rcidonly=TextFormattingRules" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Follow-ups to BrianBurns"
+      href="http://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+
+<meta content="width=device-width" name="viewport" />
+
+<script type="text/javascript" src="/outliner.0.5.0.62-toc.js">
+</script>
+
+<script type="text/javascript">
+
+
+  function addOnloadEvent(fnc) {
+    if ( typeof window.addEventListener != "undefined" )
+      window.addEventListener( "load", fnc, false );
+    else if ( typeof window.attachEvent != "undefined" ) {
+      window.attachEvent( "onload", fnc );
+    }
+    else {
+      if ( window.onload != null ) {
+	var oldOnload = window.onload;
+	window.onload = function ( e ) {
+	  oldOnload( e );
+	  window[fnc]();
+	};
+      }
+      else
+	window.onload = fnc;
+    }
+  }
+
+  // https://stackoverflow.com/questions/280634/endswith-in-javascript
+  if (typeof String.prototype.endsWith !== 'function') {
+    String.prototype.endsWith = function(suffix) {
+      return this.indexOf(suffix, this.length - suffix.length) !== -1;
+    };
+  }
+
+  var initToc=function() {
+
+    var outline = HTML5Outline(document.body);
+    if (outline.sections.length == 1) {
+      outline.sections = outline.sections[0].sections;
+    }
+
+    if (outline.sections.length >
+ 1
+	|| outline.sections.length == 1
+           && outline.sections[0].sections.length >
+ 0) {
+
+      var toc = document.getElementById('toc');
+
+      if (!toc) {
+	var divs = document.getElementsByTagName('div');
+	for (var i = 0; i < divs.length; i++) {
+	  if (divs[i].getAttribute('class') == 'toc') {
+	    toc = divs[i];
+	    break;
+	  }
+	}
+      }
+
+      if (!toc) {
+	var h2 = document.getElementsByTagName('h2')[0];
+	if (h2) {
+	  toc = document.createElement('div');
+	  toc.setAttribute('class', 'toc');
+	  h2.parentNode.insertBefore(toc, h2);
+	}
+      }
+
+      if (toc) {
+        var html = outline.asHTML(true);
+        toc.innerHTML = html;
+
+	items = toc.getElementsByTagName('a');
+	for (var i = 0; i < items.length; i++) {
+	  while (items[i].textContent.endsWith('✎')) {
+            var text = items[i].childNodes[0].nodeValue;
+	    items[i].childNodes[0].nodeValue = text.substring(0, text.length - 1);
+	  }
+	}
+      }
+    }
+  }
+
+  addOnloadEvent(initToc);
+  </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body class="default">
+<div class="header">
+<a href="http://www.emacswiki.org/emacs/SiteMap" class="logo">
+<img class="logo" alt="[Home]" src="/emacs_logo.png" />
+</a>
+<div class="menu">
+<span class="gotobar bar">
+<a class="local" href="http://www.emacswiki.org/emacs/SiteMap">
+SiteMap</a>
+ <a href="http://www.emacswiki.org/emacs/Search" class="local">
+Search</a>
+ <a href="http://www.emacswiki.org/emacs/ElispArea" class="local">
+ElispArea</a>
+ <a href="http://www.emacswiki.org/emacs/HowTo" class="local">
+HowTo</a>
+ <a href="http://www.emacswiki.org/emacs/Glossary" class="local">
+Glossary</a>
+ <a href="http://www.emacswiki.org/emacs/RecentChanges" class="local">
+RecentChanges</a>
+ <a class="local" href="http://www.emacswiki.org/emacs/News">
+News</a>
+ <a class="local" href="http://www.emacswiki.org/emacs/Problems">
+Problems</a>
+ <a class="local" href="http://www.emacswiki.org/emacs/Suggestions">
+Suggestions</a>
+ </span>
+<form method="get" action="http://www.emacswiki.org/emacs" enctype="multipart/form-data" accept-charset="utf-8" class="search">
+<p>
+<label for="search">
+Search:</label>
+ <input type="text" name="search"  size="20" id="search" accesskey="f" />
+ <label for="searchlang">
+Language:</label>
+ <input type="text" name="lang"  size="10" id="searchlang" />
+ <input type="submit" name="dosearch" value="Go!" />
+</p>
+</form>
+</div>
+<h1>
+<a title="Click to search for references to this page" href="http://www.emacswiki.org/emacs?search=%22TextFormattingRules%22" rel="nofollow">
+<span style="padding-right: 0.5ex;">
+Text</span>
+<span style="padding-right: 0.5ex;">
+Formatting</span>
+<span style="padding-right: 0.5ex;">
+Rules</span>
+</a>
+</h1>
+</div>
+<div class="wrapper">
+<div class="content browse">
+<p>
+ How do you learn to format Wiki pages?</p>
+<ul>
+<li>
+Use the <a href="http://www.emacswiki.org/emacs/SandBox" class="local">
+SandBox</a>
+ page to test stuff!</li>
+<li>
+Check how others have done things you want to do (bullets, indentation, whatever): Click <strong>
+Edit this page</strong>
+ at the bottom of a page to see its source code.</li>
+<li>
+Use <strong>
+Preview</strong>
+ when you edit, to see the effect of what you write.</li>
+</ul>
+<p>
+<a name="basics" class="anchor">
+</a>
+ </p>
+<h2>
+Basics</h2>
+<p>
+Generally, it is important to use as little markup as possible: </p>
+<ol>
+<li>
+It makes the &#x201c;source code&#x201d; easier to read and modify.</li>
+<li>
+On the other hand, we also want to make the text easy to read.</li>
+<li>
+This sometimes calls for making things stand out.</li>
+<li>
+These two goals can sometimes conflict.</li>
+</ol>
+<p>
+These are the most important formatting rules:</p>
+<ul>
+<li>
+Empty lines separate paragraphs.</li>
+<li>
+Paragraphs may span several lines.</li>
+<li>
+Paragraphs begin in column 1.</li>
+<li>
+For simple words and sentences:<ul>
+<li>
+<code>
+*bold*</code>
+, <code>
+/italic/</code>
+, <code>
+_underline_</code>
+ &#x2192;&#x00a0;<b>
+bold</b>
+, <i>
+italic</i>
+, <em style="text-decoration: underline; font-style: normal;">
+underline</em>
+ (the pattern matching is pretty restrictive, to prevent mismatches).</li>
+<li>
+<code>
+%%*escaped*%%</code>
+ &#x2192;&#x00a0;<span>
+*escaped*</span>
+ (instead of bold, by ignoring markup)</li>
+<li>
+<code>
+##*escaped and monospaced*##</code>
+ &#x2192;&#x00a0;<code>
+*escaped and monospaced*</code>
+ (instead of bold and variable width)</li>
+</ul>
+</li>
+<li>
+The following markup works as well, and even in some contexts where the basic punctuation-based markup  (<code>
+*bold*</code>
+, <code>
+/italic/</code>
+, <code>
+_underline_</code>
+) does <em>
+not</em>
+ work:<ul>
+<li>
+<code>
+//italic//</code>
+ or <code>
+''italic''</code>
+ &#x2192;&#x00a0;<em>
+italic</em>
+</li>
+<li>
+<code>
+**bold**</code>
+ or <code>
+'''bold'''</code>
+ &#x2192;&#x00a0;<strong>
+bold</strong>
+</li>
+<li>
+<code>
+__underline__</code>
+ &#x2192;&#x00a0;<em style="text-decoration: underline; font-style: normal;">
+underline</em>
+</li>
+</ul>
+</li>
+<li>
+Variable names can be surrounded by matching quotes, a syntax used in <a href="http://www.emacswiki.org/emacs/EmacsLisp" class="local">
+EmacsLisp</a>
+ and in <a href="http://www.emacswiki.org/emacs/Info" class="local">
+Info</a>
+: <code>
+`foo'</code>
+ &#x2192;&#x00a0;<code>
+&#x2018;foo&#x2019;</code>
+.</li>
+<li>
+For horizontal lines, use hyphens (<code> ----</code>) on a separate line. Horizontal lines are used for the category section of pages, see <a href="http://www.emacswiki.org/emacs/WikiOrganization" class="local"> WikiOrganization</a> .
+</li>
+
+
+<li>
+For a short punctuation dash (<i>en</i>-dash) in a sentence use two hyphens (<code>--</code>) surrounded by spaces.
+<ul>
+<li> <code> --</code> &#x2192;&#x00a0;&#x2013; </li>
+</ul>
+</li>
+
+
+<li>
+For a long punctuation dash (<i>
+em</i>
+-dash) in a sentence use three hyphens (<code>
+---</code>
+).<ul>
+<li>
+<code>
+---</code>
+ &#x2192;&#x00a0;&#x2014;</li>
+</ul>
+</li>
+</ul>
+<p>
+The official documentation is here:</p>
+<ul>
+<li>
+<a href="http://www.oddmuse.org/cgi-bin/oddmuse/Text_Formatting_Rules" class="inter Oddmuse">
+<span class="site">
+Oddmuse</span>
+<span class="separator">
+:</span>
+<span class="interpage">
+Text_Formatting_Rules</span>
+</a>
+</li>
+<li>
+<a class="inter Oddmuse" href="http://www.oddmuse.org/cgi-bin/oddmuse/Markup%20Extension">
+<span class="site">
+Oddmuse</span>
+<span class="separator">
+:</span>
+<span class="interpage">
+Markup Extension</span>
+</a>
+</li>
+<li>
+<a class="inter Oddmuse" href="http://www.oddmuse.org/cgi-bin/oddmuse/Usemod%20Markup%20Extension">
+<span class="site">
+Oddmuse</span>
+<span class="separator">
+:</span>
+<span class="interpage">
+Usemod Markup Extension</span>
+</a>
+</li>
+<li>
+<a class="inter Oddmuse" href="http://www.oddmuse.org/cgi-bin/oddmuse/bbCode%20Extension">
+<span class="site">
+Oddmuse</span>
+<span class="separator">
+:</span>
+<span class="interpage">
+bbCode Extension</span>
+</a>
+</li>
+</ul>
+<p>
+<a class="anchor" name="AlternativeMarkup">
+</a>
+ </p>
+<h2>
+Alternative Markup</h2>
+<p>
+The basic punctuation-based markup (see above) is preferable in all cases where it works. Alternative markup works in some additional contexts.</p>
+<p>
+<a class="anchor" name="WikiTags">
+</a>
+ </p>
+<h3>
+Wiki Tags</h3>
+<p>
+The following markup tags have special effects on this wiki. Use them like HTML tags.</p>
+<dl>
+<dt>
+<strong>
+<code>
+&lt;code&gt;</code>
+</strong>
+</dt>
+<dd>
+Code (usually monospaced, plus escaping of wiki processing): <span>
+&lt;code&gt;foo&lt;/code&gt;</span>
+ &#x2192;&#x00a0;<code>
+foo</code>
+</dd>
+<dt>
+<strong>
+<code>
+&lt;nowiki&gt;</code>
+</strong>
+</dt>
+<dd>
+No wiki processing (usually to unlink mixed case words): <code>
+&lt;nowiki&gt;[[No Link]]&lt;/nowiki&gt;</code>
+ &#x2192;&#x00a0;[[No Link]]</dd>
+<dt>
+<strong>
+<code>
+&lt;pre&gt;</code>
+</strong>
+</dt>
+<dd>
+Preformatted (usually monospaced, for paragraphs, plus whitespace is preserved, plus escaping of wiki processing). <code>
+&lt;pre&gt;</code>
+ tags must be alone on a line, to work. Example: to produce a line with <code>
+foo</code>
+, use this:</dd>
+</dl>
+<pre>
+        &lt;pre&gt;
+        foo
+        &lt;/pre&gt;</pre>
+<p>
+<a class="anchor" name="htmltags">
+</a>
+ </p>
+<h3>
+HTML Tags</h3>
+<p>
+The following standard HTML tags can be used on the wiki. Use them like HTML tags.</p>
+<dl>
+<dt>
+<strong>
+<code>
+&lt;u&gt;</code>
+</strong>
+</dt>
+<dd>
+<u>
+underline</u>
+: <code>
+&lt;u&gt;foo bar (toto)&lt;/u&gt;</code>
+ &#x2192;&#x00a0;<u>
+foo bar (toto)</u>
+</dd>
+<dt>
+<strong>
+<code>
+&lt;i&gt;</code>
+</strong>
+</dt>
+<dd>
+<i>
+Italics</i>
+: <code>
+&lt;i&gt;foo bar (toto)&lt;/i&gt;</code>
+ &#x2192;&#x00a0;<i>
+foo bar (toto)</i>
+</dd>
+<dt>
+<strong>
+<code>
+&lt;b&gt;</code>
+</strong>
+</dt>
+<dd>
+<b>
+Bold</b>
+: <code>
+&lt;b&gt;foo bar (toto)&lt;/b&gt;</code>
+ &#x2192;&#x00a0;<b>
+foo bar (toto)</b>
+</dd>
+<dt>
+<strong>
+<code>
+&lt;tt&gt;</code>
+</strong>
+</dt>
+<dd>
+<tt>
+Teletype</tt>
+ (usually monospaced): <code>
+&lt;tt&gt;foo bar (toto)&lt;/tt&gt;</code>
+ &#x2192;&#x00a0;<tt>
+foo bar (toto)</tt>
+</dd>
+<dt>
+<strong>
+<code>
+&lt;em&gt;</code>
+</strong>
+</dt>
+<dd>
+<em>
+Emphasis</em>
+ (usually italics): <code>
+&lt;em&gt;foo bar (toto)&lt;/em&gt;</code>
+ &#x2192;&#x00a0;<em>
+foo bar (toto)</em>
+</dd>
+<dt>
+<strong>
+<code>
+&lt;strong&gt;</code>
+</strong>
+</dt>
+<dd>
+<strong>
+Strong</strong>
+ (usually bold): <code>
+&lt;strong&gt;foo bar (toto)&lt;/strong&gt;</code>
+ &#x2192;&#x00a0;<strong>
+foo bar (toto)</strong>
+</dd>
+</dl>
+<p>
+<a name="bbcode" class="anchor">
+</a>
+ </p>
+<h3>
+BBCode</h3>
+<p>
+“BBCode is an abbreviation for Bulletin Board Code, the lightweight markup language used to format posts in many message boards. The available tags are usually indicated by rectangular brackets surrounding a keyword, and they are parsed by the message board system before being translated into a markup language the web browsers understands, usually HTML or XHTML” &#x2013; <a href="http://en.wikipedia.org/wiki/BBCode" class="url http outside">
+Wikipedia</a>
+</p>
+<pre>
+[b]this text is bold[/b]
+[i]this text is italic[/i]
+[u]this text is underlined[/u]
+[s]this text is striked through[/s] [strike]and this too[/strike]
+[tt]monospaced text[/tt]
+[sub]subscript[/sub] [sup]superscript[/sup]
+[color=blue]this text is blue[/color]
+[size=+2]this text is two sizes larger than normal[/size]
+[font=courier]this text is in the courier font[/font]
+[quote]quoted text[/quote]
+[code]preformatted monospaced text[/code] (no nesting of other bbCode!)
+[center]this text is centered[/center]
+[img]http://www.example.org/logo.png[/img]
+[left]this (often an image) floats left[/left]
+[right]this (often an image) floats right[/right]
+[h1]title[/h1]
+[h2]title[/h2]
+[h3]title[/h3]
+[h4]title[/h4]
+[h5]title[/h5]
+[h6]title[/h6]
+[list]
+  [*]item one
+  [*]item two
+[/list]
+:) <span class="builtin">
+:-</span>
+) ☺ (smile)
+:( <span class="builtin">
+:-</span>
+( ☹ (frown)
+</pre>
+<p>
+Note that traditionally, <code>[url‍=http://www.example.org/]text[/url]</code> would also be allowed. Apparently spammers also like it, which is why it ended up on <a href="http://www.emacswiki.org/emacs/BannedRegexps" class="local">BannedRegexps</a>.</p>
+<p>
+<a class="anchor" name="links">
+</a>
+<a name="anchors" class="anchor">
+</a>
+ </p>
+<h2>
+Links and Anchors</h2>
+<ul>
+<li>
+Words in <span>
+CamelCase</span>
+ (mixed case) are transformed into links to other wiki pages. This works best for ASCII characters (a-z and A-Z), because the wiki doesn&#x2019;t know what case non-ASCII characters have.</li>
+<li>
+You use ! in front of mixed case word to prevent making it into link:<ul>
+<li>
+<code>
+!NoLink</code>
+ &#x2192;&#x00a0;NoLink</li>
+</ul>
+</li>
+<li>
+<span>
+[[Words in double brackets]]</span>
+ are also transformed into links to other wiki pages. This works for all characters except punctuation characters.</li>
+<li>
+You can create <a href="http://www.emacswiki.org/emacs/PermanentAnchors" class="local">
+PermanentAnchors</a>
+ to serve as targets of links. You can link to an anchor on the same page or on a different page.</li>
+<li>
+To create a new page, just add a link to it from an existing page and click on the question-mark link that appears after the page name. See <a href="http://www.emacswiki.org/emacs/CreateNewPages" class="local">
+CreateNewPages</a>
+.</li>
+<li>
+Just type a URL to link to it. A URL ending in .png or .jpg links to an image that is displayed on the same page. See <a href="http://www.emacswiki.org/emacs/UploadingImages" class="local">
+UploadingImages</a>
+.</li>
+<li>
+To link a piece of text, use the URL with whitespace and the link text in square brackets.<ul>
+<li>
+<span>
+[http://www.vim.org/ Vim]</span>
+ &#x2192;&#x00a0;<a class="url http outside" href="http://www.vim.org/">
+Vim</a>
+</li>
+</ul>
+</li>
+<li>
+The <a href="http://www.emacswiki.org/emacs/InterMap" class="local">
+InterMap</a>
+ lists some prefixes you might want to use occasionally.<ul>
+<li>
+<a class="inter WikiPedia" href="http://en.wikipedia.org/wiki/Emacs">
+<span class="site">
+WikiPedia</span>
+<span class="separator">
+:</span>
+<span class="interpage">
+Emacs</span>
+</a>
+</li>
+<li>
+<a href="/emacs?action=history;id=SiteMap" class="inter EmacsWiki">
+<span class="site">
+EmacsWiki</span>
+<span class="separator">
+:</span>
+<span class="interpage">
+action=history;id=SiteMap</span>
+</a>
+</li>
+</ul>
+</li>
+<li>
+To give an <a href="http://www.emacswiki.org/emacs/EmacsWiki" class="local">
+EmacsWiki</a>
+ action link text, follow the action with whitespace and link text in square brackets (mysteriously, just like a URL)<ul>
+<li>
+<span>
+[EmacsWiki:action=edit;id=SandBox Play in the Sandbox]</span>
+ &#x2192;&#x00a0;<a href="/emacs?action=edit;id=SandBox" class="inter EmacsWiki outside">
+Play in the Sandbox</a>
+</li>
+</ul>
+</li>
+<li>
+To link to an index entry in the Emacs manual, use prefix <code>
+&#x2018;Manual&#x2019;</code>
+ &#x2013; see <a href="http://www.emacswiki.org/emacs/EmacsManual" class="local">
+EmacsManual</a>
+.</li>
+<li>
+See also <a class="local" href="http://www.emacswiki.org/emacs/InterLinks">
+InterLinks</a>
+ for URL abbreviations for commonly used Web sites, and <a href="http://www.emacswiki.org/emacs/NearLinks" class="local">
+NearLinks</a>
+ for linking to nearby Wikis.</li>
+<li>
+It is a good idea to provide links to appropriate category (or &#x201c;parent&#x201d;) pages at the bottom of a page &#x2013; see <a href="http://www.emacswiki.org/emacs/WikiOrganization" class="local">
+WikiOrganization</a>
+.</li>
+</ul>
+<p>
+<a class="anchor" name="actions">
+</a>
+<a class="anchor" name="action">
+</a>
+<a name="wikiactions" class="anchor">
+</a>
+ </p>
+<h2>
+Wiki actions</h2>
+<p>
+The reflexive intermap-link <span>
+EmacsWiki</span>
+ has some of the following actions: </p>
+<ul>
+<li>
+<a class="inter EmacsWiki" href="/emacs?action=history;id=SiteMap">
+<span class="site">
+EmacsWiki</span>
+<span class="separator">
+:</span>
+<span class="interpage">
+action=history;id=SiteMap</span>
+</a>
+</li>
+<li>
+<a class="inter EmacsWiki" href="/emacs?action=edit;id=SandBox">
+<span class="site">
+EmacsWiki</span>
+<span class="separator">
+:</span>
+<span class="interpage">
+action=edit;id=SandBox</span>
+</a>
+</li>
+<li>
+to show all contributions by a user: <a class="inter EmacsWiki" href="/emacs?action=rc;all=1;showedit=1;from=1;rcuseronly=AlexSchroeder">
+<span class="site">
+EmacsWiki</span>
+<span class="separator">
+:</span>
+<span class="interpage">
+action=rc;all=1;showedit=1;from=1;rcuseronly=AlexSchroeder</span>
+</a>
+</li>
+<li>
+To give an <a href="http://www.emacswiki.org/emacs/EmacsWiki" class="local">
+EmacsWiki</a>
+ action link text, follow the action with whitespace and link text in square brackets (mysteriously, just like a URL)<ul>
+<li>
+<span>
+[EmacsWiki:action=edit;id=SandBox Play in the Sandbox]</span>
+ &#x2192;&#x00a0;<a href="/emacs?action=edit;id=SandBox" class="inter EmacsWiki outside">
+Play in the Sandbox</a>
+</li>
+</ul>
+</li>
+</ul>
+<p>
+A more complete list can be found at <a href="http://www.oddmuse.org/cgi-bin/oddmuse/Action_List" class="url http">
+http://www.oddmuse.org/cgi-bin/oddmuse/Action_List</a>
+</p>
+<p>
+<a name="Lists" class="anchor">
+</a>
+<a name="Bullets" class="anchor">
+</a>
+ </p>
+<h2>
+Lists</h2>
+<p>
+Lists and indented paragraphs start with a special character <em>
+followed by at least one space character</em>
+. For example, a bulleted list item starts with <code>
+&#x2018;* &#x2019;</code>
+, not with just <code>
+&#x2018;*&#x2019;</code>
+.</p>
+<ul>
+<li>
+A bulleted list is an unordered list. List items start with an asterisk (<code>
+&#x2018;*&#x2019;</code>
+).<ul>
+<li>
+A sublist item starts with two asterisks (<code>
+&#x2018;**&#x2019;</code>
+)<ul>
+<li>
+a level 3 with (<code>
+&#x2018;***&#x2019;</code>
+), and so on</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+etc.</li>
+</ul>
+<ol>
+<li>
+A numbered list is an ordered list that uses numbers sequentially as labels. List items start with a pound sign (`<code>
+#</code>
+&#x2019;).</li>
+<li>
+second item<ol>
+<li>
+ordered sublist (with `<code>
+##</code>
+&#x2019;)</li>
+</ol>
+</li>
+<li>
+etc.</li>
+</ol>
+<dl>
+<dt>
+Definition list</dt>
+<dd>
+A definition list is a list with text labels. Items in definition lists start with a semi-colon (`<code>
+;</code>
+&#x2019;) and a space (see above), followed by any amount of text, and the description starts with a colon (&#x2019;<code>
+:</code>
+&#x2019;). Your syntax should look like this: </dd>
+</dl>
+<pre><span class="comment">; Term: Description.</span></pre>
+<dl>
+<dt>Example</dt>
+<dd>This list is an example of definition list</dd>
+<dt>Third item</dt>
+<dd>and its definition</dd>
+</dl>
+<p>
+See <a class="local anchor" href="#ListIndentation">
+Indentation</a>
+ for how to add a separate paragraph (or a line break) to a list item (i.e., at the same indentation level).</p>
+<p>
+<a class="anchor" name="indendation">
+</a>
+ </p>
+<h2>
+Indentation</h2>
+<ul>
+<li>
+Indented lines start with one or more colons, followed by one or more whitespace characters [space or tabs]</li>
+<li>
+(&#x2019;<code>
+: </code>
+&#x2019;) &#x2013; more colons mean more indention.</li>
+<li>
+Indented lines must be the first sentence in a paragraph.<br />
+ (This is useful for personal replies or blockquotes. See also <a href="#Dialog" class="local anchor">
+Dialog</a>
+.)</li>
+</ul>
+<p>
+<a name="ListIndentation" class="anchor">
+</a>
+ </p>
+<ul>
+<li>
+You can use two backslashes <strong>
+<code>
+\\</code>
+</strong>
+, to insert a line break at the current indentation level. The previous list item shows an example: <code>
+\\</code>
+ is used between <code>
+paragraph.</code>
+ and <code>
+(This is useful</code>
+.<br />
+<br />
+ To create the appearance of a separate paragraph (like this one) within a list item, you can use <strong>
+<code>
+\\\\</code>
+</strong>
+.</li>
+</ul>
+
+
+
+
+<p><a name="tables" class="anchor"></a></p>
+<h2>Tables</h2>
+<p>For tabular information that doesn&#x2019;t fit in lists or definition lists, use tables.</p>
+<p>For example, this table has two columns, with the second row having an empty first column, and the third and final column spanning all the rows.</p>
+
+<pre>
+||First row||||Second column||
+|| ||Not empty||
+||||Span the columns||
+</pre>
+
+<p>Becomes:</p>
+
+<table class="user">
+<tr class="odd first">
+<td>First row</td>
+<td colspan="2">Second column</td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td>Not empty</td>
+</tr>
+<tr class="odd">
+<td colspan="2">Span the columns</td>
+</tr>
+</table>
+
+<p>
+Official documentation is at <a href="http://www.oddmuse.org/cgi-bin/oddmuse/Table%20Markup%20Extension" class="inter Oddmuse">
+<span class="site">Oddmuse</span><span class="separator">:</span><span class="interpage">Table Markup Extension</span></a>.
+</p>
+
+
+
+
+<p>
+<a name="Dialog" class="anchor">
+</a>
+ </p>
+<h2>
+Dialog ([new])</h2>
+<p>
+Conversation should be separated with <code>
+[new]</code>
+ on a line by itself (starting in column 1). Currently, everything below each <code>
+[new]</code>
+ is visually separated by having an alternate background color.</p>
+<p>
+Alternate contributions (alternate <code>
+[new]</code>
+&#x2019;s) are shaded, like this:</p>
+<div class="color one level0">
+<p>
+ Someone&#x2019;s contribution&#x2026; </p>
+</div>
+<div class="color two level0">
+<p>
+ Someone else&#x2019;s contribution. </p>
+</div>
+<div class="color one level0">
+<p>
+ Another contribution. </p>
+</div>
+<div class="color two level0">
+<p>
+ Yet another.</p>
+<p>
+Putting <tt>
+ [new::] </tt>
+ will insert your <a class="local" href="http://www.emacswiki.org/emacs/UserName">
+UserName</a>
+, and adds a timestamp to your contribution when you save the page. The timestamp appears when you move the mouse over the contribution. See also <a href="http://www.emacswiki.org/emacs/UsingPortraits" class="local">
+UsingPortraits</a>
+.</p>
+</div>
+<div class="color one level0">
+<p>
+<code>
+&lt;rant&gt;</code>
+</p>
+<p>
+Please refrain from altering the above example&#x2019;s wiki markup in an attempt to &#x201c;clean it up&#x201d;; usually this leaves it looking like this: </p>
+<pre>
+[new<span class="builtin">
+:SamuelBronson</span>
+:2009-04-29 17:27 UTC]
+</pre>
+<p>
+<code>
+&lt;nowiki&gt;</code>
+, <code>
+&lt;code&gt;</code>
+, <code>
+&lt;pre&gt;</code>
+, {{<code>
+...</code>
+}}, etc. do not prevent it&#x2019;s being expanded; you must actually prevent those characters from all appearing next to one another in the source of the page in order to prevent their being expanded. (This is arguably a bug.) Also, we must use <code>
+&lt;tt&gt;</code>
+ to get fixed-width formatting because otherwised the <code>
+&lt;nowiki&gt;</code>
+ tags used to break up the string show up: </p>
+<pre>
+[&lt;nowiki&gt;new::&lt;/nowiki&gt;]
+</pre>
+<p>
+<code>
+&lt;/rant&gt;</code>
+</p>
+</div>
+<div class="color two level0">
+<p>
+A contribution after a <code>
+[new]</code>
+ ends at either the next <code>
+[new]</code>
+, the next heading (see below), or the next horizontal line (see above).</p>
+<p>
+Use headings, horizontal lines or even new pages to separate threads of discussions, but use <code>
+[new]</code>
+ to separate entries in the thread.</p>
+<p>
+<a class="anchor" name="SourceCode">
+</a>
+ </p>
+</div>
+<h2>
+Source Code</h2>
+<ul>
+<li>
+Pages starting with three semicolons (<code>
+;;;</code>
+) are formatted as code. No other rules are applied.</li>
+<li>
+Lines starting with one or more spaces are formatted as code. We suggest four (4) spaces.</li>
+<li>
+Lines between tags <code>
+{{{</code>
+ and <code>
+}}}</code>
+ are formatted as code.</li>
+<li>
+<strong>
+<code>
+&lt;code&gt;</code>
+</strong>
+: Code (usually monospaced, plus escaping of wiki processing): <span>
+&lt;code&gt;foo&lt;/code&gt;</span>
+ &#x2192;&#x00a0;<code>
+foo</code>
+ (see <a class="local anchor" href="#WikiTags">
+WikiTags</a>
+ above)</li>
+<li>
+<strong>
+<code>
+&lt;pre&gt;</code>
+</strong>
+: Preformatted (usually monospaced, for paragraphs, plus whitespace is preserved, plus escaping of wiki processing). <code>
+&lt;pre&gt;</code>
+ tags must be alone on a line, to work. (see <a href="#WikiTags" class="local anchor">
+WikiTags</a>
+ above)</li>
+<li>
+Include <a class="local" href="http://www.emacswiki.org/emacs/Gists">
+Gists</a>
+</li>
+</ul>
+<p>
+<a name="headings" class="anchor">
+</a>
+ </p>
+<h2>
+Headings</h2>
+<p>
+Headings are enclosed in equals signs (<span>
+=</span>
+) on a line of their own. You can use up to six equals signs to produce headers of level one to six. Level one is the most important one, and should not be used because the page title already uses a level one heading. This is why level one headings are automatically translated to level two headings.</p>
+<p>
+Example:</p>
+<pre>
+== Heading 2 ==
+=== Heading 3 ===
+</pre>
+<p>
+Using two or three equals signs is recommended (<code>
+== like this ==</code>
+). Nothing beyond a level 4 heading is supported by the <a class="local" href="http://www.emacswiki.org/emacs/CSS">
+CSS</a>
+ stylesheet. After level 4, they are not displayed differently. Overuse of headings is poor style, as short Wiki pages are preferred to long ones. Consider splitting the page into two or more pages.</p>
+<p>
+<a class="anchor" name="images">
+</a>
+ </p>
+<h2>
+Images</h2>
+<p>
+To put an image on a page, insert the URL with an image suffix.</p>
+<p>
+Example:</p>
+<pre>
+  http://www.emacswiki.org/emacs_logo.png</pre>
+<p>
+Result:</p>
+<p>
+<img class="url http" src="http://www.emacswiki.org/emacs_logo.png" alt="http://www.emacswiki.org/emacs_logo.png" />
+</p>
+<p>
+Alternatively, put <strong>
+image:</strong>
+ and a page name inside double square brackets to insert inline images. The images must exist on the Wiki, or be uploaded to a page on the Wiki. See <a class="local" href="http://www.emacswiki.org/emacs/UploadingImages">
+UploadingImages</a>
+.</p>
+<p>
+Example:</p>
+<pre>
+  [[image<span class="builtin">
+:AngryFruitSaladTwo</span>
+_Screenshot]]</pre>
+<p>
+Result:</p>
+<p>
+<a class="image" href="http://www.emacswiki.org/emacs/AngryFruitSaladTwo_Screenshot">
+<img class="upload" alt="AngryFruitSaladTwo_Screenshot" src="http://www.emacswiki.org/pics/static/AngryFruitSaladTwo_Screenshot.png" />
+</a>
+</p>
+<p>
+<a class="anchor" name="irc">
+</a>
+ </p>
+<h2>
+IRC Quotes</h2>
+<p>
+Discussions in the <a href="http://www.emacswiki.org/emacs/EmacsChannel" class="local">
+EmacsChannel</a>
+ can be copied directly to the Wiki.</p>
+<p>
+Example:</p>
+<pre>
+&lt;hybrid&gt; emacs has a text adventure game in it
+&lt;PyroMithrandir&gt; emacs IS a text adventure game
+</pre>
+<p>
+Result:</p>
+<dl class="irc">
+<dt>
+<b>
+hybrid</b>
+</dt>
+<dd>
+emacs has a text adventure game in it </dd>
+<dt>
+<b>
+PyroMithrandir</b>
+</dt>
+<dd>
+emacs IS a text adventure game</dd>
+</dl>
+<p>
+<a name="transclusion" class="anchor">
+</a>
+ </p>
+<h2>
+Inclusion / Transclusion</h2>
+<p>
+A page on the wiki can &#x201c;include&#x201d; other pages. This is especially helpful for marking certain pages as out-of-date, requiring refactoring, candidates for deletion, or wiki projects.</p>
+<pre>
+&lt;include <span class="string">
+"ExamplePage"</span>
+&gt;
+</pre>
+<p>
+There is more to it, however. See <a class="inter Oddmuse" href="http://www.oddmuse.org/cgi-bin/oddmuse/Transclusion">
+<span class="site">
+Oddmuse</span>
+<span class="separator">
+:</span>
+<span class="interpage">
+Transclusion</span>
+</a>
+.</p>
+<p>
+The resulting HTML doesn&#x2019;t tell you that ExamplePage has been transcluded, but if you&#x2019;re on ExamplePage, clicking on the header will search for it. It&#x2019;s up to the users to use a decent prefix to identify pages that are to be transcluded and to mention the page name this piece of text is from.</p>
+<p>
+<a class="anchor" name="redirect">
+</a>
+ </p>
+<h2>
+Rename / Redirect</h2>
+<p>
+To change the name of a page without losing all of the archived links to the original name, create a new page with the original content and new name, and <em>
+redirect</em>
+ the old name, by replacing the entire page with: <code>
+#REDIRECT FooBar</code>
+&#x201d;, where &#x201c;FooBar&#x201d; is the new, target Wiki page, or <code>
+#REDIRECT [[Foobar]]</code>
+ for non-camel-case words.</p>
+<p>
+More details at <a class="local" href="http://www.emacswiki.org/emacs/PageRedirection">
+PageRedirection</a>
+</p>
+<p>
+<a class="anchor" name="seealso">
+</a>
+ </p>
+<h2>
+See Also</h2>
+<p>
+For questions, problems, and comments see <a href="http://www.emacswiki.org/emacs/TextFormattingDiscussion" class="local">
+TextFormattingDiscussion</a>
+.</p>
+<p>
+For discussions on formatting style see <a href="http://www.emacswiki.org/emacs/StyleGuide" class="local">
+StyleGuide</a>
+.</p>
+<p>
+See also <a class="local" href="http://www.emacswiki.org/emacs/HowToEdit">
+HowToEdit</a>
+.</p>
+<hr />
+<p>
+<a href="http://www.emacswiki.org/emacs/CategoryEmacsWikiSite" class="local">
+CategoryEmacsWikiSite</a>
+</p>
+</div>
+<div class="wrapper close">
+</div>
+</div>
+<div class="footer">
+<hr />
+<span class="translation bar">
+<br />
+ <a class="translation es" href="http://www.emacswiki.org/emacs-es/WikiCómo">
+Español</a>
+ <a rel="nofollow" class="translation new" href="http://www.emacswiki.org/emacs?action=translate;id=TextFormattingRules;missing=de_fr_it_ja_ko_pt_ru_se_uk_zh">
+Add Translation</a>
+</span>
+<div class="edit bar">
+<a accesskey="c" href="http://www.emacswiki.org/emacs/Comments_on_TextFormattingRules" class="comment local">
+Talk</a>
+ <a rel="nofollow" accesskey="e" href="http://www.emacswiki.org/emacs?action=edit;id=TextFormattingRules" class="edit" title="Click to edit this page">
+Edit this page</a>
+ <a rel="nofollow" href="http://www.emacswiki.org/emacs?action=history;id=TextFormattingRules" class="history">
+View other revisions</a>
+ <a class="admin" href="http://www.emacswiki.org/emacs?action=admin;id=TextFormattingRules" rel="nofollow">
+Administration</a>
+</div>
+<div class="time">
+Last edited 2015-01-10 01:01 UTC by <a title="127.0.0.1" class="author" href="http://www.emacswiki.org/emacs/BrianBurns">
+BrianBurns</a>
+ <a rel="nofollow" href="http://www.emacswiki.org/emacs?action=browse;diff=2;id=TextFormattingRules" class="diff">
+(diff)</a>
+</div>
+<div style="float:right; margin-left:1ex;">
+
+<!-- Creative Commons License -->
+
+<a class="licence" href="http://creativecommons.org/licenses/GPL/2.0/">
+<img alt="CC-GNU GPL" style="border:none" src="/pics/cc-GPL-a.png" />
+</a>
+
+<!-- /Creative Commons License -->
+
+</div>
+
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+<Work rdf:about="">
+
+   <license rdf:resource="http://creativecommons.org/licenses/GPL/2.0/" />
+
+  <dc:type rdf:resource="http://purl.org/dc/dcmitype/Software" />
+
+</Work>
+
+
+<License rdf:about="http://creativecommons.org/licenses/GPL/2.0/">
+
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+
+   <requires rdf:resource="http://web.resource.org/cc/SourceCode" />
+
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+<p class="legal">
+
+This work is licensed to you under version 2 of the
+<a href="http://www.gnu.org/">
+GNU</a>
+ <a href="/GPL">
+General Public License</a>
+.
+Alternatively, you may choose to receive this work under any other
+license that grants the right to use, copy, modify, and/or distribute
+the work, as long as that license imposes the restriction that
+derivative works have to grant the same rights and impose the same
+restriction. For example, you may choose to receive this work under
+the
+<a href="http://www.gnu.org/">
+GNU</a>
+
+<a href="/FDL">
+Free Documentation License</a>
+, the
+<a href="http://creativecommons.org/">
+CreativeCommons</a>
+
+<a href="http://creativecommons.org/licenses/sa/1.0/">
+ShareAlike</a>
+
+License, the XEmacs manual license, or
+<a href="/OLD">
+similar licenses</a>
+.
+</p>
+
+</div>
+
+</body>
+
+</html>
+
