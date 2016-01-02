@@ -437,6 +437,22 @@ div.page div.portrait + p {
 
 
 
+/* IRC */
+.irc .time {
+    display: none;
+}
+dl.irc dt {
+    float: left;
+    text-align: right;
+    width: 20ex;
+}
+dl.irc dd {
+    display: block;
+    margin-left: 22ex;
+}
+
+
+
 /* Calendar */
 /* (pre gets different colors below) */
 div.month {
