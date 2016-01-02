@@ -266,12 +266,28 @@ dt {
 }
 
 
+/* Tables */
+table { 
+    border-collapse: collapse; /* otherwise leaves gaps in between cell outlines */
+}
+table th {
+    font-weight: bold;
+}
+table td,th { 
+    padding: 0 1ex;
+    text-align: left;
+    border: solid 1px #bbb;
+}
+/* odd/even rows */
+/* table tr.odd { */
+/*     background-color: #fcfbfb; */
+/* } */
+
+
+/* ? */
 /* Table on the new page */
 p.table a { float: left; width: 20ex; }
 p.table + p { clear: both; padding-top: 10px; }
-
-/* Tables */
-
 
 
 
