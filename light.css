@@ -1,12 +1,12 @@
 
-/* 
+/*
 ----------------------------------------------------------------------------
 EmacsWiki light theme
 ----------------------------------------------------------------------------
 A combination of some of the existing themes on the EmacsWiki at
-http://emacswiki.org, with various other additions. 
-The base theme was the cali2.css theme. 
-This file is in the public domain. 
+http://emacswiki.org, with various other additions.
+The base theme was the cali2.css theme.
+This file is in the public domain.
 ----------------------------------------------------------------------------
 */
 
@@ -19,12 +19,12 @@ body {
     color: #242323; /* dark gray */
     background-color: white;
     line-height: 1.3em;
-    
+
     /* serif fonts */
-    /* Hoefler Text is an Apple font since 1991 */ 
+    /* Hoefler Text is an Apple font since 1991 */
     /* Constantia is a freely available Microsoft font */
     font-family: "Hoefler Text", Constantia, Garamond, Palatino, Baskerville, "Book Antiqua", Cochin, Georgia, serif;
-    
+
     /* sans-serif fonts */
     /* font-family: "Lucida Grande", Geneva, Arial, sans-serif; */
 }
@@ -36,10 +36,10 @@ code, pre {
     color: #444;
     background-color: #fcfbfb;
     border: 1px solid #ddd;
-    
+
     /* These fonts are all pretty similar, except Courier and monospace */
     font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
-    
+
     /* for some reason, using a different font than the default monospace */
     /* increases the size of the text, so need to counteract that here */
     font-size: 0.8em;
@@ -59,10 +59,10 @@ pre {
 a {
     color: gray;
     background-color: inherit;
-    
+
     /* this works on firefox, just shows as a plain underline in chrome */
     text-decoration: underline dotted #09c;
-    
+
     /* faking a dotted underline, works on all browsers but can't adjust position */
     /* text-decoration: none; */
     /* border-bottom: 1px dotted #09c; */
@@ -85,7 +85,7 @@ a.near:hover { color: #390; background-color: inherit; }
 
 
 /* Images */
-a.image img { 
+a.image img {
     border: none;
 }
 a.left {
@@ -139,13 +139,13 @@ hr {
 
 
 /* Tables */
-table { 
+table {
     border-collapse: collapse; /* otherwise leaves gaps in between cell outlines */
 }
 table th {
     font-weight: bold;
 }
-table td,th { 
+table td,th {
     padding: 0 1ex;
     text-align: left;
     border: solid 1px #bbb;
@@ -236,7 +236,7 @@ a.logo:after {
 
 
 /* Bars (Goto bar, Translation bar, Edit bar) */
-span.bar a { 
+span.bar a {
     font-size: smaller;
     color: #444;
 }
@@ -322,13 +322,13 @@ textarea {
     font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
     font-size: 0.9em;
 }
-textarea[name="text"] { 
+textarea[name="text"] {
     width: 100%;
     height: 80%;
 }
-textarea[name="summary"] { 
-    width: 100%; 
-    height: 3em; 
+textarea[name="summary"] {
+    width: 100%;
+    height: 3em;
 }
 
 
@@ -409,7 +409,7 @@ img.portrait {
     float: left;
     clear: left;
     /* picture frame */
-    padding: 1ex; 
+    padding: 1ex;
     border:#999 1px solid;
     /* scale the image */
     width: 100%;
@@ -533,7 +533,7 @@ div.near, div.definition {
 
 /* ? */
 div.refer hr {
-    display: none; 
+    display: none;
 }
 div.refer {
     margin-top: 50px;
@@ -548,19 +548,19 @@ div.refer {
 
 /* Translation bar */
 .footer span.translation.bar {
-    display: block; 
+    display: block;
     text-align: center;
     border-top: 1px dotted #aaa;
-} 
+}
 /* Edit bar (buttons) */
 .footer .edit.bar {
-    display: block; 
+    display: block;
     text-align: center;
     padding: 5px 0px 15px 0;
 }
 /* Last edit */
 .footer div.time {
-    display: block; 
+    display: block;
     text-align: center;
     margin-bottom: 2em;
 }
@@ -666,4 +666,5 @@ span.category_3   { color: blue; }
 
 /* Local Variables: */
 /* css-indent-offset: 4 */
+/* whitespace-mode: t */
 /* End: */
