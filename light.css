@@ -206,7 +206,8 @@ a.logo {
     /* height: 64px; */
     /* just a placeholder for the moment */
     /* background:transparent url(./images/dottriangles32a.png); */
-    background:transparent url(./images/leaves32blue.png);
+    /* background:transparent url(./images/leaves32blue.png); */
+    background:transparent url(./images/leaves32green.png);
     top: 20px;
     left: 16px;
     width: 32px;
