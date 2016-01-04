@@ -2,7 +2,7 @@
 EmacsWiki Light Theme
 =====================
 
-This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.org), combining elements from various other [existing themes](http://emacswiki.org/emacs/CSS) (included in the originals subfolder) - suggestions and pull requests are welcome!
+This is an attempt to design a light theme for the [EmacsWiki](http://emacswiki.org), combining elements from various other [existing themes](http://emacswiki.org/emacs/CSS) (included in the originals subfolder) - suggestions and pull requests are welcome, or file an issue at https://github.com/bburns/emacswiki-light-theme/issues. 
 
 * Cali+  
  [x] use as a base  
