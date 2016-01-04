@@ -623,6 +623,17 @@ div.rc hr {
 div.rc h2 {
     margin-top: 0;
 }
+div.rc table {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+div.rc td, th {
+    border: none;
+}
+div.rc form {
+    border-top: 1px solid #ccc;
+    padding: 1em 0;
+}
 
 
 /* Edit */
@@ -695,12 +706,12 @@ div.color.one {
     background-color: #f4f3f2;
     border: 1px solid #ddd;
 }
-
-/* News text */
+/* news text */
 /* make text match the top margin of the portrait */
 div.page div.portrait + p {
     margin-top: 0.5ex;
 }
+
 
 
 
