@@ -325,6 +325,45 @@ div.content {
 }
 
 
+/* Portraits */
+/* These show when start post with [new::] and have a portrait image on homepage */
+/* see https://oddmuse.org/wiki/Portraits_Support_Extension */
+div.portrait {
+    margin: 0;
+    float: left;
+    font-size: 0.75em;
+    margin-right: 2em;
+}
+div.portrait p {
+    margin: 0;
+    padding-top: 1ex;
+}
+/* for the image inside a.newauthor */
+img.portrait {
+    margin: 0;
+    float: left;
+    clear: left;
+    /* picture frame */
+    padding: 1ex;
+    border:#999 1px solid;
+    /* scale the image */
+    width: 100%;
+    max-width: 18ex;
+}
+/* portrait caption */
+div.portrait a.local {
+    display: block;
+    text-decoration: none;
+    border-bottom: none;
+    /* picture frame */
+    color: #999;
+    width: 100%;
+    max-width: 20ex;
+}
+div.comment {
+    clear: both;
+}
+
 
 /* IRC */
 .irc .time {
@@ -573,7 +612,7 @@ span.category_3   { color: blue; }
 /* ---------------------------------------------------------------------- */
 
 
-/* Recent Changes page */
+/* Recent Changes */
 /* hide the hr since the header div already has a line */
 div.rc {
     padding-top: 0;
@@ -586,7 +625,7 @@ div.rc h2 {
 }
 
 
-/* Edit page */
+/* Edit */
 textarea {
     font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
     font-size: 0.9em;
@@ -601,7 +640,7 @@ textarea[name="summary"] {
 }
 
 
-/* Comment page */
+/* Comment */
 div.comment form {
     padding: 1em;
     border-top: 1px solid #ccc;
@@ -630,7 +669,7 @@ div.commentshown hr {
 .commentshown { display: block; }
 
 
-/* News page */
+/* News */
 /* headings */
 div.journal {
     padding-top: 1em;
@@ -655,45 +694,6 @@ div.color.one {
     color: #444;
     background-color: #f4f3f2;
     border: 1px solid #ddd;
-}
-
-/* Portraits */
-/* These show when start post with [new::] and have a portrait image on homepage */
-/* see https://oddmuse.org/wiki/Portraits_Support_Extension */
-div.portrait {
-    margin: 0;
-    float: left;
-    font-size: 0.75em;
-    margin-right: 2em;
-}
-div.portrait p {
-    margin: 0;
-    padding-top: 1ex;
-}
-/* for the image inside a.newauthor */
-img.portrait {
-    margin: 0;
-    float: left;
-    clear: left;
-    /* picture frame */
-    padding: 1ex;
-    border:#999 1px solid;
-    /* scale the image */
-    width: 100%;
-    max-width: 18ex;
-}
-/* portrait caption */
-div.portrait a.local {
-    display: block;
-    text-decoration: none;
-    border-bottom: none;
-    /* picture frame */
-    color: #999;
-    width: 100%;
-    max-width: 20ex;
-}
-div.comment {
-    clear: both;
 }
 
 /* News text */
