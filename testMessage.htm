@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>EmacsWiki: Org Mode</title><link rel="alternate" type="application/wiki" title="Edit this page" href="http://www.emacswiki.org/emacs?action=edit;id=OrgMode" /><link type="text/css" rel="stylesheet" href="https://rawgit.com/bburns/emacswiki-light-theme/master/light.css" /><meta name="robots" content="INDEX,FOLLOW" /><link rel="alternate" type="application/rss+xml" title="EmacsWiki" href="http://www.emacswiki.org/emacs?action=rss" /><link rel="alternate" type="application/rss+xml" title="EmacsWiki: OrgMode" href="http://www.emacswiki.org/emacs?action=rss;rcidonly=OrgMode" /><link rel="alternate" type="application/rss+xml" title="Follow-ups for BrianBurns" href="http://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content"
+      href="http://www.emacswiki.org/full.rss" />
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content and diff"
+      href="http://www.emacswiki.org/full-diff.rss" />
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki including minor differences"
+      href="http://www.emacswiki.org/minor-edits.rss" />
+<link rel="alternate" type="application/rss+xml"
+      title="Changes for OrgMode only"
+      href="http://www.emacswiki.org/emacs?action=rss;rcidonly=OrgMode" />
+<link rel="alternate" type="application/rss+xml"
+      title="Follow-ups to BrianBurns"
+      href="http://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+<meta content="width=device-width" name="viewport" />
+<script type="text/javascript" src="/outliner.0.5.0.62-toc.js"></script>
+<script type="text/javascript">
+
+  function addOnloadEvent(fnc) {
+    if ( typeof window.addEventListener != "undefined" )
+      window.addEventListener( "load", fnc, false );
+    else if ( typeof window.attachEvent != "undefined" ) {
+      window.attachEvent( "onload", fnc );
+    }
+    else {
+      if ( window.onload != null ) {
+	var oldOnload = window.onload;
+	window.onload = function ( e ) {
+	  oldOnload( e );
+	  window[fnc]();
+	};
+      }
+      else
+	window.onload = fnc;
+    }
+  }
+
+  // https://stackoverflow.com/questions/280634/endswith-in-javascript
+  if (typeof String.prototype.endsWith !== 'function') {
+    String.prototype.endsWith = function(suffix) {
+      return this.indexOf(suffix, this.length - suffix.length) !== -1;
+    };
+  }
+
+  var initToc=function() {
+
+    var outline = HTML5Outline(document.body);
+    if (outline.sections.length == 1) {
+      outline.sections = outline.sections[0].sections;
+    }
+
+    if (outline.sections.length > 1
+	|| outline.sections.length == 1
+           && outline.sections[0].sections.length > 0) {
+
+      var toc = document.getElementById('toc');
+
+      if (!toc) {
+	var divs = document.getElementsByTagName('div');
+	for (var i = 0; i < divs.length; i++) {
+	  if (divs[i].getAttribute('class') == 'toc') {
+	    toc = divs[i];
+	    break;
+	  }
+	}
+      }
+
+      if (!toc) {
+	var h2 = document.getElementsByTagName('h2')[0];
+	if (h2) {
+	  toc = document.createElement('div');
+	  toc.setAttribute('class', 'toc');
+	  h2.parentNode.insertBefore(toc, h2);
+	}
+      }
+
+      if (toc) {
+        var html = outline.asHTML(true);
+        toc.innerHTML = html;
+
+	items = toc.getElementsByTagName('a');
+	for (var i = 0; i < items.length; i++) {
+	  while (items[i].textContent.endsWith('✎')) {
+            var text = items[i].childNodes[0].nodeValue;
+	    items[i].childNodes[0].nodeValue = text.substring(0, text.length - 1);
+	  }
+	}
+      }
+    }
+  }
+
+  addOnloadEvent(initToc);
+  </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head><body class="default"><div class="header"><a class="logo" href="http://www.emacswiki.org/emacs/SiteMap"><img alt="[Home]" class="logo" src="/emacs_logo.png" /></a><div class="menu"><span class="gotobar bar"><a class="local" href="http://www.emacswiki.org/emacs/SiteMap">SiteMap</a> <a href="http://www.emacswiki.org/emacs/Search" class="local">Search</a> <a class="local" href="http://www.emacswiki.org/emacs/ElispArea">ElispArea</a> <a class="local" href="http://www.emacswiki.org/emacs/HowTo">HowTo</a> <a class="local" href="http://www.emacswiki.org/emacs/Glossary">Glossary</a> <a class="local" href="http://www.emacswiki.org/emacs/RecentChanges">RecentChanges</a> <a href="http://www.emacswiki.org/emacs/News" class="local">News</a> <a href="http://www.emacswiki.org/emacs/Problems" class="local">Problems</a> <a href="http://www.emacswiki.org/emacs/Suggestions" class="local">Suggestions</a> </span><form method="get" action="http://www.emacswiki.org/emacs" enctype="multipart/form-data" class="search" accept-charset="utf-8"><p><label for="search">Search:</label> <input type="text" name="search"  size="20" id="search" accesskey="f" /> <label for="searchlang">Language:</label> <input type="text" name="lang"  size="10" id="searchlang" /> <input type="submit" name="dosearch" value="Go!" /></p></form></div><div class="message"><p>This page needs attention!</p></div><h1><a title="Click to search for references to this page" rel="nofollow" href="http://www.emacswiki.org/emacs?search=%22OrgMode%22"><span style="padding-right: 0.5ex;">Org</span><span style="padding-right: 0.5ex;">Mode</span></a></h1></div><div class="wrapper"><div class="content browse"><p>    <a class="anchor" name="overview"></a> </p><h2>Overview</h2><p>Org-mode is an Emacs mode for note keeping, project planning, TODO lists and authoring. It is included from Emacs 22.1 onward as default.</p><p>Org-mode&#x2019;s <a class="url http outside" href="http://orgmode.org/manual/index.html">manual</a>, <a class="url http outside" href="http://orgmode.org/guide/">compact guide</a>, the community maintained <a class="url http outside" href="http://orgmode.org/worg">Worg</a> (which includes tutorial, ideas, code snippets, etc.,) and can be accessed at <a class="url http outside" href="http://orgmode.org">its homepage</a>. <a class="url http outside" href="http://www.network-theory.co.uk/org/manual/">Paperback manual</a> is also available. <a class="anchor" name="features"></a> </p><h3>Features</h3><ul><li>Outlines: headlines, TODO items, checklists, numbered lists, searching, filtering</li><li>Filing: outlines, tagging, refiling, archiving, sorting, flexible enough to build a &#x201c;getting things done&#x201d; workflow</li><li>Timestamp: deadlines, clocking in/out, scheduled items, repeating items, optionally integrated with emacs calendar and diary</li><li>Markup: bold, italic, lists, links, images, math (via <a class="local" href="http://www.emacswiki.org/emacs/LaTeX">LaTeX</a>), code highlighting</li><li>Links to URLs, files, gnus, rmail, vm, news, wanderlust, bbdb, irc, shell commands, bookmarks, images, attachments</li><li>Table: editing, spreadsheets, formulas</li><li>Export: HTML, <a class="local" href="http://www.emacswiki.org/emacs/LaTeX">LaTeX</a>, Markdown, iCalendar, <a href="http://www.emacswiki.org/emacs/OpenDocument" class="local">OpenDocument</a>, Beamer slides, PDF, and more via an extensible exporting system</li><li>Babel: Literate programming, reproducible research</li><li>Agenda: Overview of scheduled and TODO items across files</li></ul><p><a class="anchor" name="install"></a> </p><h2>Download and Install</h2><p>The development version is at:</p><pre>    git clone git://orgmode.org/org-mode.git</pre><p>There is a Ubuntu repository with the latest for non-cvs Emacs. Add the following to your <code>/etc/apt/sources.list</code>:</p><pre>    deb http://ppa.launchpad.net/hexmode/ubuntu gutsy main
+    deb-src http://ppa.launchpad.net/hexmode/ubuntu gutsy main</pre><p><a name="using" class="anchor"></a> </p><h2>Texts on using org-mode</h2><p>David O&#x2019;Toole has written a <a href="http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html" class="url http outside">general tutorial</a> with screenshots. It has been translated into <a class="url http outside" href="http://hokmen.chan.googlepages.com/OrgTutorial.en-cn.html">Chinese</a>, <a class="url http outside" href="http://web.archive.org/web/20080225214358/http://lumiere.ens.fr/~guerry/orgtutorialfr.html">French</a>, <a href="http://users.itk.ppke.hu/~mpasztor/orgtutorial/notebook/orgtutorial-hu.html" class="url http outside">Hungarian</a>, <a class="url http outside" href="http://hpcgi1.nifty.com/spen/index.cgi?OrgMode/OrgTutorial">Japanese</a> and <a href="http://jmjeong.com/index.php?display=Emacs/OrgMode" class="url http outside">Korean</a>. <a href="http://orgmode.org/worg/" class="url http outside">Worg</a> has many tutorials on specific features. Charles Cave has <a href="http://members.optusnet.com.au/~charles57/GTD/org_dates/index.html" class="url http outside">has written</a> on using date and times. Bernt Hansen describes his use and customizations of Org-mode in 70(!) pages long <a class="url http outside" href="http://doc.norang.ca/org-mode.html">document</a>, which assumes basic familiarity with Org.</p><p>One of the major influences in 2006/2007 on task organization has been the book <a class="url http outside" href="http://en.wikipedia.org/wiki/Getting_Things_Done">Getting Things Done</a> (GTD). Using Org-mode for GTD has been <a class="url http outside" href="http://members.optusnet.com.au/~charles57/GTD/orgmode.html">described</a> by Charles Cave and a modest example configuration has been given <a href="http://www.brool.com/index.php/using-org-mode-with-gtd" class="url http outside">here</a>.</p><p>Eric Neilsen has a <a class="url http outside" href="http://home.fnal.gov/~neilsen/notebook/orgExamples/org-examples.html">cookbook of Org configuration snippets</a>. Bernt Hansen wrote about <a href="http://doc.norang.ca/org-mode.html" class="url http outside">lots of things you can do with Org</a>. <a href="http://www.emacswiki.org/emacs/SachaChua" class="local">SachaChua</a> has <a href="http://sachachua.com/blog/2014/01/tips-learning-org-mode-emacs/" class="url http outside">a graphical map for learning Org</a>.</p><p>Somewhat dated (2007): Both <a class="url http outside" href="http://newartisans.com/2007/08/using-org-mode-as-a-day-planner/">John Wiegley</a> and <a href="http://sachachua.com/wp/2007/12/29/how-to-use-emacs-org-as-a-basic-day-planner/" class="url http outside">Sacha Chua</a> have described day planner usage. Another piece by <a href="http://www.emacswiki.org/emacs/SachaChua" class="local">SachaChua</a> is <a href="http://sachachua.com/wp/2007/12/22/a-day-in-a-life-with-org/" class="url http outside">"A day in the life with Org"</a>.</p><p><a name="publish" class="anchor"></a> </p><h2>Publishing</h2><p>You can <b>publish to HTML</b> using <code>&#x2018;C-c C-e h&#x2019;</code>, or you can use <a href="http://www.emacswiki.org/emacs/BhlMode" class="local">BhlMode</a> for <a class="local" href="http://www.emacswiki.org/emacs/LaTeX">LaTeX</a> or HTML output. Just switch modes before exporting (<code>&#x2018;M-x bhl-mode&#x2019;</code>). <a class="local" href="http://www.emacswiki.org/emacs/BhlMode">BhlMode</a> should automatically recognize the asterisks as marking sections and subsections. See <a class="local" href="http://www.emacswiki.org/emacs/EmacsOutlineToHtml">EmacsOutlineToHtml</a> for other alternatives.</p><p><a class="url http outside" href="http://dto.mamalala.org/e/org-publish.el">org-publish.el</a> (this comes in the latest version of org-mode) by <a href="http://www.emacswiki.org/emacs/DavidOtoole" class="local">DavidOtoole</a> is a publishing management system for creating websites composed of all the files within a project (including <a href="http://www.emacswiki.org/emacs/OrgMode" class="local">OrgMode</a> files, images, and source code, if desired).</p><h3>new exporter/publish framework</h3><ul><li><a href="http://orgmode.org/worg/exporters/ox-overview.html" class="url http outside">The New Org-mode Exporter Framework</a> - <em>As of release 8.0, Org-mode has transitioned to a new export framework, authored primarily (entirely?) by Nicolas Goaziou…</em></li><li>For instructions on how to upgrade from the previous Org-mode exporter, see the <a class="url http outside" href="http://orgmode.org/worg/org-8.0.html">upgrade guide.</a></li></ul><p><a name="conflicts" class="anchor"></a> </p><h2>Conflicts</h2><p>If you&#x2019;re using <a class="local" href="http://www.emacswiki.org/emacs/WindMove">WindMove</a>, <a class="local" href="http://www.emacswiki.org/emacs/CuaMode">CuaMode</a> or MTorus (with default keybindings), you might want to disable the Org Mode keybindings for Shift+arrow keys:</p><pre>    (setq org-replace-disputed-keys t)</pre><p>(This need to be done before org.el is loaded, or requires a restart of Emacs to be effective.)</p><p>This will result in the following replacements:</p><ul><li>S-RET   &#x2192;&#x00a0;C-S-RET</li><li>S-up    &#x2192;&#x00a0;M-p</li><li>S-down  &#x2192;&#x00a0;M-n</li><li>S-left  &#x2192;&#x00a0;M--</li><li>S-right &#x2192;&#x00a0;M-+</li></ul><p>If <a href="http://www.emacswiki.org/emacs/AllOut" class="local">AllOut</a> from Emacs 21 is loaded before org.el, you will be getting a <code>Wrong type argument ((keymapp nil))</code> error. This was fixed in Emacs 22.</p><p>If you are forced to use Emacs 21, either install a newer version of allout.el, or make sure that org.el is loaded before allout.el. For example, use <code>(require 'org)</code> before requiring allout.</p><p>If you&#x2019;re using session.el (<a href="http://www.emacswiki.org/emacs/EmacsSession" class="local">EmacsSession</a>), you need to excempt a circular data structure from saving:</p><pre>    (add-to-list 'session-globals-exclude 'org-mark-ring)</pre><p>If you&#x2019;re using Emacs 23 and Org 7.5, then you can also have some pseudo-compatability while maintaining CUA support with <a class="inter Lisp" href="/emacs/org-cua-dwim.el"><span class="site">Lisp</span><span class="separator">:</span><span class="interpage">org-cua-dwim.el</span></a></p><p><a class="anchor" name="datasources"></a> </p><h2>External Data Sources</h2><p>If you publish external sources to org mode agenda files, you&#x2019;ll need to refresh those files after changes occur. Try this snippet to reload those files.</p><pre>    (<span class="keyword">defun</span> <span class="function">org-reload</span> ()
+      (interactive)
+      (switch-to-buffer <span class="string">"mail.org"</span>)
+      (revert-buffer nil 1)
+      (org-agenda nil <span class="string">"a"</span>)
+      (delete-other-windows))</pre><p><a class="anchor" name="addons"></a>] </p><h2>Add-ons and other files</h2><ul><li><a class="inter Lisp" href="/emacs/org-mairix.el"><span class="site">Lisp</span><span class="separator">:</span><span class="interpage">org-mairix.el</span></a> integrates Org mode with <a href="http://www.rpcurnow.force9.co.uk/mairix/" class="url http outside">mairix</a> email search.</li><li><a href="http://www.astro.uva.nl/~dominik/Tools/outline-magic.el" class="url http outside">outline-magic.el</a> by <a href="http://www.emacswiki.org/emacs/CarstenDominik" class="local">CarstenDominik</a> can be used to obtain the feel of org-mode outline navigation when you use <a href="http://www.emacswiki.org/emacs/OutlineMode" class="local">OutlineMode</a> or <a class="local" href="http://www.emacswiki.org/emacs/OutlineMinorMode">OutlineMinorMode</a> in other types of files (for example, source code.)</li><li><a class="url http outside" href="http://repo.or.cz/w/org-mode.git?a=blob_plain;f=lisp/org-w3m.el;hb=HEAD">GIT:org-w3m.el</a> &#x2013; Copy and paste from w3m buffer to <a href="http://www.emacswiki.org/emacs/OrgMode" class="local">OrgMode</a>.</li><li><a class="url http outside" href="http://www.emacswiki.org/emacs/OrgMode-OSD">Display Appointments Using OSD on Gnome</a></li><li><a href="http://gitorious.org/bkuhn-small-hacks/org-mode/blobs/master/planner2org.plx" class="url http outside">A small Perl script that will convert data to orgmode</a> format from <a class="local" href="http://www.emacswiki.org/emacs/PlannerMode">PlannerMode</a> format.</li><li><a href="/emacs/org-assoc-tags.el" class="inter Lisp"><span class="site">Lisp</span><span class="separator">:</span><span class="interpage">org-assoc-tags.el</span></a> Allow user to have list of associated tags, that are automatically assigned to the item.</li><li>inlimg.el in <a href="http://www.emacswiki.org/emacs/NxhtmlMode" class="local">nXhtml</a> (&gt; v 1.88) lets you display images inline in org files.</li><li><a href="http://www.emacswiki.org/emacs/FreeMind" class="local">FreeMind</a> lets you import/export between org-mode and freemind file format.</li><li><a href="http://www.emacswiki.org/emacs/mobileorg" class="local">mobileorg</a> (<a class="url http outside" href="http://mobileorg.ncogni.to/">home page</a>) is an iPhone and iPod Touch application for storing, searching, viewing and editing Org-mode files</li><li><a class="local" href="http://www.emacswiki.org/emacs/OrgOutlook">OrgOutlook</a> lets you integrate with Microsoft Outlook</li><li><a href="http://www.emacswiki.org/emacs/OutlookFlagToOrgTask" class="local">OutlookFlagToOrgTask</a> exports emails flagged in Outlook to an Org file.</li><li><a href="/emacs/org-table-comment.el" class="inter Lisp"><span class="site">Lisp</span><span class="separator">:</span><span class="interpage">org-table-comment.el</span></a> provides orgtbl-mode (via orgtbl-comment-mode) support for modes that don&#x2019;t support block comments.</li><li><a class="inter Lisp" href="/emacs/org-occur-goto.el"><span class="site">Lisp</span><span class="separator">:</span><span class="interpage">org-occur-goto.el</span></a> allows you to jump quickly anywhere in your open org buffers using a dynamic version of the multi-occur interface</li><li><a class="inter Lisp" href="/emacs/org-search-goto.el"><span class="site">Lisp</span><span class="separator">:</span><span class="interpage">org-search-goto.el</span></a> a variant of the above package which supports matching multiple substrings given in any order</li><li><a class="inter Lisp" href="/emacs/org-search-goto-ml.el"><span class="site">Lisp</span><span class="separator">:</span><span class="interpage">org-search-goto-ml.el</span></a> a variant of the above package which supports matches across line boundaries in the whole entry</li><li>For those who track their time using org-mode (in macosx): <a class="url http outside" href="https://github.com/koddo/org-clock-statusbar-app">org-clock-statusbar-app</a></li><li><a href="https://github.com/JHeiner/BabelRoot" class="url http">https://github.com/JHeiner/BabelRoot</a> contains code that runs org-babel-execute asynchronously in a term-mode buffer.</li></ul><p><a class="anchor" name="elisp"></a> </p><h2>Related elisp code</h2><h3>Dragging URLs</h3><p>This function uses org-mode support for plain list to facilitate dragging URLs from a webbrowser (or other apps) to an org-mode buffer:</p><pre>(<span class="keyword">defadvice</span> <span class="function">dnd-insert-text</span> (around org-mouse-dnd-insert-text activate)
+  (<span class="keyword elisp">if</span> (eq major-mode 'org-mode)
+      (<span class="keyword elisp">progn</span>
+	(<span class="keyword elisp">cond</span>
+	 <span class="comment">;; if this is the end of the line then just insert text here</span>
+	 ((eolp)
+	  (skip-chars-backward <span class="string">" \t"</span>)
+	  (kill-region (point) (point-at-eol))
+	  (<span class="keyword cl">unless</span> (looking-back <span class="string">":"</span>) (insert <span class="string">":"</span>))
+	  (insert <span class="string">" "</span>))
+
+	 <span class="comment">;; if this is the beginning of the line then insert before</span>
+	 ((and (looking-at <span class="string">" \\|\t"</span>)
+	       (<span class="keyword elisp">save-excursion</span>
+		 (skip-chars-backward <span class="string">" \t"</span>) (bolp)))
+	  (beginning-of-line)
+	  (looking-at <span class="string">"[ \t]*"</span>)
+	  (open-line 1)
+	  (indent-to (- (match-end 0) (match-beginning 0)))
+	  (insert <span class="string">"+ "</span>))
+
+	 <span class="comment">;; if this is a middle of the line, then insert after</span>
+	 (t
+	  (end-of-line)
+	  (newline t)
+	  (indent-relative)
+	  (insert <span class="string">"+ "</span>)))
+	(insert text)
+	(beginning-of-line))
+    ad-do-it))
+</pre><h3>Including all org files from a directory into the agenda</h3><pre>(setq org-agenda-files (file-expand-wildcards <span class="string">"~/org/*.org"</span>))
+</pre><h3>Turn header lines into apparent visible separators</h3><p>To make header lines more apparently visible in the buffer, set them a background color and change this part of <code>&#x2018;org-set-font-lock-defaults&#x2019;</code>, so that the header line is drawn across the screen:</p><pre>	   <span class="comment">;; Headlines</span>
+	   '(<span class="string">"^\\(\\**\\)\\(\\* \\)\\(.*\xa\\)"</span> (1 (org-get-level-face 1))
+	     (2 (org-get-level-face 2)) (3 (org-get-level-face 3)))
+</pre><p>The only change is the `\xa&#x2019; character is added before the last closing paren. This feature has been added to org-mode; see <code>&#x2018;org-fontify-whole-heading-line&#x2019;</code>.</p><h3>Following Links</h3><p>To follow links with RET, rather than a 2 key combo:</p><pre>    (setq org-return-follows-link t)</pre><p>You can also make TAB follow links in a similar way.</p><h3>Opening pdf at specific page</h3><p>To open links of type [~/test.pdf::3] i.e. open file at page 3: </p><pre>    (delete '(<span class="string">"\\.pdf\\'"</span> . default) org-file-apps)
+    (add-to-list 'org-file-apps '(<span class="string">"\\.pdf::\\([0-9]+\\)\\'"</span> . <span class="string">"evince \"%s\" -p %1"</span>))
+</pre><h3>Opening pdf with alternative application</h3><p>To open a link with a program other than the default(e.g. modify a pdf rather than read it): </p><pre>(<span class="keyword">defun</span> <span class="function">my-org-open-at-point</span>()
+  (interactive)
+  (<span class="keyword elisp">let</span> ((org-file-apps '((<span class="string">"\\.pdf\\'"</span> . <span class="string">"xournal %s"</span>))))
+    (org-open-at-point)
+    ))
+</pre><h3>Sort a column in an Org Table</h3><p>Org-Mode provide org-table-sort-lines <code>C-c ^</code> to sort all  the table lines based on a column. But sometime one need to sort just one column : </p><pre>
+(<span class="keyword">defun</span> <span class="function">org-table-sort-column</span> ()
+  <span class="string">"Sort table column at point."</span>
+
+  (interactive)
+  (<span class="keyword elisp">let</span>* ((thisline (org-current-line))
+	 (thiscol (org-table-current-column))
+	 (otc org-table-overlay-coordinates)
+	 beg end bcol ecol tend tbeg column lns pos)
+    (<span class="keyword cl">when</span> (equal thiscol 0)
+      (<span class="keyword elisp">if</span> (org-called-interactively-p 'any)
+	  (setq thiscol
+		(string-to-number
+		 (read-string <span class="string">"Use column N for sorting: "</span>)))
+	(setq thiscol 1))
+      (org-table-goto-column thiscol))
+    (org-table-check-inside-data-field)
+    (<span class="keyword elisp">if</span> (org-region-active-p)
+	(<span class="keyword elisp">progn</span>
+	  (setq beg (region-beginning) end (region-end))
+	  (goto-char beg)
+	  (setq column (org-table-current-column)
+		beg (point-at-bol))
+	  (goto-char end)
+	  (setq end (point-at-bol 2)))
+      (setq column (org-table-current-column)
+	    pos (point)
+	    tbeg (org-table-begin)
+	    tend (org-table-end))
+      (<span class="keyword elisp">if</span> (re-search-backward org-table-hline-regexp tbeg t)
+	  (setq beg (point-at-bol 2))
+	(goto-char tbeg)
+	(setq beg (point-at-bol 1)))
+      (goto-char pos)
+      (<span class="keyword elisp">if</span> (re-search-forward org-table-hline-regexp tend t)
+	  (setq end (point-at-bol 1))
+	(goto-char tend)
+	(setq end (point-at-bol))))
+    (setq beg (move-marker (make-marker) beg)
+	  end (move-marker (make-marker) end))
+    (untabify beg end)
+    (goto-char beg)
+    (org-table-goto-column column)
+    (skip-chars-backward <span class="string">"^|"</span>)
+    (setq bcol (point))
+    (goto-char end)
+    (previous-line)
+    (org-table-goto-column column)
+    (skip-chars-forward <span class="string">"^|"</span>)
+    (setq ecol (point))
+    (org-table-copy-region bcol ecol nil)
+    (setq lns (mapcar (<span class="keyword elisp">lambda</span> (x) (cons 
+				   (org-sort-remove-invisible 
+				    (substring-no-properties x) )
+				   x))
+		      ( mapcar 'car org-table-clip)))    
+    (setq lns (org-do-sort lns <span class="string">"Column"</span> ))
+
+    (setq org-table-clip (mapcar 'list (mapcar 'cdr lns)))
+    (goto-char beg)
+    (org-table-goto-column column)
+    (org-table-paste-rectangle)
+    (org-goto-line thisline)
+    (org-table-goto-column thiscol)
+    (<span class="keyword cl">when</span> otc (org-table-toggle-coordinate-overlays))
+    (message <span class="string">"%d element sorted in column %d"</span> (length lns) column)))
+
+</pre><h3>Editing Wikipedia</h3><p>Org Mode can be easily configured to help edit <b>Wikipedia</b> articles by changing outline-regexp in the mode hook:</p><pre>(add-hook 'org-mode-hook '(<span class="keyword elisp">lambda</span> () (setq outline-regexp <span class="string">"=+"</span>)))
+</pre><p>If you use <a class="local" href="http://www.emacswiki.org/emacs/WThreeM">WThreeM</a>, add the following instead: </p><pre>(setq w3m-form-textarea-edit-mode 'org-mode)
+(add-hook 'w3m-form-input-textarea-mode-hook
+          '(<span class="keyword elisp">lambda</span> nil
+                   (setq outline-regexp <span class="string">"=+"</span>)))
+</pre><h3>Export UTF-8 checkboxes</h3><p>This snippet turns <code>- [X]</code> into ☑ and <code>- [ ]</code> into ☐.</p><pre>(<span class="keyword">defun</span> <span class="function">sacha/org-html-checkbox</span> (checkbox)
+  <span class="string">"Format CHECKBOX into HTML."</span>
+  (<span class="keyword cl">case</span> checkbox (on <span class="string">"&lt;span class=\"check\"&gt;&amp;#x2611<span class="comment">;&lt;/span&gt;"</span>) ; checkbox (checked)</span>
+	(off <span class="string">"&lt;span class=\"checkbox\"&gt;&amp;#x2610<span class="comment">;&lt;/span&gt;"</span>)</span>
+	(trans <span class="string">"&lt;code&gt;[-]&lt;/code&gt;"</span>)
+	(t <span class="string">""</span>)))
+(<span class="keyword">defadvice</span> <span class="function">org-html-checkbox</span> (around sacha activate)
+  (setq ad-return-value (sacha/org-html-checkbox (ad-get-arg 0))))
+</pre><h3>Refile to opened orgmode buffer</h3><p>The following codes allow refile to opened orgmode buffer files. (Currently set at level 1, to avoid too many refile targets when there are lots of orgmode files opened).</p><pre>(<span class="keyword">defun</span> <span class="function">ixp/org-buffer-files</span> ()
+  <span class="string">"Return list of opened orgmode buffer files"</span>
+  (mapcar (function buffer-file-name)
+	  (org-buffer-list 'files)))
+
+(setq org-refile-targets
+      (quote ((nil <span class="builtin">:maxlevel</span> . 3)
+	      (ixp/org-buffer-files <span class="builtin">:maxlevel</span> . 1)
+	      (org-agenda-files <span class="builtin">:maxlevel</span> . 3))))
+</pre><h3>Run org-todo at a specified date</h3><p>The following code snippet allows you to run <code>org-todo</code> as though it had been executed at some prior time that is interactively selected using <code>org-read-date</code>. This is particularly useful if you use the org-habits module and you are late to file the completion of a habit. If you complete the habit with org-todo it will be completed for the current day, and scheduled to repeat at the next repeat interval based on the current date. If you use <code>org-todo-at-date</code> and set the appropriate date, the task will be scheduled to repeat as though the task had been completed on the specified date. </p><pre>(<span class="keyword">defun</span> <span class="function">org-todo-at-date</span> (date)
+  (interactive (list (org-time-string-to-time (org-read-date))))
+  (cl-flet ((org-current-effective-time (<span class="type">&amp;rest</span> r) date)
+         (org-today (<span class="type">&amp;rest</span> r) (time-to-days date)))
+    (org-todo)))
+</pre><p><a class="anchor" name="discussion"></a> </p><h2>Discussion</h2><p>Discussion moved to <a class="local" href="http://www.emacswiki.org/emacs/Comments_on_OrgMode">Talk page</a></p><h2>Categories</h2><p><a class="local" href="http://www.emacswiki.org/emacs/CategoryOutline">CategoryOutline</a> <a class="local" href="http://www.emacswiki.org/emacs/CategoryPersonalInformationManager">CategoryPersonalInformationManager</a> <a href="http://www.emacswiki.org/emacs/CategoryCalendar" class="local">CategoryCalendar</a> <a href="http://www.emacswiki.org/emacs/CategoryNeedsAttention" class="local">CategoryNeedsAttention</a> <a href="http://www.emacswiki.org/emacs/CategoryWriting" class="local">CategoryWriting</a> <a class="local" href="http://www.emacswiki.org/emacs/CategoryTables">CategoryTables</a></p></div><div class="wrapper close"></div></div><div class="footer"><hr /><span class="translation bar"><br /> <a href="http://www.emacswiki.org/emacs-ja/オルグモード" class="translation ja">日本語</a> <a href="http://www.emacswiki.org/emacs-zh/Org-Mode (中文)" class="translation zh">中文</a> <a href="http://www.emacswiki.org/emacs-es/ModoOrg" class="translation es">Español</a> <a class="translation new" href="http://www.emacswiki.org/emacs?action=translate;id=OrgMode;missing=de_fr_it_ko_pt_ru_se_uk" rel="nofollow">Add Translation</a></span><div class="edit bar"><a accesskey="c" href="http://www.emacswiki.org/emacs/Comments_on_OrgMode" class="comment local">Talk</a> <a accesskey="e" rel="nofollow" title="Click to edit this page" href="http://www.emacswiki.org/emacs?action=edit;id=OrgMode" class="edit">Edit this page</a> <a rel="nofollow" href="http://www.emacswiki.org/emacs?action=history;id=OrgMode" class="history">View other revisions</a> <a class="admin" href="http://www.emacswiki.org/emacs?action=admin;id=OrgMode" rel="nofollow">Administration</a></div><div class="time">Last edited 2015-11-26 01:57 UTC by <a title="75.119.230.47" class="author" href="http://www.emacswiki.org/emacs/SachaChua">SachaChua</a> <a href="http://www.emacswiki.org/emacs?action=browse;diff=2;id=OrgMode" class="diff" rel="nofollow">(diff)</a></div><div style="float:right; margin-left:1ex;">
+<!-- Creative Commons License -->
+<a class="licence" href="http://creativecommons.org/licenses/GPL/2.0/"><img alt="CC-GNU GPL" style="border:none" src="/pics/cc-GPL-a.png" /></a>
+<!-- /Creative Commons License -->
+</div>
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <license rdf:resource="http://creativecommons.org/licenses/GPL/2.0/" />
+  <dc:type rdf:resource="http://purl.org/dc/dcmitype/Software" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/GPL/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+   <requires rdf:resource="http://web.resource.org/cc/SourceCode" />
+</License>
+</rdf:RDF>
+-->
+
+<p class="legal">
+This work is licensed to you under version 2 of the
+<a href="http://www.gnu.org/">GNU</a> <a href="/GPL">General Public License</a>.
+Alternatively, you may choose to receive this work under any other
+license that grants the right to use, copy, modify, and/or distribute
+the work, as long as that license imposes the restriction that
+derivative works have to grant the same rights and impose the same
+restriction. For example, you may choose to receive this work under
+the
+<a href="http://www.gnu.org/">GNU</a>
+<a href="/FDL">Free Documentation License</a>, the
+<a href="http://creativecommons.org/">CreativeCommons</a>
+<a href="http://creativecommons.org/licenses/sa/1.0/">ShareAlike</a>
+License, the XEmacs manual license, or
+<a href="/OLD">similar licenses</a>.
+</p>
+</div>
+</body>
+</html>
