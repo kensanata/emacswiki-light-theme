@@ -1,0 +1,559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+EmacsWiki: Google Summer Of Code</title>
+<link rel="alternate" type="application/wiki" title="Edit this page" href="http://www.emacswiki.org/emacs?action=edit;id=GoogleSummerOfCode" />
+<!-- <link type="text/css" rel="stylesheet" href="https://rawgit.com/bburns/emacswiki-light-theme/master/light.css" /> -->
+<link type="text/css" rel="stylesheet" href="light.css" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="alternate" type="application/rss+xml" title="EmacsWiki" href="http://www.emacswiki.org/emacs?action=rss" />
+<link rel="alternate" type="application/rss+xml" title="EmacsWiki: GoogleSummerOfCode" href="http://www.emacswiki.org/emacs?action=rss;rcidonly=GoogleSummerOfCode" />
+<link rel="alternate" type="application/rss+xml" title="Follow-ups for BrianBurns" href="http://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content"
+      href="http://www.emacswiki.org/full.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content and diff"
+      href="http://www.emacswiki.org/full-diff.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki including minor differences"
+      href="http://www.emacswiki.org/minor-edits.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Changes for GoogleSummerOfCode only"
+      href="http://www.emacswiki.org/emacs?action=rss;rcidonly=GoogleSummerOfCode" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Follow-ups to BrianBurns"
+      href="http://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+
+<meta name="viewport" content="width=device-width" />
+
+<script type="text/javascript" src="/outliner.0.5.0.62-toc.js">
+</script>
+
+<script type="text/javascript">
+
+
+  function addOnloadEvent(fnc) {
+    if ( typeof window.addEventListener != "undefined" )
+      window.addEventListener( "load", fnc, false );
+    else if ( typeof window.attachEvent != "undefined" ) {
+      window.attachEvent( "onload", fnc );
+    }
+    else {
+      if ( window.onload != null ) {
+	var oldOnload = window.onload;
+	window.onload = function ( e ) {
+	  oldOnload( e );
+	  window[fnc]();
+	};
+      }
+      else
+	window.onload = fnc;
+    }
+  }
+
+  // https://stackoverflow.com/questions/280634/endswith-in-javascript
+  if (typeof String.prototype.endsWith !== 'function') {
+    String.prototype.endsWith = function(suffix) {
+      return this.indexOf(suffix, this.length - suffix.length) !== -1;
+    };
+  }
+
+  var initToc=function() {
+
+    var outline = HTML5Outline(document.body);
+    if (outline.sections.length == 1) {
+      outline.sections = outline.sections[0].sections;
+    }
+
+    if (outline.sections.length >
+ 1
+	|| outline.sections.length == 1
+           && outline.sections[0].sections.length >
+ 0) {
+
+      var toc = document.getElementById('toc');
+
+      if (!toc) {
+	var divs = document.getElementsByTagName('div');
+	for (var i = 0; i < divs.length; i++) {
+	  if (divs[i].getAttribute('class') == 'toc') {
+	    toc = divs[i];
+	    break;
+	  }
+	}
+      }
+
+      if (!toc) {
+	var h2 = document.getElementsByTagName('h2')[0];
+	if (h2) {
+	  toc = document.createElement('div');
+	  toc.setAttribute('class', 'toc');
+	  h2.parentNode.insertBefore(toc, h2);
+	}
+      }
+
+      if (toc) {
+        var html = outline.asHTML(true);
+        toc.innerHTML = html;
+
+	items = toc.getElementsByTagName('a');
+	for (var i = 0; i < items.length; i++) {
+	  while (items[i].textContent.endsWith('✎')) {
+            var text = items[i].childNodes[0].nodeValue;
+	    items[i].childNodes[0].nodeValue = text.substring(0, text.length - 1);
+	  }
+	}
+      }
+    }
+  }
+
+  addOnloadEvent(initToc);
+  </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body class="default">
+<div class="header">
+<a class="logo" href="http://www.emacswiki.org/emacs/SiteMap">
+<img class="logo" src="/emacs_logo.png" alt="[Home]" />
+</a>
+<div class="menu">
+<span class="gotobar bar">
+<a class="local" href="http://www.emacswiki.org/emacs/SiteMap">
+SiteMap</a>
+ <a class="local" href="http://www.emacswiki.org/emacs/Search">
+Search</a>
+ <a href="http://www.emacswiki.org/emacs/ElispArea" class="local">
+ElispArea</a>
+ <a class="local" href="http://www.emacswiki.org/emacs/HowTo">
+HowTo</a>
+ <a class="local" href="http://www.emacswiki.org/emacs/Glossary">
+Glossary</a>
+ <a href="http://www.emacswiki.org/emacs/RecentChanges" class="local">
+RecentChanges</a>
+ <a href="http://www.emacswiki.org/emacs/News" class="local">
+News</a>
+ <a href="http://www.emacswiki.org/emacs/Problems" class="local">
+Problems</a>
+ <a href="http://www.emacswiki.org/emacs/Suggestions" class="local">
+Suggestions</a>
+ </span>
+<form method="get" action="http://www.emacswiki.org/emacs" enctype="multipart/form-data" class="search" accept-charset="utf-8">
+<p>
+<label for="search">
+Search:</label>
+ <input type="text" name="search"  size="20" accesskey="f" id="search" />
+ <label for="searchlang">
+Language:</label>
+ <input type="text" name="lang"  size="10" id="searchlang" />
+ <input type="submit" name="dosearch" value="Go!" />
+</p>
+</form>
+</div>
+<h1>
+<a href="http://www.emacswiki.org/emacs?search=%22GoogleSummerOfCode%22" title="Click to search for references to this page" rel="nofollow">
+<span style="padding-right: 0.5ex;">
+Google</span>
+<span style="padding-right: 0.5ex;">
+Summer</span>
+<span style="padding-right: 0.5ex;">
+Of</span>
+<span style="padding-right: 0.5ex;">
+Code</span>
+</a>
+</h1>
+</div>
+<div class="wrapper">
+<div class="content browse">
+<p>
+In Google&#x2019;s <a href="http://code.google.com/soc" class="url http outside">
+Summer of Code</a>
+ program, students receive some help while they work for 3 months on the free software project they choose. Several organizations have taken part in the last 4 years, including GNU (<a href="http://www.gnu.org/software/soc-projects/ideas.html" class="url http outside">
+ideas for SOC 2009</a>
+). GNU Emacs could also take part this year; this page is an informal discussion about ideas. Feel free to edit this page! (<a href="http://www.emacswiki.org/emacs/HowToEdit" class="local">
+HowToEdit</a>
+).</p>
+
+
+<h2> How to participate; the basics</h2>
+<p>
+Detailed info in the <a href="http://socghop.appspot.com/document/show/program/google/gsoc2009/faqs" class="url http outside">
+FAQs</a>
+. Use also the chat channel <code>
+#gsoc</code>
+ on <a href="http://freenode.net" class="url http outside">
+Freenode</a>
+.</p>
+
+
+<h3> Dates and deadlines</h3>
+<p>
+In 2007 it started in 5th March.</p>
+
+<h4> 2008</h4>
+<p>
+In 2008: the program announcement was on 25th February; the start date of applications submission from the mentoring organizations was on 3rd March You can find the dates in 2008 in the <a class="url http outside" href="http://code.google.com/opensource/gsoc/2008/faqs.html#0.1_timeline">
+timeline</a>
+. There were 9 days to submit the ideas list, 14 to register as students, and almost 3 months to code.</p>
+
+<h4> 2009</h4>
+<p>
+In 2009 the list of <a href="http://socghop.appspot.com/program/accepted_orgs/google/gsoc2009" class="url http outside">
+accepted mentoring organizations</a>
+ was published on March 18th. Google started accepting students applications on March 23rd, application deadline was April 3rd. A list of accepted applications was published on the 20th of April.</p>
+<p>
+Coding started on 23rd of May.</p>
+
+
+<h3> People</h3>
+<p>
+We need: </p>
+<ul>
+<li>
+mentors, which follow students&#x2019; progress and help them. Each project needs a mentor.</li>
+<li>
+students which have interest on a particular project. They must be taking official studies. They will work approx. from May to August.</li>
+</ul>
+
+
+<h3> Legal</h3>
+<p>
+Since students will write code for <a class="local" href="http://www.emacswiki.org/emacs/GnuEmacs">
+GnuEmacs</a>
+, they must sign first an agreement with the FSF. See <a class="local" href="http://www.emacswiki.org/emacs/LegalMatters">
+LegalMatters</a>
+.</p>
+
+
+
+<h2> Firm list of ideas (with mentors)</h2>
+<p>
+If you can guide a student in a particular project, write your name and the project here.</p>
+<p>
+Requisites for the proposals: </p>
+<ul>
+<li>
+the goal is to write code, not documentation</li>
+<li>
+adapt the difficulty to 12 weeks of work</li>
+<li>
+they should fit the GNU project; that means: they should steer people to use free platforms and programs</li>
+<li>
+please list here only the projects with mentor; for loose ideas and brainstorming, see the next section</li>
+</ul>
+<p>
+After a proposal is here, consult with the community and then send to <a class="url http outside" href="http://www.gnu.org/software/soc-projects/ideas.html">
+GNU project's ideas list</a>
+. That is the page which will be shown to Google.</p>
+
+<h3> shell and script debuggers and Emacs</h3>
+<p>
+(<a href="http://www.gnu.org/software/soc-projects/ideas.html#shelldbg" class="url http outside">
+source</a>
+)</p>
+<p>
+In the last couple of years, a large number of Integrated Development Environments (IDE&#x2019;s) has emerged. So far, none has come close to the editing capabilities of Emacs, but on the debugger side, Emacs has been surpassed.</p>
+<p>
+As many people still use Emacs as their preferred editor, an ideal situation would be that Emacs also would be used as a debugger front-end with windows for, say, the call stack, local variables, and breakpoints.</p>
+<p>
+Some work in this area has been done, most notably gdb-ui.el, which provides a multi-window debugging environment for C and C++ and gdb. In addition, the ruby-debug project is doing similar work for Ruby. This project would:</p>
+<ul>
+<li>
+define guidelines for the look and feel for multi-window debugger Emacs environments.</li>
+<li>
+refactor and unify the existing code base (gdb-ui and rdebug), to make it easier to implement support for other debuggers.</li>
+<li>
+Analyze the underlying Emacs layers [1], and maybe restructure parts. Especially, the gud.el layer is a candidate for this.</li>
+<li>
+Implement support for other languages and/or debuggers, for example Bash and Python.</li>
+</ul>
+<p>
+For more information, contact R. Bernstein and Anders Lindgren.</p>
+<h2>
+Loose ideas and discussion</h2>
+<p>
+If you know about these topics and you want to help people to improve Emacs, please adapt it, add yourself as a mentor and move the heading to the previous section.</p>
+<p>
+Other sources for ideas are: </p>
+<ul>
+<li>
+the <a href="http://www.emacswiki.org/emacs/WishList" class="local">
+WishList</a>
+. You can extract and define a project based on the wishes there</li>
+<li>
+<a class="local" href="http://www.emacswiki.org/emacs/EmacsIDEWishList">
+EmacsIDEWishList</a>
+, particularly important improvements</li>
+<li>
+<a class="local" href="http://www.emacswiki.org/emacs/EmacsBugs">
+EmacsBugs</a>
+</li>
+<li>
+<a href="http://www.emacswiki.org/emacs/EmacsTodo" class="local">
+EmacsTodo</a>
+: fixing a subset of those tasks would be instructive and helpful</li>
+</ul>
+<h3>
+Make Scheme an Emacs extension language</h3>
+<p>
+See <a href="http://www.emacswiki.org/emacs/GuileEmacs" class="local">
+GuileEmacs</a>
+. At least goal 1 can be aimed.</p>
+<h3>
+Integrate CEDET into Emacs</h3>
+<p>
+See <a href="http://www.emacswiki.org/emacs/CEDET" class="local">
+CEDET</a>
+; this is already planned for Emacs 24. This will ease support for other languages and integrate much wanted features like code completion, syntax highlighting, syntax checking, project handling, &#x2026; Some other tools like <a href="http://www.emacswiki.org/emacs/JDEE" class="local">
+JDEE</a>
+ (Java support) or <a class="local" href="http://www.emacswiki.org/emacs/ECB">
+ECB</a>
+ could also be included. Lots of things must be done to make Emacs a better IDE, and this is one of them.</p>
+<h3>
+Improve VC (version control system)</h3>
+<p>
+How about also having a proposal for improving VC? Improve dealing with branches and add other features that are needed for modern version control systems.</p>
+<h3>
+Good multithreading support for Emacs</h3>
+<p>
+This is much wanted, specially for background processes like checking mail. It is necessary to profit from multicore processors, very common nowadays. There were already attempts to do this. See <a href="http://www.emacswiki.org/emacs/ConcurrentEmacs" class="local">
+ConcurrentEmacs</a>
+ and messages in the mailing list (Giuseppe Scrivano, 29 Nov 2008).</p>
+<h3>
+Create an usable shell interface</h3>
+<p>
+There is M-x term, ansi-term, shell, eshell: too many shells, and no one is good enough to please most users. </p>
+<ul>
+<li>
+<a class="local" href="http://www.emacswiki.org/emacs/AnsiTerm">
+AnsiTerm</a>
+ and <a class="local" href="http://www.emacswiki.org/emacs/ShellMode">
+ShellMode</a>
+ could be merged so that we have just 2 types of shell: an Elisp one (<a class="local" href="http://www.emacswiki.org/emacs/Eshell">
+Eshell</a>
+) and an interface to your other shell (like bash).</li>
+<li>
+Eshell could also have all good things by default: colors, completion, globbing, &#x2026; See <a class="local" href="http://www.emacswiki.org/emacs/EshellWishlist">
+EshellWishlist</a>
+</li>
+<li>
+Compatibility should be checked so that all programs work normally; just like in bash inside an xterm</li>
+<li>
+Performance issues: cat, ls, find, &#x2026; should run fast</li>
+</ul>
+<h3>
+Integrated version control system and bug tracker to be used in Emacs project</h3>
+<p>
+Emacs has unfinished and sometimes rudimentary tools to track its development. A new GNU project could be established (or existing ones extended) to improve the tools which will serve to sustain Emacs&#x2019; coding infrastructure. This could include: </p>
+<ul>
+<li>
+setting the Bazaar repository, migrating from CVS to Bazaar and adapting Bazaar so that it fits Emacs</li>
+<li>
+web interface to the bug tracker, similar to the other projects like Bugzilla and Launchpad, where you could see reports, send a new bug, query for bugs, &#x2026;</li>
+<li>
+and at the same time, mail interface, where you can issue all commands just via mail</li>
+<li>
+integration between VC and bug tracker; similar to what Bundle Buggy (in Launchpad) does: patch tracking, asking for automatic merges from the mailing list, patch approval, &#x2026;</li>
+<li>
+some other infrastructure tasks could be added, like automatic building (continuous integration), breakage detection (get noticed when code doesn&#x2019;t compile), validation at commit time, &#x2026;</li>
+</ul>
+<h3>
+Finer dimensions for window and frame sizes</h3>
+<p>
+Another change we should ask Google to support is to eliminate the requirement for window and frame sizes to be integral numbers of characters and lines.</p>
+<h3>
+Multiple major modes</h3>
+<p>
+Integrate <a class="local" href="http://www.emacswiki.org/emacs/MuMaMo">
+MuMaMo</a>
+ into Emacs so that it is easy to have more than one major mode in a buffer; for instance: Java and HTML (that&#x2019;s .jsp) or <a class="local" href="http://www.emacswiki.org/emacs/OrgMode">
+OrgMode</a>
++C/Lisp/Python/Java/&#x2026;</p>
+<h3>
+Port to GNUstep</h3>
+<p>
+Improve port to <a href="http://www.emacswiki.org/emacs/OpenStep" class="local">
+OpenStep</a>
+ (both for <a href="http://www.gnustep.org/" class="url http outside">
+GNUStep</a>
+ and <a href="http://www.emacswiki.org/emacs/MacOS" class="local">
+MacOS</a>
+ X). See <a href="http://www.emacswiki.org/emacs/EmacsApp" class="local">
+EmacsApp</a>
+. The main part would be to get the dump to work. There are also issues with incorrect font displaying.</p>
+<h3>
+Image Display</h3>
+<p>
+Currently, Emacs doesn&#x2019;t really do well with images that are larger than the window. Improving vertical and horizontal scrolling and being able to switch between window size and actual size should be a considerable improvement.</p>
+<h3>
+Right to Left Writing</h3>
+<p>
+Bidi support is one of the main things (the only thing?) Emacs lacks to be an universal text editor. If you look at the bidi mailing list (<a href="http://lists.gnu.org/mailman/listinfo/emacs-bidi" class="url http">
+http://lists.gnu.org/mailman/listinfo/emacs-bidi</a>
+), you find two (aborted) attempts to accomplish this, so it should not be insurmountable.</p>
+<h3>
+Create an Emacs package distribution system</h3>
+<p>
+See <a href="http://www.emacswiki.org/emacs/RationalElispPackaging" class="local">
+RationalElispPackaging</a>
+. Nowadays each project must provide install instructions, requirements list, update scripts, etc. individually. A packaging system would ease the installation of Emacs components. There is already <a class="url http outside" href="http://tromey.com/elpa/">
+elpa</a>
+.</p>
+<p>
+As a sysadmin (and a Debian developer and packager for RPM-based OSs), I hope that any such packaging system will be compatible with existing OS distribution packages.</p>
+<h3>
+Integrate the many searching engines (find/grep) into one tool</h3>
+<p>
+We have: grep, grep-find, <a href="http://www.emacswiki.org/emacs/igrep.el" class="local">
+igrep.el</a>
+ (egrep/agrep), rgrep, lgrep, <a class="local" href="http://www.emacswiki.org/emacs/GrepPlus">
+GrepPlus</a>
+, find-name-dired, find-grep-dired, mgrep, <a class="local" href="http://www.emacswiki.org/emacs/OccurMode">
+OccurMode</a>
+, <b>
+and lots more</b>
+. See <a href="http://www.emacswiki.org/emacs/GrepMode" class="local">
+GrepMode</a>
+. Each one with its particular UI, regexp handling, results displaying, shortcomings, &#x2026;</p>
+<p>
+We need just <b>
+one</b>
+ versatile find/grep interface, and obsolete the others for clarity. If it accepts a file name filter and a content filter (both are regexps), it can combine all grep/find functionality.</p>
+<h2>
+Accepted Emacs-related projects</h2>
+<ul>
+<li>
+<a href="http://www.emacswiki.org/emacs/GDB-MI" class="local">
+Emacs GDB/MI migration</a>
+</li>
+<li>
+<a href="http://www.emacswiki.org/emacs/GuileEmacs" class="local">
+GuileEmacs</a>
+ (in 2009, 2010 and 2011)</li>
+</ul>
+<hr />
+<p>
+<a class="local" href="http://www.emacswiki.org/emacs/CategoryWishList">
+CategoryWishList</a>
+</p>
+</div>
+<div class="wrapper close">
+</div>
+</div>
+<div class="footer">
+<hr />
+<span class="translation bar">
+<br />
+  <a class="translation new" rel="nofollow" href="http://www.emacswiki.org/emacs?action=translate;id=GoogleSummerOfCode;missing=de_es_fr_it_ja_ko_pt_ru_se_uk_zh">
+Add Translation</a>
+</span>
+<div class="edit bar">
+<a href="http://www.emacswiki.org/emacs/Comments_on_GoogleSummerOfCode" accesskey="c" class="comment local edit">
+Talk</a>
+ <a href="http://www.emacswiki.org/emacs?action=edit;id=GoogleSummerOfCode" title="Click to edit this page" rel="nofollow" class="edit" accesskey="e">
+Edit this page</a>
+ <a href="http://www.emacswiki.org/emacs?action=history;id=GoogleSummerOfCode" rel="nofollow" class="history">
+View other revisions</a>
+ <a href="http://www.emacswiki.org/emacs?action=admin;id=GoogleSummerOfCode" rel="nofollow" class="admin">
+Administration</a>
+</div>
+<div class="time">
+Last edited 2016-01-05 13:53 UTC by <a class="author" href="http://www.emacswiki.org/emacs/dadada" title="125.33.155.147">
+dadada</a>
+ <a rel="nofollow" href="http://www.emacswiki.org/emacs?action=browse;diff=2;id=GoogleSummerOfCode" class="diff">
+(diff)</a>
+</div>
+<div style="float:right; margin-left:1ex;">
+
+<!-- Creative Commons License -->
+
+<a class="licence" href="http://creativecommons.org/licenses/GPL/2.0/">
+<img alt="CC-GNU GPL" style="border:none" src="/pics/cc-GPL-a.png" />
+</a>
+
+<!-- /Creative Commons License -->
+
+</div>
+
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+<Work rdf:about="">
+
+   <license rdf:resource="http://creativecommons.org/licenses/GPL/2.0/" />
+
+  <dc:type rdf:resource="http://purl.org/dc/dcmitype/Software" />
+
+</Work>
+
+
+<License rdf:about="http://creativecommons.org/licenses/GPL/2.0/">
+
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+
+   <requires rdf:resource="http://web.resource.org/cc/SourceCode" />
+
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+<p class="legal">
+
+This work is licensed to you under version 2 of the
+<a href="http://www.gnu.org/">
+GNU</a>
+ <a href="/GPL">
+General Public License</a>
+.
+Alternatively, you may choose to receive this work under any other
+license that grants the right to use, copy, modify, and/or distribute
+the work, as long as that license imposes the restriction that
+derivative works have to grant the same rights and impose the same
+restriction. For example, you may choose to receive this work under
+the
+<a href="http://www.gnu.org/">
+GNU</a>
+
+<a href="/FDL">
+Free Documentation License</a>
+, the
+<a href="http://creativecommons.org/">
+CreativeCommons</a>
+
+<a href="http://creativecommons.org/licenses/sa/1.0/">
+ShareAlike</a>
+
+License, the XEmacs manual license, or
+<a href="/OLD">
+similar licenses</a>
+.
+</p>
+
+</div>
+
+</body>
+
+</html>
+

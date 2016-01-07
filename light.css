@@ -116,7 +116,8 @@ h2 {
     font-size: 1.5em;
     margin-top: 1.5em;
     padding-top: 1em;
-    border-top: 1px dotted #333;
+    /* border-top: 1px dotted #333; */
+    border-top: 1px solid #aaa;
     margin-bottom: 1em;
 }
 
@@ -124,8 +125,14 @@ h2 {
 /* h3 */
 h3 {
     font-size: 1.2em;
+    margin-top: 0.1em;
     padding-top: 0.5em;
-    padding-bottom: .5em;
+    /* padding-bottom: .5em; */
+    /* border-top: 1px solid #ddd; */
+    border-bottom: 1px solid #ccc;
+    /* text-decoration: underline; */
+    /* text-decoration: underline solid #999; */
+    margin-bottom: 0.5em;
 }
 
 /* after a subheading, no whitespace */
@@ -259,7 +266,8 @@ span.gotobar {
     padding-right: 1em;
     padding-top: 30px;
     text-align: right;
-    border-top: 1px dotted #ccc;
+    /* border-top: 1px dotted #ccc; */
+    border-top: 1px solid #ccc;
 }
 span.gotobar a {
     display: block;
@@ -289,7 +297,8 @@ div.header h1 {
     margin: 0;
     padding-left: 20px;
     padding-top: 30px;
-    border-top: 1px dotted #ccc;
+    /* border-top: 1px dotted #ccc; */
+    border-top: 1px solid #ccc;
     border-left: 1px solid #ccc;
     /* letter-spacing: 0.05em; */
 }
@@ -687,7 +696,8 @@ div.journal {
 }
 div.page {
     padding-top: 1em;
-    border-top: 1px dotted #333;
+    /* border-top: 1px dotted #333; */
+    border-top: 1px solid #aaa;
     padding-bottom: 1em;
 }
 h1 a.local {
