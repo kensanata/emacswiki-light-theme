@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+EmacsWiki: Using Portraits</title>
+<link rel="alternate" type="application/wiki" title="Edit this page" href="http://www.emacswiki.org/emacs?action=edit;id=UsingPortraits" />
+<!-- <link type="text/css" rel="stylesheet" href="https://rawgit.com/bburns/emacswiki-light-theme/master/light.css" /> -->
+<link type="text/css" rel="stylesheet" href="light.css" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="alternate" type="application/rss+xml" title="EmacsWiki" href="http://www.emacswiki.org/emacs?action=rss" />
+<link rel="alternate" type="application/rss+xml" title="EmacsWiki: UsingPortraits" href="http://www.emacswiki.org/emacs?action=rss;rcidonly=UsingPortraits" />
+<link rel="alternate" type="application/rss+xml" title="Follow-ups for BrianBurns" href="http://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content"
+      href="http://www.emacswiki.org/full.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content and diff"
+      href="http://www.emacswiki.org/full-diff.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki including minor differences"
+      href="http://www.emacswiki.org/minor-edits.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Changes for UsingPortraits only"
+      href="http://www.emacswiki.org/emacs?action=rss;rcidonly=UsingPortraits" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Follow-ups to BrianBurns"
+      href="http://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+
+<meta name="viewport" content="width=device-width" />
+
+<script type="text/javascript" src="/outliner.0.5.0.62-toc.js">
+</script>
+
+<script type="text/javascript">
+
+
+  function addOnloadEvent(fnc) {
+    if ( typeof window.addEventListener != "undefined" )
+      window.addEventListener( "load", fnc, false );
+    else if ( typeof window.attachEvent != "undefined" ) {
+      window.attachEvent( "onload", fnc );
+    }
+    else {
+      if ( window.onload != null ) {
+	var oldOnload = window.onload;
+	window.onload = function ( e ) {
+	  oldOnload( e );
+	  window[fnc]();
+	};
+      }
+      else
+	window.onload = fnc;
+    }
+  }
+
+  // https://stackoverflow.com/questions/280634/endswith-in-javascript
+  if (typeof String.prototype.endsWith !== 'function') {
+    String.prototype.endsWith = function(suffix) {
+      return this.indexOf(suffix, this.length - suffix.length) !== -1;
+    };
+  }
+
+  var initToc=function() {
+
+    var outline = HTML5Outline(document.body);
+    if (outline.sections.length == 1) {
+      outline.sections = outline.sections[0].sections;
+    }
+
+    if (outline.sections.length >
+ 1
+	|| outline.sections.length == 1
+           && outline.sections[0].sections.length >
+ 0) {
+
+      var toc = document.getElementById('toc');
+
+      if (!toc) {
+	var divs = document.getElementsByTagName('div');
+	for (var i = 0; i < divs.length; i++) {
+	  if (divs[i].getAttribute('class') == 'toc') {
+	    toc = divs[i];
+	    break;
+	  }
+	}
+      }
+
+      if (!toc) {
+	var h2 = document.getElementsByTagName('h2')[0];
+	if (h2) {
+	  toc = document.createElement('div');
+	  toc.setAttribute('class', 'toc');
+	  h2.parentNode.insertBefore(toc, h2);
+	}
+      }
+
+      if (toc) {
+        var html = outline.asHTML(true);
+        toc.innerHTML = html;
+
+	items = toc.getElementsByTagName('a');
+	for (var i = 0; i < items.length; i++) {
+	  while (items[i].textContent.endsWith('✎')) {
+            var text = items[i].childNodes[0].nodeValue;
+	    items[i].childNodes[0].nodeValue = text.substring(0, text.length - 1);
+	  }
+	}
+      }
+    }
+  }
+
+  addOnloadEvent(initToc);
+  </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body class="default">
+<div class="header">
+<a class="logo" href="http://www.emacswiki.org/emacs/SiteMap">
+<img class="logo" alt="[Home]" src="/emacs_logo.png" />
+</a>
+<div class="menu">
+<span class="gotobar bar">
+<a href="http://www.emacswiki.org/emacs/SiteMap" class="local">
+SiteMap</a>
+ <a href="http://www.emacswiki.org/emacs/Search" class="local">
+Search</a>
+ <a href="http://www.emacswiki.org/emacs/ElispArea" class="local">
+ElispArea</a>
+ <a class="local" href="http://www.emacswiki.org/emacs/HowTo">
+HowTo</a>
+ <a href="http://www.emacswiki.org/emacs/Glossary" class="local">
+Glossary</a>
+ <a class="local" href="http://www.emacswiki.org/emacs/RecentChanges">
+RecentChanges</a>
+ <a class="local" href="http://www.emacswiki.org/emacs/News">
+News</a>
+ <a href="http://www.emacswiki.org/emacs/Problems" class="local">
+Problems</a>
+ <a href="http://www.emacswiki.org/emacs/Suggestions" class="local">
+Suggestions</a>
+ </span>
+<form method="get" action="http://www.emacswiki.org/emacs" enctype="multipart/form-data" class="search" accept-charset="utf-8">
+<p>
+<label for="search">
+Search:</label>
+ <input type="text" name="search"  size="20" id="search" accesskey="f" />
+ <label for="searchlang">
+Language:</label>
+ <input type="text" name="lang"  size="10" id="searchlang" />
+ <input type="submit" name="dosearch" value="Go!" />
+</p>
+</form>
+</div>
+<h1>
+<a href="http://www.emacswiki.org/emacs?search=%22UsingPortraits%22" title="Click to search for references to this page" rel="nofollow">
+<span style="padding-right: 0.5ex;">
+Using</span>
+<span style="padding-right: 0.5ex;">
+Portraits</span>
+</a>
+</h1>
+</div>
+<div class="wrapper">
+<div class="content browse">
+<p>
+This page explains how to use portraits in discussions on this wiki.</p>
+<p>
+Short summary:</p>
+<ol>
+<li>
+Choose an image of your face somewhere on the web. We prefer portrait size 48x48.</li>
+<li>
+Use this image URL on your homepage: Put <code>
+portrait: &lt;url&gt;</code>
+ on a line somewhere on your page. &#x2013; <em>
+Note:</em>
+ This must be the URL of the image itself, not the URL of a Web page where the image might be displayed. In particular, if you upload the image to <a href="http://www.emacswiki.org/emacs/EmacsWiki" class="local">
+EmacsWiki</a>
+, this will not be the URL of the <a class="local" href="http://www.emacswiki.org/emacs/EmacsWiki">
+EmacsWiki</a>
+ page containing the image. Use your browser (command &#x201c;View Image&#x201d; or &#x201c;Copy Image Location&#x201d;) to copy the image URL.</li>
+<li>
+When you save your homepage, you should now see your portrait.</li>
+<li>
+When you use <code>
+[new:AlexSchroeder:2004-12-23 20:09 UTC]</code>
+ on a page somewhere, it will automatically be expanded to <code>
+[new:&lt;username&gt;:&lt;date&gt;]</code>
+ and it will show your portrait.</li>
+<li>
+This only works if your username is also the name of your homepage.</li>
+</ol>
+<h2>
+[new]</h2>
+<p>
+When you are using <a href="http://www.emacswiki.org/emacs/ThreadMode" class="local">
+ThreadMode</a>
+ instead of <a class="local" href="http://www.emacswiki.org/emacs/DocumentMode">
+DocumentMode</a>
+, ie. appending personal statements to a discussion instead of writing pages that could be part of a manual, then you should introduce your statements with <code>
+[new]</code>
+. This changes the background color of your statements.</p>
+<p>
+Example:</p>
+<pre>
+    [new]
+    Like this.</pre>
+<p>
+Result:</p>
+<div class="color one level0">
+<p>
+ Like this.</p>
+</div>
+
+<h2>[new:page:popup]</h2>
+
+<p>
+If you use <code>[new:page:popup]</code>, then <i> page</i> will be searched for a line starting with <code>portrait:</code> and an URL. If such an URL is found, it is inlined as an image. <i>popup</i> will be used as a tooltip for your image.
+</p>
+
+<p>Definition example:</p>
+<pre>
+    portrait<span class="builtin">:http://www</span>.emacswiki.org/alex/pics/alex-furious.jpg
+    Note how text flows around the image.
+</pre>
+
+<p>Result:</p>
+<p>
+<img class="portrait" src="http://www.emacswiki.org/alex/pics/alex-furious.jpg" alt="Foto personal" />
+ Note how text flows around the image.
+</p>
+<hr />
+
+
+<p>Usage example:</p>
+<pre>
+    [new<span class="builtin">:UsingPortraits:Yadda</span>yadda!] 
+Let your mouse pointer hover over the image!
+</pre>
+
+<p>Result:</p>
+<div class="color one level0">
+<div class="portrait">
+<p>
+<a class="newauthor" title="Yadda yadda!" href="http://www.emacswiki.org/emacs-es/UsingPortraits">
+<img class="portrait" src="http://www.emacswiki.org/alex/pics/alex-furious.jpg" alt="new: Yadda yadda!" />
+</a>
+ <br />
+ <a class="local" href="http://www.emacswiki.org/emacs-es/UsingPortraits"> UsingPortraits</a>
+</p>
+</div>
+
+<p>Let your mouse pointer hover over the image!</p>
+</div>
+
+<h2>[new:page:2004-12-23 20:09 UTC] and [new:AlexSchroeder:2004-12-23 20:09 UTC]</h2>
+<p>
+If you don&#x2019;t specify a page or popup text, this will be expanded to  <code>[new:&lt;username&gt;:&lt;date&gt;]</code> when saving the page.</p>
+<p>
+If you have a portrait defined on your homepage, and the name of your homepage is the same as your username, then the portrait will be inlined as an image. A timestamp  will be used as a popup on the image.</p>
+<p> Example:</p>
+<dl class="quote">
+<dt />
+<dd>
+<tt>
+[new::]</tt>
+</dd>
+<dt />
+<dd>
+<code>More eye-candy!  :)</code>
+</dd>
+</dl>
+<p>Result: </p>
+
+<div class="color one level0">
+<div class="portrait">
+<p>
+<a class="newauthor" title="2004-12-23 20:09 UTC" href="http://www.emacswiki.org/emacs-es/AlexSchroeder">
+<img class="portrait" src="http://alexschroeder.ch/pics/alex-drinking-coffee-48-bw.jpg" alt="new: 2004-12-23 20:09 UTC" />
+</a>
+<br />
+<a class="local" href="http://www.emacswiki.org/emacs-es/AlexSchroeder">
+AlexSchroeder</a>
+</p>
+</div>
+<p>More eye-candy! :)</p>
+</div>
+
+
+<h2>Discussion</h2>
+
+
+<div class="color one level0">
+<div class="portrait">
+<p>
+<a class="newauthor" title="2005-01-10 17:30 UTC" href="http://www.emacswiki.org/emacs-es/AlexSchroeder">
+<img class="portrait" src="http://alexschroeder.ch/pics/alex-drinking-coffee-48-bw.jpg" alt="new: 2004-12-23 20:09 UTC" />
+</a>
+<br />
+<a class="local" href="http://www.emacswiki.org/emacs-es/AlexSchroeder">AlexSchroeder</a>
+</p>
+</div>
+<p>I&#x2019;d prefer it if we didn&#x2019;t use weird icons, avatars, screenshots, or anything like that. I want to enable us to add a human touch to the wiki. We have enough symbolic overload on the web.</p>
+</div>
+
+
+<div class="color two level0">
+<div class="portrait">
+<p>
+<a class="newauthor" title="2013-02-03 16:20 UTC" href="http://www.emacswiki.org/emacs-es/NicFerrier">
+<img class="portrait" src="http://gravatar.com/avatar/e94960f8e47c178e206a869c3b81165d" alt="new: 2013-02-03 16:20 UTC" />
+</a>
+<br />
+<a class="local" href="http://www.emacswiki.org/emacs-es/NicFerrier">NicFerrier</a>
+</p>
+</div>
+<p>I wonder if we should have an index page of all avatars and their locations?</p>
+</div>
+
+
+<div class="color one level0">
+<div class="portrait">
+<p>
+<a class="newauthor" title="2013-02-03 16:31 UTC" href="http://www.emacswiki.org/emacs-es/NicFerrier">
+<img class="portrait" src="http://gravatar.com/avatar/e94960f8e47c178e206a869c3b81165d" alt="new: 2013-02-03 16:20 UTC" />
+</a>
+<br />
+<a class="local" href="http://www.emacswiki.org/emacs-es/NicFerrier">Test</a>
+</p>
+</div>
+<p>Also it seems that we should limit the size of these as we display?</p>
+</div>
+
+</div>
+
+
+<div class="wrapper close">
+</div>
+</div>
+<div class="footer">
+<hr />
+<span class="translation bar">
+<br />
+  <a class="translation new" href="http://www.emacswiki.org/emacs?action=translate;id=UsingPortraits;missing=de_es_fr_it_ja_ko_pt_ru_se_uk_zh" rel="nofollow">
+Add Translation</a>
+</span>
+<div class="edit bar">
+<a href="http://www.emacswiki.org/emacs/Comments_on_UsingPortraits" class="comment local edit" accesskey="c">
+Talk</a>
+ <a accesskey="e" class="edit" rel="nofollow" title="Click to edit this page" href="http://www.emacswiki.org/emacs?action=edit;id=UsingPortraits">
+Edit this page</a>
+ <a class="history" rel="nofollow" href="http://www.emacswiki.org/emacs?action=history;id=UsingPortraits">
+View other revisions</a>
+ <a class="admin" rel="nofollow" href="http://www.emacswiki.org/emacs?action=admin;id=UsingPortraits">
+Administration</a>
+</div>
+<div class="time">
+Last edited 2013-08-24 11:59 UTC by <a href="http://www.emacswiki.org/emacs/AlexSchroeder" title="178-83-163-103.dynamic.hispeed.ch" class="author">
+AlexSchroeder</a>
+ <a rel="nofollow" href="http://www.emacswiki.org/emacs?action=browse;diff=2;id=UsingPortraits" class="diff">
+(diff)</a>
+</div>
+<div style="float:right; margin-left:1ex;">
+
+<!-- Creative Commons License -->
+
+<a class="licence" href="http://creativecommons.org/licenses/GPL/2.0/">
+<img alt="CC-GNU GPL" style="border:none" src="/pics/cc-GPL-a.png" />
+</a>
+
+<!-- /Creative Commons License -->
+
+</div>
+
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+<Work rdf:about="">
+
+   <license rdf:resource="http://creativecommons.org/licenses/GPL/2.0/" />
+
+  <dc:type rdf:resource="http://purl.org/dc/dcmitype/Software" />
+
+</Work>
+
+
+<License rdf:about="http://creativecommons.org/licenses/GPL/2.0/">
+
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+
+   <requires rdf:resource="http://web.resource.org/cc/SourceCode" />
+
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+<p class="legal">
+
+This work is licensed to you under version 2 of the
+<a href="http://www.gnu.org/">
+GNU</a>
+ <a href="/GPL">
+General Public License</a>
+.
+Alternatively, you may choose to receive this work under any other
+license that grants the right to use, copy, modify, and/or distribute
+the work, as long as that license imposes the restriction that
+derivative works have to grant the same rights and impose the same
+restriction. For example, you may choose to receive this work under
+the
+<a href="http://www.gnu.org/">
+GNU</a>
+
+<a href="/FDL">
+Free Documentation License</a>
+, the
+<a href="http://creativecommons.org/">
+CreativeCommons</a>
+
+<a href="http://creativecommons.org/licenses/sa/1.0/">
+ShareAlike</a>
+
+License, the XEmacs manual license, or
+<a href="/OLD">
+similar licenses</a>
+.
+</p>
+
+</div>
+
+</body>
+
+</html>
+

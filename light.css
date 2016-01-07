@@ -147,6 +147,7 @@ hr {
     height: 1px;
     background-color: #ccc;
     width: 100%;
+    clear: both;
 }
 
 
@@ -352,8 +353,9 @@ div.content {
 div.portrait {
     margin: 0;
     float: left;
+    clear: left;
     font-size: 0.75em;
-    margin-right: 2em;
+    text-align: center;
 }
 div.portrait p {
     margin: 0;
@@ -365,21 +367,23 @@ img.portrait {
     float: left;
     clear: left;
     /* picture frame */
-    padding: 1ex;
-    border:#999 1px solid;
+    padding: 6px;
+    background-color: white;
+    border: 1px solid #999;
     /* scale the image */
     width: 100%;
-    max-width: 18ex;
+    /* preferred image size is 48x48px */
+    max-width: 62px; 
 }
 /* portrait caption */
 div.portrait a.local {
+float: left;
     display: block;
+    clear: both;
     text-decoration: none;
     border-bottom: none;
-    /* picture frame */
-    color: #999;
-    width: 100%;
-    max-width: 20ex;
+    min-width: 74px; /* 62px from above + 2*6px padding */
+    margin-right: 1em;
 }
 div.comment {
     clear: both;
@@ -724,6 +728,7 @@ h1 a.local {
 div.color {
     clear: both;
     padding: 1ex 1em;
+    min-height: 100px; /* give room for portraits */
 }
 /* alternate conversations with .one/.two */
 div.color.one {
