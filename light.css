@@ -314,12 +314,21 @@ div.header h1 a {
 
 
 
+/* Wrapper */
+/* .wrapper { */
+/* padding: 0; */
+/* margin: 0; */
+/* } */
+
+
 /* Content */
 div.content, div.rc, div.diff, div.comment {
     margin-left: 150px; /* see gotobar */
     padding: 1em;
     background: white;
     border-left: 1px solid #ccc;
+    min-height: 14em; /* so gotobar won't overwrite footer on small pages */
+/* border: 1px solid red; */
 }
 div.content {
     padding-top: 0.5em;
@@ -434,10 +443,13 @@ div.new { background-color: #CFFFCF; color: #000; }
 div.footer {
     clear: both;
     font-size: smaller;
+/* border: 1px solid green; */
 }
-div.footer + hr {
-    border: none;
-    margin: 10px;
+div.footer hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid #ccc;
+    margin: 0;
 }
 
 /* Footer edit bar */
