@@ -216,26 +216,40 @@ a.logo {
     /* width: 64px; */
     /* height: 64px; */
     /* just a placeholder for the moment */
+    background:transparent url(./images/coloreddots32.png);
     /* background:transparent url(./images/dottriangles32a.png); */
     /* background:transparent url(./images/leaves32blue.png); */
-    background:transparent url(./images/leaves32green.png);
-    top: 20px;
-    left: 16px;
+    /* background:transparent url(./images/leaves32green.png); */
+    /* top: 20px; */
+    /* left: 16px; */
     width: 32px;
     height: 32px;
+background-size: contain;
+height: auto;
+width: auto;
+max-width: 26px;
+max-height: 26px;
+top: 28px;
+left: 22px;
     border-bottom: none;
     text-decoration: none;
 }
 /* and add some text next to the logo */
+/* just a placeholder for now */
 a.logo:after {
     display: block;
-    /* just a placeholder for now */
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     content: "EmacsWiki";
+    /* content: "emacswiki"; */
+    /* content: "emacs wiki"; */
     font-size: 2em;
-    margin-top: 5px;
-    margin-left: 36px;
+    /* font-size: 1.5em; */
+    /* margin-top: 5px; */
+    /* margin-left: 36px; */
+margin-top: -4px;
+margin-left: 32px;
     color: #555;
+    line-height: 0.9em;
 }
 
 
@@ -316,13 +330,6 @@ div.header h1 a {
 
 
 
-/* Wrapper */
-/* .wrapper { */
-/* padding: 0; */
-/* margin: 0; */
-/* } */
-
-
 /* Content */
 div.content, div.rc, div.diff, div.comment {
     margin-left: 150px; /* see gotobar */
@@ -331,7 +338,6 @@ div.content, div.rc, div.diff, div.comment {
     /* border-left: 1px solid #ccc; */
     border-left: 1px dotted #ccc;
     min-height: 14em; /* so gotobar won't overwrite footer on small pages */
-/* border: 1px solid red; */
 }
 div.content {
     padding-top: 0.5em;
@@ -350,7 +356,6 @@ div.content {
 
 
 /* Portraits */
-/* These show when start post with [new::] and have a portrait image on homepage */
 /* see https://oddmuse.org/wiki/Portraits_Support_Extension */
 div.portrait {
     margin: 0;
@@ -375,7 +380,7 @@ img.portrait {
     /* scale the image */
     width: 100%;
     /* preferred image size is 48x48px */
-    max-width: 62px; 
+    max-width: 62px;
 }
 /* portrait caption */
 div.portrait a.local {
