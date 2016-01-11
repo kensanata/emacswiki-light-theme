@@ -32,8 +32,8 @@ body {
 }
 
 
-/* Code and Pre */
-/* note: syntax highlighting is at EOF */
+/* Code - used for keysequences, function references (anything in `...') */
+/* Pre - used for blocks of code */
 code, pre {
     color: #444;
     /* background-color: #fcfbfb; */
@@ -47,11 +47,11 @@ code, pre {
     /* increases the size of the text, so need to counteract that here */
     font-size: 0.8em;
 }
-/* Code - used for keysequences, function references (anything in `...') */
+
 code {
     padding: 2px;
 }
-/* Pre - used for blocks of code */
+
 pre {
     margin: 1em 0;
     padding: 1em 2em;
@@ -117,7 +117,6 @@ h2 {
     margin-top: 1.5em;
     padding-top: 1em;
     border-top: 1px dotted #888;
-    /* border-top: 1px solid #aaa; */
     margin-bottom: 1em;
 }
 
@@ -127,11 +126,7 @@ h3 {
     font-size: 1.2em;
     margin-top: 0.1em;
     padding-top: 0.5em;
-    /* padding-bottom: .5em; */
-    /* border-top: 1px solid #ddd; */
     border-bottom: 1px solid #ccc;
-    /* text-decoration: underline; */
-    /* text-decoration: underline solid #999; */
     margin-bottom: 0.5em;
 }
 
@@ -169,8 +164,8 @@ table td,th {
 /* } */
 
 
-/* ? */
 /* Table on the new page */
+/* ? */
 p.table a { float: left; width: 20ex; }
 p.table + p { clear: both; padding-top: 10px; }
 
@@ -209,45 +204,26 @@ a.logo {
     position: absolute;
     top: 6px;
     left: 10px;
-    /* background:transparent url(./images/emacswiki.png); */
-    /* width: 196px; */
-    /* height: 112px; */
-    /* background:transparent url(./images/leaf_light64x64.png); */
-    /* width: 64px; */
-    /* height: 64px; */
     /* just a placeholder for the moment */
-    background:transparent url(./images/coloreddots32.png);
-    /* background:transparent url(./images/dottriangles32a.png); */
-    /* background:transparent url(./images/leaves32blue.png); */
-    /* background:transparent url(./images/leaves32green.png); */
-    /* top: 20px; */
-    /* left: 16px; */
-    width: 32px;
-    height: 32px;
-background-size: contain;
-height: auto;
-width: auto;
-max-width: 26px;
-max-height: 26px;
-top: 28px;
-left: 22px;
+    background: transparent url(./images/coloreddots32.png);
+    background-size: contain;
+    height: auto;
+    width: auto;
+    max-width: 26px;
+    max-height: 26px;
+    top: 28px;
+    left: 22px;
     border-bottom: none;
     text-decoration: none;
 }
 /* and add some text next to the logo */
-/* just a placeholder for now */
 a.logo:after {
     display: block;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     content: "EmacsWiki";
-    /* content: "emacswiki"; */
-    /* content: "emacs wiki"; */
     font-size: 2em;
-    /* font-size: 1.5em; */
-    /* margin-top: 5px; */
-    /* margin-left: 36px; */
-margin-top: -4px;
-margin-left: 32px;
+    margin-top: -4px;
+    margin-left: 32px;
     color: #555;
     line-height: 0.9em;
 }
@@ -454,7 +430,6 @@ div.new { background-color: #CFFFCF; color: #000; }
 div.footer {
     clear: both;
     font-size: smaller;
-/* border: 1px solid green; */
 }
 div.footer hr {
     border: 0;
@@ -475,14 +450,12 @@ div.footer span.edit {
 
 /* Legal */
 p.legal {
-    /* float: left; */
     margin: 0;
     padding: 0;
     font-style: italic;
 }
 /* also has <div style="float:right; margin-left:1ex;"> */
 a.license {
-    /* margin-top: 2em; */
     border-bottom: none;
     text-decoration: none;
 }
@@ -751,9 +724,8 @@ div.page div.portrait + p {
 
 
 
-
-
 /* Local Variables: */
 /* css-indent-offset: 4 */
 /* whitespace-mode: t */
 /* End: */
+
