@@ -204,13 +204,14 @@ a.logo {
     top: 6px;
     left: 10px;
     /* just a placeholder for the moment */
-    background: url(./images/logo225x39.png);
-    width: 225px;
-    height: 39px;
+    background: url(./images/logo218x38.png);
+    width: 218px;
+    height: 38px;
     top: 22px;
     left: 22px;
     border-bottom: none;
     text-decoration: none;
+float: left;
 /* border: 1px solid red; */
 }
 
