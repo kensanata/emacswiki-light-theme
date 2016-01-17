@@ -225,6 +225,12 @@ a.logo {
     margin-top: 0.1em;
     padding: 0;
 }
+input#search + label {
+    display: none;
+}
+input#searchlang {
+    display: none;
+}
 
 
 /* Bars (Goto bar, Translation bar, Edit bar) */
