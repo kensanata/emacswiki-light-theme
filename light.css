@@ -46,11 +46,9 @@ code, pre {
     /* increases the size of the text, so need to counteract that here */
     font-size: 0.8em;
 }
-
 code {
     padding: 2px;
 }
-
 pre {
     margin: 1em 0;
     padding: 1em 2em;
@@ -119,7 +117,6 @@ h2 {
     margin-bottom: 1em;
 }
 
-
 /* h3 */
 h3 {
     font-size: 1.2em;
@@ -183,7 +180,6 @@ dt {
 
 /* Header - includes logo, search bar, goto bar, and article title */
 div.header {
-    margin-left: 150px;
 }
 div.header .specialdays {
     display: block;
@@ -200,9 +196,6 @@ img.logo {
 /* ...and override it with a different image */
 a.logo {
     display: block;
-    position: absolute;
-    top: 6px;
-    left: 10px;
     /* just a placeholder for the moment */
     background: url(./images/logo218x38.png);
     width: 218px;
@@ -211,25 +204,31 @@ a.logo {
     left: 22px;
     border-bottom: none;
     text-decoration: none;
-float: left;
-/* border: 1px solid red; */
+    float: left;
 }
 
 
 /* Search bar */
+/* don't let search bar overwrite logo */
+@media (max-width: 580px) {
+    form.search {
+        margin-top: 0.5em;
+    }
+}
 .header .menu {
     float: right;
     height: 2.5em;
+}
+form.search {
+    float: right;
+    clear: both;
 }
 .menu p {
     margin: 0;
     margin-top: 0.1em;
     padding: 0;
 }
-input#search + label {
-    display: none;
-}
-input#searchlang {
+label[for="searchlang"], input#searchlang {
     display: none;
 }
 
@@ -242,28 +241,37 @@ span.bar a {
 
 
 /* Goto bar (SiteMap, HowTo, etc) - on left side */
-span.gotobar {
-    position: absolute;
-    top: 3.5em;
-    left: 10px;
-    width: 140px;
-    padding-right: 1em;
-    padding-top: 30px;
-    text-align: right;
-    border-top: 1px dotted #ccc;
-    /* border-top: 1px solid #ccc; */
+@media (max-width: 580px) {
+    span.gotobar {
+        float: left;
+        margin-top: 0.5em;
+        text-align: right;
+    }
+}
+@media (min-width: 580px) {
+    span.gotobar {
+        position: absolute;
+        top: 3.5em;
+        left: 10px;
+        width: 140px;
+        padding-right: 1em;
+        padding-top: 30px;
+        text-align: right;
+        border-top: 1px dotted #ccc;
+    }
+    span.gotobar a {
+        display: block;
+        margin-top: 0.5em;
+        font-size: 100%;
+    }
 }
 span.gotobar a {
-    display: block;
-    font-size: 100%;
-    margin-top: 0.5em;
     border-bottom: none;
     text-decoration: none;
 }
 span.gotobar a:hover {
     color: #069;
 }
-
 
 /* Messages */
 div.message {
@@ -277,18 +285,25 @@ div.message {
     box-shadow: 2px 2px 2px 0 #888;
 }
 
-
 /* h1 (title) */
+@media (max-width: 580px) {
+    div.header h1 {
+        margin-top: 1em;
+        float: left;
+        clear: both;
+    }
+}
+@media (min-width: 580px) {
+    div.header h1 {
+        margin-left: 150px;
+        border-left: 1px dotted #ccc;
+        border-top: 1px dotted #ccc;
+    }
+}
 div.header h1 {
     font-size: 2em;
-    margin: 0;
     padding-left: 20px;
     padding-top: 30px;
-    border-top: 1px dotted #ccc;
-    /* border-top: 1px solid #ccc; */
-    border-left: 1px dotted #ccc;
-    /* border-left: 1px solid #ccc; */
-    /* letter-spacing: 0.05em; */
 }
 div.header h1 a {
     color: inherit;
@@ -298,14 +313,21 @@ div.header h1 a {
 }
 
 
-
 /* Content */
+@media (max-width: 580px) {
+    div.content, div.rc, div.diff, div.comment {
+        clear: both;
+    }
+}
+@media (min-width: 580px) {
+    div.content, div.rc, div.diff, div.comment {
+        margin-left: 150px; /* see gotobar */
+        border-left: 1px dotted #ccc;
+    }
+}
 div.content, div.rc, div.diff, div.comment {
-    margin-left: 150px; /* see gotobar */
     padding: 1em;
     background: white;
-    /* border-left: 1px solid #ccc; */
-    border-left: 1px dotted #ccc;
     min-height: 14em; /* so gotobar won't overwrite footer on small pages */
 }
 div.content {
@@ -410,13 +432,10 @@ div.month a.edit {
 }
 
 
-
-
 /* diff */
 div.diff { padding-left: 5%; padding-right: 5%; }
 div.old { background-color: #FFFFAF; color: #000; }
 div.new { background-color: #CFFFCF; color: #000; }
-
 
 
 /* Footer */
@@ -442,6 +461,12 @@ div.footer span.edit {
 
 
 /* Legal */
+@media (max-width: 580px) {
+    /* hide CC logo */
+    .footer .licence {
+        display: none;
+    }
+}
 p.legal {
     margin: 0;
     padding: 0;
