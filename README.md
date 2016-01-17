@@ -48,7 +48,9 @@ To test the theme you can either download the project and open one of the '''tes
 
 Note: some of the test* files may have extra whitespace here and there - this is just due to globally adding a linefeed after '>' characters to make the HTML more readable. 
 
-To reset your theme go to http://www.emacswiki.org/emacs/CSS/ and choose one of the existing themes. 
+To reset your theme go to
+http://www.emacswiki.org/emacs?action=browse;id=CSS;bootstrap=1, or see
+http://www.emacswiki.org/emacs/CSS/ and choose one of the existing themes.
 
 
 License

@@ -204,27 +204,14 @@ a.logo {
     top: 6px;
     left: 10px;
     /* just a placeholder for the moment */
-    background: transparent url(./images/coloreddots32.png);
-    background-size: contain;
-    height: auto;
-    width: auto;
-    max-width: 26px;
-    max-height: 26px;
-    top: 28px;
+    background: url(./images/logo225x39.png);
+    width: 225px;
+    height: 39px;
+    top: 22px;
     left: 22px;
     border-bottom: none;
     text-decoration: none;
-}
-/* and add some text next to the logo */
-a.logo:after {
-    display: block;
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-    content: "EmacsWiki";
-    font-size: 2em;
-    margin-top: -4px;
-    margin-left: 32px;
-    color: #555;
-    line-height: 0.9em;
+/* border: 1px solid red; */
 }
 
 
