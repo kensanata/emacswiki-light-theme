@@ -67,11 +67,12 @@ code, pre {
     font-size: 0.8em;
 }
 code {
-    padding: 2px;
+    padding: 1px;
 }
 pre {
     margin: 1em 0;
     padding: 1em 2em;
+    line-height: 1.4em;
 }
 
 
