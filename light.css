@@ -109,7 +109,8 @@ pre {
 /* Links */
 a {
     /* color: gray; */
-    color: #09c;
+    /* color: #09c; */
+    color: #07b;
     background-color: inherit;
 
     /* This works on firefox, just shows as a plain underline in chrome */
@@ -528,6 +529,10 @@ div.footer span.edit {
     white-space: nowrap;
 }
 
+div.time a.author, a.diff {
+    color: gray;
+}
+
 
 /* Legal */
 @media (max-width: 580px) {
@@ -541,11 +546,14 @@ p.legal {
     padding: 0;
     font-style: italic;
 }
-/* also has <div style="float:right; margin-left:1ex;"> */
-a.license {
-    border-bottom: none;
-    text-decoration: none;
+p.legal a {
+    color: gray;
 }
+/* also has <div style="float:right; margin-left:1ex;"> */
+/* a.license { */
+/*     border-bottom: none; */
+/*     text-decoration: none; */
+/* } */
 
 
 /* ? */
