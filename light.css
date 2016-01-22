@@ -189,8 +189,10 @@ h2 + p, h3 + p, h2 + div p, h3 + div p  {
 /* hr */
 hr {
     border: 0;
-    height: 1px;
-    background-color: #ccc;
+    height: 0;
+    border-bottom: 1px solid #ccc;
+    padding-top: 1em;
+    margin-bottom: 2em;
     width: 100%;
     clear: both;
 }
@@ -397,7 +399,9 @@ div.content, div.rc, div.diff, div.comment {
 div.content {
     padding-top: 0.5em;
 }
-
+/* div.content hr { */
+    /* padding: 1em 0; */
+/* } */
 
 /* Table of contents */
 .toc {
@@ -512,10 +516,7 @@ div.footer {
     font-size: smaller;
 }
 div.footer hr {
-    border: 0;
-    height: 1px;
-    background-color: #ddd;
-    margin: 0; /* close gap with vertical line */
+    margin: -1em; /* close gap with vertical line */
 }
 
 /* Footer edit bar */
