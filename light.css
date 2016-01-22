@@ -75,7 +75,7 @@ a:link, a:visited {
     background-color: inherit;
 }
 a:active, a:hover {
-    color: #079;
+    color: #0ae;
 }
 /* external links */
 /* a.url:before { content: "\2197"; } */
