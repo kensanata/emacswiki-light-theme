@@ -13,15 +13,14 @@ welcome!
 
 ### Testing ###
 
-To test the theme you can visit
-http://www.emacswiki.org/emacs?action=browse;bootstrap=0;id=CSSPreview;css=https://rawgit.com/bburns/emacswiki-light-theme/master/light.css -
+To test the theme you can visit [this link](http://www.emacswiki.org/emacs?action=browse;bootstrap=0;id=CSSPreview;css=https://rawgit.com/bburns/emacswiki-light-theme/master/light.css) and use the wiki as normally -
 this uses a service provided by http://rawgit.com to serve github files with the
 appropriate content headers, though it will change to a more permanent location
 later. 
 
-To reset your theme go to
-http://www.emacswiki.org/emacs?action=browse;id=CSS;bootstrap=1, or see
-http://www.emacswiki.org/emacs/CSS/ and choose one of the existing themes.
+To reset your theme to the default Bootstrap, visit
+[this link](http://www.emacswiki.org/emacs?action=browse;id=CSS;bootstrap=1), or
+see http://www.emacswiki.org/emacs/CSS/ and choose one of the existing themes.
 
 You can also download the project and open one of the '''test*.htm''' files,
 though note that some files may have extra whitespace here and there - this is
@@ -31,7 +30,9 @@ more readable.
 
 ### Discussion ###
 
-Some discussion is available on Reddit, for [version 1](https://www.reddit.com/r/emacs/comments/40u8fx/new_emacswiki_theme/) and [version 2](). 
+Some discussion is available on Reddit, for
+[version 1](https://www.reddit.com/r/emacs/comments/40u8fx/new_emacswiki_theme/)
+and [version 2]().
 
 
 ### Fonts ###
@@ -68,9 +69,8 @@ weight than the Garamond included with Windows.
 
 #### Italic Text ####
 
-For italic text, the [ET Book font](https://github.com/edwardtufte/et-book) is
-used (the font from in Edward Tufte's books), as it looks nicer than the
-computer-generated EB Garamond italic. ET Book has an MIT License.
+For italic text, one of the built-in serif fonts is used, as EB Garamond lacks
+an italic face, and so is computer generated.
 
 
 ### Existing themes ###
@@ -105,9 +105,9 @@ Some features drawn from other themes:
 
 ### Todo ###
 
-* Some further ideas
+* Some further things to do
 
- [ ] make new logo with 'emacswiki' in it  
+ [ ] make new logo  
  [ ] change menu items from "SiteMap" to "Site Map", etc  
  [ ] update the favicon  
  [ ] add links to emacs main page, manuals, twitter, rss, along sidebar  
@@ -116,5 +116,5 @@ Some features drawn from other themes:
 
 ### About ###
 
-This CSS has the MIT License. Developed by Brian Burns (http://bburns.github.io).
+This CSS has the MIT License. 
 

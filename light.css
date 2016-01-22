@@ -18,26 +18,23 @@ Developed by Brian Burns (http://bburns.github.io).
 
 @charset "UTF-8";
 
-/* a light serif font from Google Fonts */
+/* an open source Garamond, slightly heavier than Windows Garamond */
 @import url(http://fonts.googleapis.com/css?family=EB+Garamond);
-
 @font-face {
     font-family: "EB Garamond", serif;
     font-weight: normal;
     font-style: normal;
 }
 
+/* EB Garamond lacks an italic version, so use one of these instead */
 @font-face {
-    font-family: "et-book";
-    src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
-    src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
+    font-family: "Hoefler Text", Constantia, Garamond, Palatino, Baskerville, "Book Antiqua", Cochin, Georgia, serif;
     font-weight: normal;
     font-style: italic;
 }
 
 
 html {
-    /* font-family: 'EB Garamond', serif; */
     font-size: 1.1em;
     letter-spacing: 0.005em;
 }
@@ -132,9 +129,9 @@ h1, h2, h3, h4 {
 /* line and whitespace before subheadings */
 h2 {
     font-size: 1.5em;
-    margin-top: 1.5em;
+    margin-top: 1em;
     padding-top: 1em;
-    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ddd;
     margin-bottom: 1em;
 }
 
