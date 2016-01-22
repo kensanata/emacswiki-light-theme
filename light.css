@@ -24,7 +24,7 @@ This file is in the public domain.
 /*   src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot"); */
 /*   src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg"); */
 /*   font-weight: normal; */
-/*   font-style: normal */
+/*   font-style: normal; */
 /* } */
 
 /* @font-face { */
@@ -43,14 +43,15 @@ This file is in the public domain.
 /* /\*   font-style: normal *\/ */
 /* /\* } *\/ */
 
-/* /\* @font-face { *\/ */
-/* /\*   font-family: "et-book-roman-old-style"; *\/ */
-/* /\*   src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot"); *\/ */
-/* /\*   src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg"); *\/ */
-/* /\*   font-weight: normal; *\/ */
-/* /\*   font-style: normal; *\/ */
-/* /\* } *\/ */
+@font-face {
+  font-family: "et-book-roman-old-style";
+  src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot");
+  src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 
+@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
 
 
 /* ---------------------------------------------------------------------- */
@@ -58,6 +59,19 @@ This file is in the public domain.
 /* ---------------------------------------------------------------------- */
 
 html { 
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: "Hoefler Text", Constantia, Garamond, Palatino, Baskerville, "Book Antiqua", Cochin, Georgia, serif; */
+    /* font-family: et-book, serif; */
+    /* letter-spacing: 0.01em; */
+    
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1em;
+    letter-spacing: 0.005em;
+    
+    /* font-family: 'Garamond', serif; */
+    /* font-size: 1.1em; */
+    /* letter-spacing: 0.005em; */
+    
     /* font-size: 15px;  */
     /* font-size: 20px;  */
 }
@@ -75,9 +89,9 @@ body {
     /* Serif fonts */
     /* Hoefler Text is an Apple font since 1991 */
     /* Constantia is a freely available Microsoft font */
-    font-family: "Hoefler Text", Constantia, Garamond, Palatino, Baskerville, "Book Antiqua", Cochin, Georgia, serif;
+    /* font-family: "Hoefler Text", Constantia, Garamond, Palatino, Baskerville, "Book Antiqua", Cochin, Georgia, serif; */
     /* font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; */
-
+    
     /* Sans-serif fonts */
     /* font-family: "Lucida Grande", Geneva, Arial, sans-serif; */
 }
@@ -126,9 +140,9 @@ a:link, a:visited {
 a:active, a:hover {
     color: #079;
 }
-/* ? */
-a[class="url outside"]:before { content: "\2197"; }
-.safari a[class="url outside"]:before { content: url(http://www.emacswiki.org/alex/pics/arrow.png); }
+/* external links */
+/* a.url:before { content: "\2197"; } */
+/* .safari a.url:before { content: url(http://www.emacswiki.org/alex/pics/arrow.png); } */
 
 /* not sure where these are used... */
 a.near:link { color: #036; background-color: inherit; }
@@ -294,7 +308,7 @@ label[for="searchlang"], input#searchlang {
 
 /* Bars (Goto bar, Translation bar, Edit bar) */
 span.bar a {
-    font-size: smaller;
+    /* font-size: smaller; */
     color: #444;
 }
 
@@ -304,20 +318,16 @@ span.bar a {
     span.gotobar {
         float: left;
         margin-top: 0.5em;
-        /* text-align: right; */
     }
 }
 @media (min-width: 580px) {
     span.gotobar {
         position: absolute;
         top: 3.5em;
-        /* left: 10px; */
-        /* width: 140px; */
         left: 20px;
         width: 130px;
         padding-right: 1em;
         padding-top: 30px;
-        /* text-align: right; */
         /* border-top: 1px dotted #ccc; */
         /* border-top: 1px dotted #888; */
         border-top: 1px solid #ccc;
@@ -325,8 +335,10 @@ span.bar a {
     span.gotobar a {
         display: block;
         margin-top: 0.5em;
-        font-size: 100%;
     }
+}
+span.gotobar {
+    line-height: 1em;
 }
 span.gotobar a {
     border-bottom: none;
@@ -367,6 +379,7 @@ div.message {
 }
 div.header h1 {
     font-size: 2em;
+    /* letter-spacing: -0.02em; */
     padding-left: 20px;
     padding-top: 30px;
 }
@@ -514,7 +527,8 @@ div.new { background-color: #CFFFCF; color: #000; }
 /* Footer */
 div.footer {
     clear: both;
-    font-size: smaller;
+    /* font-size: smaller; */
+    font-size: 0.9em;
 }
 div.footer hr {
     margin: -1em; /* close gap with vertical line */
@@ -546,6 +560,7 @@ p.legal {
     margin: 0;
     padding: 0;
     font-style: italic;
+font-size: 1.1em;
 }
 p.legal a {
     color: gray;
@@ -620,7 +635,7 @@ div.refer {
     zoom:1;
     padding:4px 12px;
     margin-bottom:0;
-    font-size:14px;
+    /* font-size:14px; */
     line-height:20px;
     text-align:center;
     vertical-align:middle;
@@ -799,7 +814,8 @@ div.page {
 }
 h1 a.local {
     color: #222;
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
+    font-size: 0.9em;
     border-bottom: none;
     text-decoration: none;
 }
