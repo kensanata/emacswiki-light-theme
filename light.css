@@ -108,7 +108,8 @@ pre {
 
 /* Links */
 a {
-    color: gray;
+    /* color: gray; */
+    color: #09c;
     background-color: inherit;
 
     /* This works on firefox, just shows as a plain underline in chrome */
@@ -124,7 +125,7 @@ a:link, a:visited {
 a:active, a:hover {
     color: #079;
 }
-/* External links */
+/* ? */
 a[class="url outside"]:before { content: "\2197"; }
 .safari a[class="url outside"]:before { content: url(http://www.emacswiki.org/alex/pics/arrow.png); }
 
@@ -300,19 +301,22 @@ span.bar a {
     span.gotobar {
         float: left;
         margin-top: 0.5em;
-        text-align: right;
+        /* text-align: right; */
     }
 }
 @media (min-width: 580px) {
     span.gotobar {
         position: absolute;
         top: 3.5em;
-        left: 10px;
-        width: 140px;
+        /* left: 10px; */
+        /* width: 140px; */
+        left: 20px;
+        width: 130px;
         padding-right: 1em;
         padding-top: 30px;
-        text-align: right;
-        border-top: 1px dotted #ccc;
+        /* text-align: right; */
+        /* border-top: 1px dotted #ccc; */
+        border-top: 1px dotted #888;
     }
     span.gotobar a {
         display: block;
@@ -351,8 +355,10 @@ div.message {
 @media (min-width: 580px) {
     div.header h1 {
         margin-left: 150px;
-        border-left: 1px dotted #ccc;
-        border-top: 1px dotted #ccc;
+        /* border-left: 1px dotted #ccc; */
+        /* border-top: 1px dotted #ccc; */
+        border-left: 1px dotted #888;
+        border-top: 1px dotted #888;
     }
 }
 div.header h1 {
@@ -377,7 +383,8 @@ div.header h1 a {
 @media (min-width: 580px) {
     div.content, div.rc, div.diff, div.comment {
         margin-left: 150px; /* see gotobar */
-        border-left: 1px dotted #ccc;
+        /* border-left: 1px dotted #ccc; */
+        border-left: 1px dotted #888;
     }
 }
 div.content, div.rc, div.diff, div.comment {
@@ -398,6 +405,7 @@ div.content {
     margin: 2em 0;
     line-height: 1.4em;
     border: 1px solid #ccc;
+    /* border: 1px dotted #888; */
 }
 
 
@@ -712,7 +720,8 @@ div.rc td, th {
     border: none;
 }
 div.rc form {
-    border-top: 1px solid #ccc;
+    /* border-top: 1px solid #ccc; */
+    border-top: 1px dotted #888;
     padding: 1em 0;
 }
 
@@ -735,7 +744,8 @@ textarea[name="summary"] {
 /* Comment */
 div.comment form {
     padding: 1em;
-    border-top: 1px solid #ccc;
+    /* border-top: 1px solid #ccc; */
+    border-top: 1px dotted #888;
 }
 span.time {
     /* The default Constantia doesn't have monospace numbers, so use this. */
@@ -769,7 +779,8 @@ div.journal {
 div.page {
     padding-top: 1em;
     /* border-top: 1px dotted #333; */
-    border-top: 1px solid #aaa;
+    /* border-top: 1px solid #aaa; */
+    border-top: 1px dotted #888;
     padding-bottom: 1em;
 }
 h1 a.local {
@@ -787,7 +798,8 @@ div.color {
 div.color.one {
     color: #444;
     background-color: #f4f3f2;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
+    border: 1px dotted #999;
 }
 /* news text */
 /* make text match the top margin of the portrait */
