@@ -64,12 +64,12 @@ a {
     color: #07b;
     background-color: inherit;
 
-    /* This works on firefox, just shows as a plain underline in chrome */
-    text-decoration: underline dotted #09c;
+    /* This works on firefox, but just shows as a plain underline in chrome, which looks terrible */
+    /* text-decoration: underline dotted #09c; */
 
     /* Faking a dotted underline, works on all browsers but can't adjust position */
-    /* text-decoration: none; */
-    /* border-bottom: 1px dotted #09c; */
+    text-decoration: none;
+    border-bottom: 1px dotted #09c;
 }
 a:link, a:visited {
     background-color: inherit;
