@@ -15,7 +15,7 @@ welcome!
 
 [Version 1](http://i.imgur.com/2pfc65I.png)
 
-[Version 2](http://i.imgur.com/xjinBAf.png)
+[Version 2](http://i.imgur.com/MiJl9yv.png)
 
 
 ### Testing ###
