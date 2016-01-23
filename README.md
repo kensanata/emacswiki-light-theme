@@ -13,11 +13,9 @@ welcome!
 
 ### Screenshots ###
 
-Version 2:  
-![Version 2]()
+[Version 1](http://i.imgur.com/2pfc65I.png)
 
-Version 1:  
-![Version 1](http://i.imgur.com/NCjDpe3.png)
+[Version 2](http://i.imgur.com/xjinBAf.png)
 
 
 ### Testing ###
@@ -47,7 +45,18 @@ and [version 2]().
 ### Fonts ###
 
 The font used is Garamond - it's a bit on the light side, but most other serif
-fonts tried seemed to be too heavy.
+fonts seemed to be too heavy.
+
+
+### Todo ###
+
+* Some further things to do
+
+ [ ] make new logo  
+ [ ] change menu items from "SiteMap" to "Site Map", etc  
+ [ ] update the favicon  
+ [ ] add links to emacs main page, manuals, twitter, rss, along sidebar  
+ [ ] add a back to top link at bottom  
 
 
 ### Existing themes ###
@@ -60,35 +69,24 @@ at http://imgur.com/a/czk9D.
 Some features drawn from other themes:
 
 * Cali+
- [x] use as a base
- [x] have section separators but lighter dots
- [x] headline text in normal font
- [x] box around table of contents
- [x] buttons at bottom
+ [x] use as a base  
+ [x] have section separators but lighter dots  
+ [x] headline text in normal font  
+ [x] box around table of contents  
+ [x] buttons at bottom  
 
 * Made in California
- [x] gray links
- [x] larger `function references' text (had been too small on my system)
+ [x] gray links  
+ [x] larger `function references' text (had been too small on my system)  
 
 * Planet CSS
- [x] code block font
- [x] colored syntax highlighting
+ [x] code block font  
+ [x] colored syntax highlighting  
 
 * Wikipedia
- [x] large logo on left
- [x] try headings with underlines instead of section separators
- [x] try a vertical sidebar
-
-
-### Todo ###
-
-* Some further things to do
-
- [ ] make new logo
- [ ] change menu items from "SiteMap" to "Site Map", etc
- [ ] update the favicon
- [ ] add links to emacs main page, manuals, twitter, rss, along sidebar
- [ ] add a back to top link at bottom
+ [x] large logo on left  
+ [x] try headings with underlines instead of section separators  
+ [x] try a vertical sidebar  
 
 
 ### About ###
