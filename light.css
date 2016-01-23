@@ -19,13 +19,17 @@ Released under the MIT License.
 html {
     /* Garamond is nice but a bit too light */
     /* Constantia is too heavy - almost bold */
-    /* Georgia is the happiest medium, though a bit heavy */
+    /* Georgia is also too heavy */
 
+    /* Garamond comes with Windows and Apple */
     /* Georgia comes with Windows and Apple */
     /* Liberation Serif comes with Ubuntu */
-    font-family: Georgia, "Liberation Serif", Garamond, serif;
+    /* font-family: Georgia, "Liberation Serif", Garamond, serif; */
+    font-family: Garamond, "Liberation Serif", serif;
     font-size: 1.3em;
     /* letter-spacing: -0.015em; */
+    /* letter-spacing: -0.02em; */
+    letter-spacing: -0.022em;
 }
 
 body {
@@ -123,7 +127,7 @@ h2 {
     /* underline */
     margin-top: 1.2em;
     margin-bottom: 1em;
-    border-bottom: 1px solid #bbb;
+    border-bottom: 1px solid #aaa;
 
     /* divider */
     /* margin-top: 1em; */
