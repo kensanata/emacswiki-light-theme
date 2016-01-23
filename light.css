@@ -7,43 +7,31 @@ A combination of some of the existing themes on the EmacsWiki at
 http://emacswiki.org, with various other additions.
 The base theme was the cali2.css theme - question marks indicate things left
 over which might be removable.
-This file has the MIT License.
-Developed by Brian Burns (http://bburns.github.io).
+Released under the MIT License.
 ----------------------------------------------------------------------------
 */
+
 
 /* ---------------------------------------------------------------------- */
 /* Base */
 /* ---------------------------------------------------------------------- */
 
-@charset "UTF-8";
-
-/* an open source Garamond, slightly heavier than Windows Garamond */
-@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
-@font-face {
-    font-family: "EB Garamond", serif;
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* EB Garamond lacks an italic version, so use one of these instead */
-@font-face {
-    font-family: "Hoefler Text", Constantia, Garamond, Palatino, Baskerville, "Book Antiqua", Cochin, Georgia, serif;
-    font-weight: normal;
-    font-style: italic;
-}
-
-
 html {
-    font-size: 1.1em;
-    letter-spacing: 0.005em;
+    /* Garamond is nice but a bit too light */
+    /* Constantia is too heavy - almost bold */
+    /* Georgia is the happiest medium, though a bit heavy */
+
+    /* Georgia comes with Windows and Apple */
+    /* Liberation Serif comes with Ubuntu */
+    font-family: Georgia, "Liberation Serif", Garamond, serif;
+    font-size: 1.3em;
+    /* letter-spacing: -0.015em; */
 }
 
 body {
     margin: 0 0 1.5em 0;
     padding: 1em 1em;
     line-height: 1.3em;
-
     color: #111;
     background-color: #fdfcfc;
 }
@@ -53,7 +41,7 @@ body {
 /* Pre - used for blocks of code */
 code, pre {
     color: #444;
-    background-color: #faf9f9;
+    background-color: #f9f8f8;
     border: 1px solid #ddd;
 
     /* These fonts are all pretty similar, except Courier and monospace */
@@ -125,20 +113,29 @@ h1, h2, h3, h4 {
     clear: both;
 }
 
+/* h1 */
+/* defined further below */
+
 /* h2 */
-/* line and whitespace before subheadings */
 h2 {
-    font-size: 1.5em;
-    margin-top: 1em;
-    padding-top: 1em;
-    border-bottom: 1px solid #ddd;
+    font-size: 1.7em;
+
+    /* underline */
+    margin-top: 1.2em;
     margin-bottom: 1em;
+    border-bottom: 1px solid #bbb;
+
+    /* divider */
+    /* margin-top: 1em; */
+    /* padding-top: 1em; */
+    /* border-top: 1px solid #bbb; */
+    /* margin-bottom: 1em; */
 }
 
 /* h3 */
 h3 {
     font-style: italic;
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-top: 0.1em;
     padding-top: 0.5em;
     margin-bottom: 0.5em;
@@ -172,7 +169,7 @@ table {
     /* border-collapse: collapse; /\* otherwise leaves gaps in between cell outlines *\/ */
 }
 table tr.first td {
-    border-bottom: solid 1px #bbb;
+    border-bottom: 1px solid #bbb;
 }
 table td,th {
     padding: 0 1ex;
@@ -260,6 +257,7 @@ label[for="searchlang"], input#searchlang {
 /* Bars (Goto bar, Translation bar, Edit bar) */
 span.bar a {
     /* font-size: smaller; */
+font-size: 1em;
     color: #444;
 }
 
@@ -279,7 +277,7 @@ span.bar a {
         width: 130px;
         padding-right: 1em;
         padding-top: 30px;
-        border-top: 1px solid #ccc;
+        border-top: 1px solid #888;
     }
     span.gotobar a {
         display: block;
@@ -297,6 +295,7 @@ span.gotobar a:hover {
     color: #069;
 }
 
+
 /* Messages */
 div.message {
     position: absolute;
@@ -307,6 +306,7 @@ div.message {
     color: #000;
     box-shadow: 2px 2px 2px 0 #888;
 }
+
 
 /* h1 (title) */
 @media (max-width: 580px) {
@@ -319,12 +319,13 @@ div.message {
 @media (min-width: 580px) {
     div.header h1 {
         margin-left: 150px;
-        border-left: 1px solid #ccc;
-        border-top: 1px solid #ccc;
+        border-left: 1px solid #888;
+        border-top: 1px solid #888;
     }
 }
 div.header h1 {
-    font-size: 2em;
+/* font-weight: bold; */
+    font-size: 2.5em;
     padding-left: 20px;
     padding-top: 30px;
 }
@@ -345,7 +346,7 @@ div.header h1 a {
 @media (min-width: 580px) {
     div.content, div.rc, div.diff, div.comment {
         margin-left: 150px; /* see gotobar */
-        border-left: 1px solid #ccc;
+        border-left: 1px solid #888;
     }
 }
 div.content, div.rc, div.diff, div.comment {
@@ -466,12 +467,12 @@ div.new { background-color: #CFFFCF; color: #000; }
 /* Footer */
 div.footer {
     clear: both;
-    /* font-size: smaller; */
     font-size: 0.9em;
 }
 div.footer hr {
     margin: -1em; /* close gap with vertical line */
     margin-left: 0px;
+    border-bottom: 1px solid #aaa;
 }
 
 /* Footer edit bar */
@@ -511,47 +512,14 @@ p.legal a {
 /* } */
 
 
-/* ? */
-div.sister {
-    font-size: smaller;
-    margin-right: 1ex;
-}
-div.sister p {
-    margin-top: 0;
-}
-div.sister hr {
-    display: none;
-}
-div.sister img {
-    border: none;
-    vertical-align: top;
-    margin-right: 20px;
-}
-
-/* ? */
-div.near, div.definition {
-    font-size: smaller;
-}
-
-/* ? */
-div.refer hr {
-    display: none;
-}
-div.refer {
-    margin-top: 50px;
-    padding-left: 1ex;
-    border-left: 0.6ex solid #aaa;
-    font-size: smaller;
-    clear: both;
-}
-
-
 /* Center lower menu items and add border*/
 
 /* Translation bar */
 .footer span.translation.bar {
     display: block;
     text-align: center;
+    padding-top: 1em;
+    font-size: 0.9em;
 }
 /* Edit bar (buttons) */
 .footer .edit.bar {
@@ -607,17 +575,6 @@ div.refer {
 }
 
 .edit.bar a:active, .edit.bar a.active {background-color:#cccccc;}
-
-
-/* Sidebar */
-div.sidebar {
-    float: right;
-    border: 1px dotted #000;
-    padding: 0 1em;
-}
-div.sidebar ul {
-    padding-left: 1em;
-}
 
 
 /* Printing */
@@ -744,12 +701,10 @@ div.journal {
 div.page {
     padding-top: 1em;
     border-top: 1px solid #ccc;
-    /* border-top: 1px dotted #888; */
     padding-bottom: 1em;
 }
 h1 a.local {
     color: #222;
-    /* font-size: 0.8em; */
     font-size: 0.9em;
     border-bottom: none;
     text-decoration: none;
@@ -778,4 +733,3 @@ div.page div.portrait + p {
 /* css-indent-offset: 4 */
 /* whitespace-mode: t */
 /* End: */
-
