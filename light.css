@@ -17,11 +17,9 @@ Released under the MIT License.
 /* ---------------------------------------------------------------------- */
 
 html {
-    font-size: 1.3em;
+    font-size: 1.2em;
     /* Garamond comes with Windows and Apple */
-    /* Georgia comes with Windows and Apple */
     /* Liberation Serif comes with Ubuntu */
-    /* font-family: Georgia, "Liberation Serif", Garamond, serif; */
     font-family: Garamond, "Liberation Serif", serif;
     letter-spacing: -0.022em;
 }
@@ -31,7 +29,7 @@ body {
     padding: 1em 1em;
     line-height: 1.3em;
     color: #111;
-    background-color: #fefdfd;
+    background-color: #fffefe;
 }
 
 
@@ -275,7 +273,7 @@ font-size: 1em;
         width: 130px;
         padding-right: 1em;
         padding-top: 30px;
-        border-top: 1px solid #888;
+        border-top: 1px solid #aaa;
     }
     span.gotobar a {
         display: block;
@@ -322,8 +320,8 @@ div.message p {
 @media (min-width: 580px) {
     div.header h1 {
         margin-left: 150px;
-        border-left: 1px solid #888;
-        border-top: 1px solid #888;
+        border-left: 1px solid #aaa;
+        border-top: 1px solid #aaa;
     }
 }
 div.header h1 {
@@ -349,7 +347,7 @@ div.header h1 a {
 @media (min-width: 580px) {
     div.content, div.rc, div.diff, div.comment {
         margin-left: 150px; /* see gotobar */
-        border-left: 1px solid #888;
+        border-left: 1px solid #aaa;
     }
 }
 div.content, div.rc, div.diff, div.comment {
@@ -509,10 +507,10 @@ p.legal a {
     color: gray;
 }
 /* also has <div style="float:right; margin-left:1ex;"> */
-/* a.license { */
-/*     border-bottom: none; */
-/*     text-decoration: none; */
-/* } */
+a.license {
+    border-bottom: none;
+    text-decoration: none;
+}
 
 
 /* Center lower menu items and add border*/
