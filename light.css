@@ -536,6 +536,11 @@ p.legal a {
     text-align: center;
     padding: 5px 0px 15px 0;
 }
+/* account for missing translation bar in testEdit.htm */
+.footer hr + .edit.bar {
+    padding-top: 2em;
+    padding-bottom: 1.5em;
+}
 /* Last edit */
 .footer div.time {
     display: block;
