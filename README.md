@@ -68,22 +68,22 @@ at http://imgur.com/a/czk9D.
 
 Some features drawn from other themes:
 
-* Cali+
+* Cali+  
  [x] use as a base  
  [x] have section separators but lighter dots  
  [x] headline text in normal font  
  [x] box around table of contents  
  [x] buttons at bottom  
 
-* Made in California
+* Made in California  
  [x] gray links  
  [x] larger `function references' text (had been too small on my system)  
 
-* Planet CSS
+* Planet CSS  
  [x] code block font  
  [x] colored syntax highlighting  
 
-* Wikipedia
+* Wikipedia  
  [x] large logo on left  
  [x] try headings with underlines instead of section separators  
  [x] try a vertical sidebar  
