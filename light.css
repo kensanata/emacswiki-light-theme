@@ -524,6 +524,10 @@ p.legal a {
     padding-top: 1em;
     font-size: 0.9em;
 }
+/* add a little space between languages */
+.footer .translation a + a {
+    margin-left: 0.5ex;
+}
 /* Edit bar (buttons) */
 .footer .edit.bar {
     display: block;
