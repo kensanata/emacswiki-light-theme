@@ -249,14 +249,18 @@ span.bar a {
 }
 
 
-/* Goto bar (SiteMap, HowTo, etc) - on left side */
-@media (max-width: 580px) {
+/* Goto bar (SiteMap, HowTo, etc) */
+@media (max-width: 580px) { /* show along top */
     span.gotobar {
         float: left;
         margin-top: 0.5em;
     }
+    span.gotobar a + a:before {
+        content: "|";
+        color: #ccc;
+    }
 }
-@media (min-width: 580px) {
+@media (min-width: 580px) { /* show on left side */
     span.gotobar {
         position: absolute;
         top: 3.5em;
