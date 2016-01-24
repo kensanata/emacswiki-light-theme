@@ -39,7 +39,7 @@ more readable.
 
 Some discussion is available on Reddit, for
 [version 1](https://www.reddit.com/r/emacs/comments/40u8fx/new_emacswiki_theme/)
-and [version 2]().
+and [version 2](https://www.reddit.com/r/emacs/comments/42dqdg/emacswiki_theme_v2/).
 
 
 ### Todo ###
