@@ -26,7 +26,7 @@ body {
     /* Garamond comes with Windows and Apple */
     /* URW Palladio L and Bitstream Charter come with Ubuntu */
     font-family: Garamond, "URW Palladio L", "Bitstream Charter", serif;
-    letter-spacing: -0.005em;
+    /* letter-spacing: -0.005em; */
 }
 
 
