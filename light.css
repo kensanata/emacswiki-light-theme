@@ -16,20 +16,17 @@ Released under the MIT License.
 /* Base */
 /* ---------------------------------------------------------------------- */
 
-html {
-    font-size: 1.2em;
-    /* Garamond comes with Windows and Apple */
-    /* Liberation Serif comes with Ubuntu */
-    font-family: Garamond, "Liberation Serif", serif;
-    letter-spacing: -0.022em;
-}
-
 body {
     margin: 0 0 1.5em 0;
     padding: 1em 1em;
-    line-height: 1.3em;
     color: #111;
     background-color: #fffefe;
+    font-size: 1.2em;
+    line-height: 1.3em;
+    /* Garamond comes with Windows and Apple */
+    /* URW Palladio L and Bitstream Charter come with Ubuntu */
+    font-family: Garamond, "URW Palladio L", "Bitstream Charter", serif;
+    letter-spacing: -0.01em;
 }
 
 

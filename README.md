@@ -42,12 +42,6 @@ Some discussion is available on Reddit, for
 and [version 2]().
 
 
-### Fonts ###
-
-The font used is Garamond - it's a bit on the light side, but most other serif
-fonts seemed to be too heavy.
-
-
 ### Todo ###
 
 * Some further things to do
