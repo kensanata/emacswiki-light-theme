@@ -37,8 +37,8 @@ Released under the MIT License.
 
 
 /* import a google font */
-@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
-/* @import url(http://fonts.googleapis.com/css?family=Pontano+Sans); */
+/* @import url(http://fonts.googleapis.com/css?family=EB+Garamond); */
+@import url(http://fonts.googleapis.com/css?family=Pontano+Sans);
 
 
 body {
@@ -53,9 +53,9 @@ body {
     /* font-family: Garamond, "URW Palladio L", "Bitstream Charter", serif; */
     /* letter-spacing: -0.005em; */
     /* font-family: "et-book", serif; */
-    font-family: "EB Garamond", serif;
-    letter-spacing: 0.005em;
-    /* font-family: "Pontano Sans", sans-serif; */
+    /* font-family: "EB Garamond", serif; */
+    /* letter-spacing: 0.005em; */
+    font-family: "Pontano Sans", sans-serif;
 }
 
 
