@@ -47,7 +47,7 @@ body {
     background-color: #fffefe;
     font-size: 1.2em;
     line-height: 1.3em;
-    font-family: "et-book", serif;
+    /* font-family: "et-book", serif; */
     /* font-family: "EB Garamond", serif; */
     /* letter-spacing: 0.005em; */
     /* Garamond comes with Windows and Apple */
@@ -65,11 +65,12 @@ code, pre {
     border: 1px solid #ddd;
 
     /* These fonts are all pretty similar, except Courier and monospace */
-    font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace;
+    /* font-family: Consolas, 'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', Courier, monospace; */
+    font-family: monospace;
 
     /* For some reason, using a different font than the default monospace */
     /* increases the size of the text, so need to counteract that here */
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
 }
 code {
     padding: 1px;
