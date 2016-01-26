@@ -120,62 +120,63 @@ EmacsWiki: CSSPreview</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
+
+
 <body class="default">
+    
 <div class="header">
+    
 <a href="http://www.emacswiki.org/emacs/SiteMap" class="logo">
 <img src="/emacs_logo.png" alt="[Home]" class="logo" />
 </a>
+
 <div class="menu">
+    
 <span class="gotobar bar">
-<a class="local" href="http://www.emacswiki.org/emacs/SiteMap">
-SiteMap</a>
- <a class="local" href="http://www.emacswiki.org/emacs/Search">
-Search</a>
- <a href="http://www.emacswiki.org/emacs/ElispArea" class="local">
-ElispArea</a>
- <a href="http://www.emacswiki.org/emacs/HowTo" class="local">
-HowTo</a>
- <a href="http://www.emacswiki.org/emacs/Glossary" class="local">
-Glossary</a>
- <a class="local" href="http://www.emacswiki.org/emacs/RecentChanges">
-RecentChanges</a>
- <a class="local" href="http://www.emacswiki.org/emacs/News">
-News</a>
- <a class="local" href="http://www.emacswiki.org/emacs/Problems">
-Problems</a>
- <a class="local" href="http://www.emacswiki.org/emacs/Suggestions">
-Suggestions</a>
- </span>
+<a class="local" href="http://www.emacswiki.org/emacs/SiteMap">SiteMap</a>
+<a class="local" href="http://www.emacswiki.org/emacs/Search">Search</a>
+<a href="http://www.emacswiki.org/emacs/ElispArea" class="local">ElispArea</a>
+<a href="http://www.emacswiki.org/emacs/HowTo" class="local">HowTo</a>
+<a href="http://www.emacswiki.org/emacs/Glossary" class="local">Glossary</a>
+<a class="local" href="http://www.emacswiki.org/emacs/RecentChanges">RecentChanges</a>
+<a class="local" href="http://www.emacswiki.org/emacs/News">News</a>
+<a class="local" href="http://www.emacswiki.org/emacs/Problems">Problems</a>
+<a class="local" href="http://www.emacswiki.org/emacs/Suggestions">Suggestions</a>
+</span>
+
 <form method="get" action="http://www.emacswiki.org/emacs" enctype="multipart/form-data" class="search" accept-charset="utf-8">
 <p>
-<label for="search">
-Search:</label>
- <input type="text" name="search"  size="20" accesskey="f" id="search" />
- <label for="searchlang">
-Language:</label>
- <input type="text" name="lang"  size="10" id="searchlang" />
- <input type="submit" name="dosearch" value="Go!" />
+<label for="search">Search:</label>
+<input type="text" name="search"  size="20" accesskey="f" id="search" />
+<label for="searchlang">Language:</label>
+<input type="text" name="lang"  size="10" id="searchlang" />
+<input type="submit" name="dosearch" value="Go!" />
 </p>
 </form>
+
 </div>
+
+
 <h1>
 <a href="http://www.emacswiki.org/emacs?search=%22CSSPreview%22" title="Click to search for references to this page" rel="nofollow">
 CSSPreview</a>
 </h1>
+
 </div>
+
 <div class="wrapper">
 <div class="content browse">
+    
 <p>
 This page aims to give a brief preview of the main features of a <a href="http://www.emacswiki.org/emacs/CSS" class="local">
 CSS stylesheet</a>
  - code blocks, wikilinks, lists, key sequences and function references - for a more complete preview see <a class="local" href="http://www.emacswiki.org/emacs/TextFormattingRules">
-TextFormattingRules</a>. Feel free to edit it, though it was initially set up to use for screenshots, so it was kept fairly short.</p>
-<h2>
-Basics</h2>
-<p>
-Here is a <strong>
-bulleted list</strong>
- -</p>
+TextFormattingRules</a>. Feel free to edit it, though it was initially set up to use for screenshots, so it was kept fairly short.
+</p>
+
+<h2>Basics</h2>
+<p>Here is a <strong>bulleted list</strong> -</p>
+
 <ul>
 <li>
 Use <code>&#x2018;C-h f&#x2019;</code>
@@ -189,6 +190,7 @@ Code (usually monospaced, plus escaping of wiki processing): <span>&lt;code&gt;f
 For more hash table functions see <a class="url http" href="https://github.com/Wilfred/ht.el">
 https://github.com/Wilfred/ht.el</a>.</li>
 </ul>
+
 <h2>Code Blocks</h2>
 <pre>
   (<span class="keyword">defun</span> <span class="function">describe-hash-descend</span> (hash)
@@ -199,12 +201,12 @@ https://github.com/Wilfred/ht.el</a>.</li>
                      (describe-hash-descend value))
              hash))
 </pre>
-<h3>
-A subheading</h3>
-<p>
-This is a subheading to show the subheading style.</p>
-<h2>
-Tables</h2>
+
+<h3>A subheading</h3>
+<p>This is a subheading to show the subheading style.</p>
+
+<h2>Tables</h2>
+
 <table class="user">
 <tr class="odd first">
 <td align="left">
@@ -257,29 +259,35 @@ MIT       </td>
 </td>
 </tr>
 </table>
-<h2>
-Cons cells and lists</h2>
+
+
+<h2>Cons cells and lists</h2>
+
 <pre>
           +-------+---+    +------+---+  +-------+-----+
  list1---&gt;| alpha | *-----&gt;| beta | *---&gt;| gamma | nil |
           +-------+---+    +------+---+  +-------+-----+
 </pre>
-<h2>
-Quotes</h2>
+
+<h2>Quotes</h2>
+
 <dl class="quote">
 <dt />
 <dd>
 “If you have a garden and a library, you have everything you need.” - Cicero</dd>
 </dl>
+
 <hr />
-<p>
-<a class="local" href="http://www.emacswiki.org/emacs/CategoryEmacsWikiSite">
-CategoryEmacsWikiSite</a>
-</p>
+
+<p><a class="local" href="http://www.emacswiki.org/emacs/CategoryEmacsWikiSite">CategoryEmacsWikiSite</a> </p>
 </div>
+
 <div class="wrapper close">
 </div>
+
 </div>
+
+
 <div class="footer">
 <hr />
 <span class="translation bar">
