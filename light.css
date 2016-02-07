@@ -200,11 +200,10 @@ div.header .specialdays {
 
 
 /* Logo */
-/* hide the existing logo... */
+/* hide the existing logo and override it with a different image */
 img.logo {
     display: none;
 }
-/* ...and override it with a different image */
 a.logo {
     display: block;
     /* just a placeholder for the moment */
@@ -267,7 +266,7 @@ span.bar a {
         position: absolute;
         top: 3.5em;
         left: 20px;
-        width: 130px;
+        width: 140px; /* left+width=160px */
         padding-right: 1em;
         padding-top: 30px;
         border-top: 1px solid #aaa;
@@ -317,7 +316,7 @@ div.message p {
 }
 @media (min-width: 580px) {
     div.header h1 {
-        margin-left: 150px;
+        margin-left: 160px;
         border-left: 1px solid #aaa;
         border-top: 1px solid #aaa;
         padding-left: 20px;
@@ -343,9 +342,9 @@ div.header h1 a {
 }
 @media (min-width: 580px) {
     div.content, div.rc, div.diff, div.comment {
-        margin-left: 150px; /* see gotobar */
+        margin-left: 160px; /* see gotobar */
         border-left: 1px solid #aaa;
-padding: 1em;
+        padding: 1em;
     }
 }
 div.content, div.rc, div.diff, div.comment {
