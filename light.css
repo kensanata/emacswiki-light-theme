@@ -371,6 +371,7 @@ div.content {
 
 /* Portraits */
 /* see https://oddmuse.org/wiki/Portraits_Support_Extension */
+/* see also News page, below */
 div.portrait {
     margin: 0;
     float: left;
@@ -385,6 +386,7 @@ div.portrait p {
 /* for the image inside a.newauthor */
 img.portrait {
     margin: 0;
+    margin-right: 0.5em;
     float: left;
     clear: left;
     /* picture frame */
@@ -398,7 +400,7 @@ img.portrait {
 }
 /* portrait caption */
 div.portrait a.local {
-float: left;
+    float: left;
     display: block;
     clear: both;
     text-decoration: none;
@@ -731,6 +733,7 @@ h1 a.local {
 }
 div.color {
     clear: both;
+    margin: 0;
     padding: 1ex 1em;
     min-height: 100px; /* give room for portraits */
 }
