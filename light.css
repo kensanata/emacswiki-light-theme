@@ -469,8 +469,9 @@ div.footer {
     font-size: 0.9em;
 }
 div.footer hr {
-    margin: -1em; /* close gap with vertical line */
-    margin-left: 0px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1em;
     border-bottom: 1px solid #aaa;
 }
 
@@ -525,8 +526,11 @@ a.license {
 .footer span.translation.bar {
     display: block;
     text-align: center;
-    padding-top: 1em;
     font-size: 0.9em;
+}
+/* hide the br element, which we don't need */
+.footer .translation br {
+    display: none;
 }
 /* add a little space between languages */
 .footer .translation a + a {
@@ -553,7 +557,7 @@ a.license {
 .footer div.time {
     display: block;
     text-align: center;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 
