@@ -366,6 +366,11 @@ div.content {
 }
 .toc a {
     color: #444;
+    /* color: #09d; */
+    /* border-bottom: 1px dotted #09c; */
+}
+.toc a:hover {
+    color: #09d;
 }
 
 

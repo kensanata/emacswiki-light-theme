@@ -34,11 +34,11 @@ EmacsWiki: CSSPreview</title>
 
 <meta name="viewport" content="width=device-width" />
 
-<script type="text/javascript" src="/outliner.0.5.0.62-toc.js">
+<!-- <script type="text/javascript" src="/outliner.0.5.0.62-toc.js"> -->
+<script type="text/javascript" src="outliner.0.5.0.62-toc.js">
 </script>
 
 <script type="text/javascript">
-
 
   function addOnloadEvent(fnc) {
     if ( typeof window.addEventListener != "undefined" )
@@ -73,11 +73,9 @@ EmacsWiki: CSSPreview</title>
       outline.sections = outline.sections[0].sections;
     }
 
-    if (outline.sections.length >
- 1
+    if (outline.sections.length > 1
 	|| outline.sections.length == 1
-           && outline.sections[0].sections.length >
- 0) {
+           && outline.sections[0].sections.length > 0) {
 
       var toc = document.getElementById('toc');
 
