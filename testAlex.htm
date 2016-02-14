@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>EmacsWiki: Alex Schroeder</title><link rel="alternate" type="application/wiki" title="Edit this page" href="https://www.emacswiki.org/emacs?action=edit;id=AlexSchroeder" />
+<!-- <link type="text/css" rel="stylesheet" href="https://rawgit.com/bburns/emacswiki-light-theme/master/light.css" /> -->
+<link type="text/css" rel="stylesheet" href="light.css" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="alternate" type="application/rss+xml" title="EmacsWiki" href="https://www.emacswiki.org/emacs?action=rss" />
+<link rel="alternate" type="application/rss+xml" title="EmacsWiki: AlexSchroeder" href="https://www.emacswiki.org/emacs?action=rss;rcidonly=AlexSchroeder" />
+<link rel="alternate" type="application/rss+xml" title="Follow-ups for BrianBurns" href="https://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content"
+      href="https://www.emacswiki.org/full.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content and diff"
+      href="https://www.emacswiki.org/full-diff.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki including minor differences"
+      href="https://www.emacswiki.org/minor-edits.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Changes for AlexSchroeder only"
+      href="https://www.emacswiki.org/emacs?action=rss;rcidonly=AlexSchroeder" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Follow-ups to BrianBurns"
+      href="https://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+
+<meta name="viewport" content="width=device-width" />
+
+<script type="text/javascript" src="/outliner.0.5.0.62-toc.js">
+</script>
+
+<script type="text/javascript">
+
+
+  function addOnloadEvent(fnc) {
+    if ( typeof window.addEventListener != "undefined" )
+      window.addEventListener( "load", fnc, false );
+    else if ( typeof window.attachEvent != "undefined" ) {
+      window.attachEvent( "onload", fnc );
+    }
+    else {
+      if ( window.onload != null ) {
+	var oldOnload = window.onload;
+	window.onload = function ( e ) {
+	  oldOnload( e );
+	  window[fnc]();
+	};
+      }
+      else
+	window.onload = fnc;
+    }
+  }
+
+  // https://stackoverflow.com/questions/280634/endswith-in-javascript
+  if (typeof String.prototype.endsWith !== 'function') {
+    String.prototype.endsWith = function(suffix) {
+      return this.indexOf(suffix, this.length - suffix.length) !== -1;
+    };
+  }
+
+  var initToc=function() {
+
+    var outline = HTML5Outline(document.body);
+    if (outline.sections.length == 1) {
+      outline.sections = outline.sections[0].sections;
+    }
+
+    if (outline.sections.length >
+ 1
+	|| outline.sections.length == 1
+           && outline.sections[0].sections.length >
+ 0) {
+
+      var toc = document.getElementById('toc');
+
+      if (!toc) {
+	var divs = document.getElementsByTagName('div');
+	for (var i = 0; i < divs.length; i++) {
+	  if (divs[i].getAttribute('class') == 'toc') {
+	    toc = divs[i];
+	    break;
+	  }
+	}
+      }
+
+      if (!toc) {
+	var h2 = document.getElementsByTagName('h2')[0];
+	if (h2) {
+	  toc = document.createElement('div');
+	  toc.setAttribute('class', 'toc');
+	  h2.parentNode.insertBefore(toc, h2);
+	}
+      }
+
+      if (toc) {
+        var html = outline.asHTML(true);
+        toc.innerHTML = html;
+
+	items = toc.getElementsByTagName('a');
+	for (var i = 0; i < items.length; i++) {
+	  while (items[i].textContent.endsWith('✎')) {
+            var text = items[i].childNodes[0].nodeValue;
+	    items[i].childNodes[0].nodeValue = text.substring(0, text.length - 1);
+	  }
+	}
+      }
+    }
+  }
+
+  addOnloadEvent(initToc);
+  </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body class="default">
+<div class="header">
+<a href="https://www.emacswiki.org/emacs/SiteMap" class="logo">
+<img class="logo" alt="[Home]" src="/emacs_logo.png" />
+</a>
+<div class="menu">
+<span class="gotobar bar">
+<a class="local" href="https://www.emacswiki.org/emacs/SiteMap">
+SiteMap</a>
+ <a href="https://www.emacswiki.org/emacs/Search" class="local">
+Search</a>
+ <a href="https://www.emacswiki.org/emacs/ElispArea" class="local">
+ElispArea</a>
+ <a class="local" href="https://www.emacswiki.org/emacs/HowTo">
+HowTo</a>
+ <a class="local" href="https://www.emacswiki.org/emacs/Glossary">
+Glossary</a>
+ <a class="local" href="https://www.emacswiki.org/emacs/RecentChanges">
+RecentChanges</a>
+ <a href="https://www.emacswiki.org/emacs/News" class="local">
+News</a>
+ <a class="local" href="https://www.emacswiki.org/emacs/Problems">
+Problems</a>
+ <a href="https://www.emacswiki.org/emacs/Suggestions" class="local">
+Suggestions</a>
+ </span>
+<form method="get" action="https://www.emacswiki.org/emacs" enctype="multipart/form-data" accept-charset="utf-8" class="search">
+<p>
+<label for="search">
+Search:</label>
+ <input type="text" name="search"  size="20" accesskey="f" id="search" />
+ <label for="searchlang">
+Language:</label>
+ <input type="text" name="lang"  size="10" id="searchlang" />
+ <input type="submit" name="dosearch" value="Go!" />
+</p>
+</form>
+</div>
+<h1>
+<a rel="nofollow" title="Click to search for references to this page" href="https://www.emacswiki.org/emacs?search=%22AlexSchroeder%22">
+<span style="padding-right: 0.5ex;">
+Alex</span>
+<span style="padding-right: 0.5ex;">
+Schroeder</span>
+</a>
+</h1>
+</div>
+<div class="wrapper">
+<div class="content browse">
+<p>
+<img src="https://www.emacswiki.org/pics/static/AlexSchroederPortrait" alt="Portrait" class="portrait" />
+</p>
+<p>
+I&#x2019;m an editor of the <a href="https://www.emacswiki.org/emacs/EmacsWiki" class="local">
+EmacsWiki</a>
+. I invite all Emacs and XEmacs users to take up editing responsibilities as well. All you need to do is edit new pages, correct typos, add categories, rework pages. A good rule of thumb I try to follow is to make all pages potential sections in a printed book or info manual.</p>
+<p>
+I usually don&#x2019;t sign my contributions because I think that encourages other people to rework the page. Signing contributions would not make sense in a traditional book, either.</p>
+<p>
+You can contact me <a href="mailto:kensanata@gmail.com" class="url mailto outside">
+using mail</a>
+.</p>
+<p>
+I use Emacs. I am <a href="http://member.fsf.org" class="url http outside">
+FSF Member</a>
+ #894, joined on 2003-03-06, I am <a class="url http outside" href="http://www.fsfe.org/">
+FSFE Member</a>
+ #372, joined 2005-05-22, and I am an <a class="url http outside" href="http://www.eff.org/">
+EFF Member</a>
+, joined 2006-03-14. It&#x2019;s sad how I need to support foreign NGOs because policy in the USA and the EU will end up affecting me whether I like it or not.</p>
+<p>
+My favorite <a class="local" href="https://www.emacswiki.org/emacs/CSS">
+Emacs Wiki Theme</a>
+ is <a class="inter Self outside" href="/emacs?action=browse;id=AlexSchroeder;css=;bootstrap=0">
+Classic No Bootstrap</a>
+.</p>
+<ul>
+<li>
+<a href="http://alexschroeder.ch/wiki/Contact" class="url http outside">
+Contact</a>
+</li>
+<li>
+<a class="url http outside" href="http://alexschroeder.ch/wiki/">
+Blog</a>
+</li>
+<li>
+<a href="http://alexschroeder.ch/pics/pink-bliss.png" class="url http outside">
+Emacs Screenshot</a>
+</li>
+<li>
+<a href="http://www.oddmuse.org/" class="url http outside">
+Oddmuse</a>
+ is the wiki engine used for this wiki.</li>
+</ul>
+<p>
+I use <a class="local" href="https://www.emacswiki.org/emacs/CSS">
+CSS</a>
+ to switch to the <i>
+Classic</i>
+ theme on this wiki. No bootstrap for me!</p>
+<p>
+If you think that Emacs Wiki is a mess and needs to be based on a different technology, feel free to read a blog post of mine, <a href="http://alexschroeder.ch/wiki/2012-03-24_How_Emacs_Wiki_Works" class="url http outside">
+How Emacs Wiki Works</a>
+.</p>
+<p>
+I am also known as <a name="kensanata" rel="nofollow" title="Click to search for references to this permanent anchor" href="https://www.emacswiki.org/emacs?search=%22kensanata%22" class="definition">
+kensanata</a>
+ on IRC. &#x201c;Kensanata&#x201d; doesn&#x2019;t mean anything. It was the name of my character when I started <a href="http://alexschroeder.ch/wiki/J%C3%BCnger_des_Blauen_Mondes" class="url http outside">
+playing PBEM games</a>
+. I started my first homepage for this game on Geocities and needed an account name. Instead of alex4365472432009 I chose a name related to the game. And since Geocities and Yahoo and AOL started to cooperate, &#x201c;kensanata&#x201d; turned out to be the name of my Yahoo mailbox and my AIM handle. Later, I also used it on ICQ. And now I&#x2019;m using it on IRC.</p>
+<dl class="irc">
+<dt>
+<span class="time">
+13:03  </span>
+<b>
+Blkt</b>
+</dt>
+<dd>
+kensanata: may I ask you another thing? </dd>
+<dt>
+<span class="time">
+13:03  </span>
+<b>
+kensanata</b>
+</dt>
+<dd>
+This is IRC!!! <code>
+*boot*</code>
+</dd>
+</dl>
+<h2>
+Code</h2>
+<ul>
+<li>
+<a class="url http" href="https://github.com/kensanata/emacs-setup">
+https://github.com/kensanata/emacs-setup</a>
+ &#x2013; my new setup, inspired by <a class="local" href="https://www.emacswiki.org/emacs/EmacsLife">
+EmacsLife</a>
+</li>
+<li>
+<a href="https://github.com/kensanata/elisp/" class="url http">
+https://github.com/kensanata/elisp/</a>
+ &#x2013; various elisp files I&#x2019;m no longer using (if I were to use them, they&#x2019;d be in the <code>
+emacs-setup</code>
+ repository)</li>
+<li>
+<a class="url http" href="https://github.com/kensanata/ggg">
+https://github.com/kensanata/ggg</a>
+ &#x2013; my Gmail Gnus GPG Guide (GGGG)</li>
+<li>
+<a href="https://www.emacswiki.org/emacs/AlexSchroederConfigMegabombus" class="local">
+AlexSchroederConfigMegabombus</a>
+ &#x2013; the old setup on my wife&#x2019;s Powerbook @ home running Mac OS X</li>
+<li>
+<a href="https://www.emacswiki.org/emacs/AlexSchroederConfigOrientalibombus" class="local">
+AlexSchroederConfigOrientalibombus</a>
+ &#x2013; the very old iBook 4G using Xubuntu</li>
+<li>
+<a href="https://www.emacswiki.org/emacs/AlexSchroederConfigPyrobombus" class="local">
+AlexSchroederConfigPyrobombus</a>
+ &#x2013; the old Mac Mini @ home running Mac OS X, no longer in use</li>
+<li>
+<a class="local" href="https://www.emacswiki.org/emacs/AlexSchroederConfigWindows">
+AlexSchroederConfigWindows</a>
+ &#x2013; the workstation @ work running Windows 7; get grep and friends from <a href="http://gnuwin32.sourceforge.net/packages.html" class="url http outside">
+GnuWin32</a>
+<ul>
+<li>
+<a class="local" href="https://www.emacswiki.org/emacs/EmacsSession">
+EmacsSession</a>
+ <a href="https://www.emacswiki.org/emacs/EshellAutojump" class="local">
+EshellAutojump</a>
+ <a href="https://www.emacswiki.org/emacs/rcircColoredNicks" class="local">
+rcircColoredNicks</a>
+ <a class="local" href="https://www.emacswiki.org/emacs/rcircColors">
+rcircColors</a>
+ <a href="https://www.emacswiki.org/emacs/rcircGroupMode" class="local">
+rcircGroupMode</a>
+ <a href="https://www.emacswiki.org/emacs/rcircPounce" class="local">
+rcircPounce</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://www.emacswiki.org/emacs/AlexSchroederConfigConfusibombus" class="local">
+AlexSchroederConfigConfusibombus</a>
+ &#x2013; no longer used for an old Ubuntu installation</li>
+<li>
+<a href="https://www.emacswiki.org/emacs/AlexSchroederConfigAlpinobombus" class="local">
+AlexSchroederConfigAlpinobombus</a>
+ &#x2013; no longer used as I switched the iBook from Mac OS 10.3 to Ubuntu</li>
+<li>
+<a href="https://www.emacswiki.org/emacs/AlexSchroederErcConfig" class="local">
+AlexSchroederErcConfig</a>
+ &#x2013; no longer used as I switched to <a href="https://www.emacswiki.org/emacs/rcirc" class="local">
+rcirc</a>
+</li>
+</ul>
+<h2>
+RSI</h2>
+<div class="color one level0">
+<div class="portrait">
+<p>
+<a title="2016-02-08 19:46 UTC" class="newauthor" href="https://www.emacswiki.org/emacs/AlexSchroeder">
+<img src="https://www.emacswiki.org/pics/static/AlexSchroederPortrait" alt="new: 2016-02-08 19:46 UTC" class="portrait" />
+</a>
+ <br />
+ <a href="https://www.emacswiki.org/emacs/AlexSchroeder" class="local">
+AlexSchroeder</a>
+</p>
+</div>
+<p>
+ <a class="local" href="https://www.emacswiki.org/emacs/RepeatedStrainInjury">
+RepeatedStrainInjury</a>
+ &#x2013; saw a doctor, started physiotherapy on 2002-02-05. I bought a Kinesis keyboard. I used little programs that forced me to take a lot of breaks. It didn&#x2019;t help. I stopped therapy 2002-10-21 and decided to work less, get up more often, started practicing Aikido, and no longer work in long shifts. That helped.</p>
+</div>
+<hr />
+<p>
+<a class="local" href="https://www.emacswiki.org/emacs/CategoryHomepage">
+CategoryHomepage</a>
+</p>
+</div>
+<div class="wrapper close">
+</div>
+</div>
+<div class="footer">
+<hr />
+<span class="translation bar">
+<br />
+  <a class="translation new" href="https://www.emacswiki.org/emacs?action=translate;id=AlexSchroeder;missing=de_es_fr_it_ja_ko_pt_ru_se_uk_zh" rel="nofollow">
+Add Translation</a>
+</span>
+<div class="edit bar">
+<a class="comment local edit" href="https://www.emacswiki.org/emacs/Comments_on_AlexSchroeder" accesskey="c">
+Talk</a>
+ <a title="Click to edit this page" class="edit" href="https://www.emacswiki.org/emacs?action=edit;id=AlexSchroeder" accesskey="e" rel="nofollow">
+Edit this page</a>
+ <a rel="nofollow" class="history" href="https://www.emacswiki.org/emacs?action=history;id=AlexSchroeder">
+View other revisions</a>
+ <a href="https://www.emacswiki.org/emacs?action=admin;id=AlexSchroeder" class="admin" rel="nofollow">
+Administration</a>
+</div>
+<div class="time">
+Last edited 2016-02-08 19:52 UTC by <a href="https://www.emacswiki.org/emacs/AlexSchroeder" class="author" title="77.57.27.11">
+AlexSchroeder</a>
+ <a class="diff" href="https://www.emacswiki.org/emacs?action=browse;diff=2;id=AlexSchroeder" rel="nofollow">
+(diff)</a>
+</div>
+<div style="float:right; margin-left:1ex;">
+
+<!-- Creative Commons License -->
+
+<a class="licence" href="https://creativecommons.org/licenses/GPL/2.0/">
+<img alt="CC-GNU GPL" style="border:none" src="/pics/cc-GPL-a.png" />
+</a>
+
+<!-- /Creative Commons License -->
+
+</div>
+
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+<Work rdf:about="">
+
+   <license rdf:resource="https://creativecommons.org/licenses/GPL/2.0/" />
+
+  <dc:type rdf:resource="http://purl.org/dc/dcmitype/Software" />
+
+</Work>
+
+
+<License rdf:about="https://creativecommons.org/licenses/GPL/2.0/">
+
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+
+   <requires rdf:resource="http://web.resource.org/cc/SourceCode" />
+
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+<p class="legal">
+
+This work is licensed to you under version 2 of the
+<a href="https://www.gnu.org/">
+GNU</a>
+ <a href="/GPL">
+General Public License</a>
+.
+Alternatively, you may choose to receive this work under any other
+license that grants the right to use, copy, modify, and/or distribute
+the work, as long as that license imposes the restriction that
+derivative works have to grant the same rights and impose the same
+restriction. For example, you may choose to receive this work under
+the
+<a href="https://www.gnu.org/">
+GNU</a>
+
+<a href="/FDL">
+Free Documentation License</a>
+, the
+<a href="https://creativecommons.org/">
+CreativeCommons</a>
+
+<a href="https://creativecommons.org/licenses/sa/1.0/">
+ShareAlike</a>
+
+License, the XEmacs manual license, or
+<a href="/OLD">
+similar licenses</a>
+.
+</p>
+
+</div>
+
+</body>
+
+</html>
+
