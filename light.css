@@ -26,6 +26,12 @@ body {
 }
 
 
+body.dark {
+    color: #ccc;
+    background-color: #222;
+}
+
+
 /* Code - used for keysequences, function references (anything in `...') */
 /* Pre - used for blocks of code */
 code, pre {
@@ -41,6 +47,11 @@ code, pre {
     /* increases the size of the text, so need to counteract that here */
     /* font-size: 0.8em; */
 }
+body.dark code, pre {
+    color: #f9f8f8;
+    background-color: #282828;
+    border: 1px solid #333;
+}
 code {
     padding: 1px;
 }
@@ -50,6 +61,8 @@ pre {
     line-height: 1.4em;
     overflow: auto; /* add horizontal scrollbar if necessary */
 }
+
+
 
 
 /* Links */
@@ -70,6 +83,14 @@ a:link, a:visited {
 a:active, a:hover {
     color: #09d;
 }
+
+body.dark a {
+    color: #09b;
+}
+body.dark a:active, body.dark a:hover {
+    color: #0ce;
+}
+
 /* external links */
 /* a.url:before { content: "\2197"; } */
 /* .safari a.url:before { content: url(http://www.emacswiki.org/alex/pics/arrow.png); } */
@@ -208,6 +229,7 @@ a.logo {
     display: block;
     /* just a placeholder for the moment */
     background: url(./images/logo218x38.png);
+    /* background: url(./images/ew.png); */
     width: 218px;
     height: 38px;
     top: 22px;
@@ -248,7 +270,9 @@ span.bar a {
     font-size: 1em;
     color: #444;
 }
-
+body.dark span.bar a {
+    color: #888;
+}
 
 /* Goto bar (SiteMap, HowTo, etc) */
 @media (max-width: 580px) { /* show along top */
@@ -271,6 +295,9 @@ span.bar a {
         padding-top: 30px;
         border-top: 1px solid #aaa;
     }
+    body.dark span.gotobar {
+        border-top: 1px solid #444;
+    }
     span.gotobar a {
         display: block;
         margin-top: 0.5em;
@@ -285,6 +312,9 @@ span.gotobar a {
 }
 span.gotobar a:hover {
     color: #09d;
+}
+body.dark span.bar a:hover {
+    color: #aaa;
 }
 
 
@@ -322,6 +352,10 @@ div.message p {
         padding-left: 20px;
         font-size: 2.5em;
     }
+    body.dark div.header h1 {
+        border-left: 1px solid #444;
+        border-top: 1px solid #444;
+    }
 }
 div.header h1 {
     padding-top: 30px;
@@ -346,6 +380,9 @@ div.header h1 a {
         border-left: 1px solid #aaa;
         padding: 1em;
     }
+    body.dark div.content, div.rc, div.diff, div.comment {
+        border-left: 1px solid #444;
+    }
 }
 div.content, div.rc, div.diff, div.comment {
     min-height: 14em; /* so gotobar won't overwrite footer on small pages */
@@ -364,14 +401,22 @@ div.content {
     line-height: 1.4em;
     border: 1px solid #ccc;
 }
+body.dark .toc {
+    border: 1px solid #333;
+}
 .toc a {
-    /* color: #444; */
     color: #999;
     /* color: #09d; */
     /* border-bottom: 1px dotted #09c; */
 }
 .toc a:hover {
     color: #09d;
+}
+body.dark .toc a {
+    color: #999;
+}
+body.dark .toc a:hover {
+    color: #48b;
 }
 
 
@@ -479,6 +524,9 @@ div.footer hr {
     padding: 0;
     margin-bottom: 1em;
     border-bottom: 1px solid #aaa;
+}
+body.dark div.footer hr {
+    border-bottom: 1px solid #444;
 }
 
 /* Footer edit bar */
@@ -601,12 +649,12 @@ a.license {
     -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
     box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
 }
-
 .edit.bar a:hover,.edit.bar a:focus,.edit.bar a:active, .edit.bar a.active,.edit.bar a.disabled,.edit.bar a[disabled] {
     background-image: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
 }
-
-.edit.bar a:active, .edit.bar a.active {background-color:#cccccc;}
+.edit.bar a:active, .edit.bar a.active {
+    background-color:#cccccc;
+}
 
 
 /* Printing */
@@ -650,6 +698,21 @@ span.quote        { color: blue; }
 span.category_1   { color: teal; }
 span.category_2   { color: blue; }
 span.category_3   { color: blue; }
+
+
+/* dark version */
+body.dark span.builtin      { color: red; } /* DarkSlateBlue */
+body.dark span.comment      { color: green; } /* Firebrick */
+body.dark span.constant     { color: blue; } /* DarkCyan */
+body.dark span.function     { color: orange; } /* Blue1 */
+body.dark span.keyword      { color: purple; } /* Purple */
+body.dark span.string       { color: yellow; } /* VioletRed4 */
+body.dark span.type         { color: gray; } /* ForestGreen */
+body.dark span.warning      { color: pink; font-weight: bold; } /* Red1 */
+body.dark span.comment span,
+span.string  span { color: inherit; }
+body.dark span.comment span.important.constant,
+span.string  span.important.constant { color: brown; }
 
 
 

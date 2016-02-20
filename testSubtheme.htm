@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+EmacsWiki: CSSPreview</title>
+<link rel="alternate" type="application/wiki" title="Edit this page" href="http://www.emacswiki.org/emacs?action=edit;id=CSSPreview" />
+<!-- <link type="text/css" rel="stylesheet" href="https://rawgit.com/bburns/emacswiki-light-theme/master/light.css" /> -->
+<link type="text/css" rel="stylesheet" href="light.css" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="alternate" type="application/rss+xml" title="EmacsWiki" href="http://www.emacswiki.org/emacs?action=rss" />
+<link rel="alternate" type="application/rss+xml" title="EmacsWiki: CSSPreview" href="http://www.emacswiki.org/emacs?action=rss;rcidonly=CSSPreview" />
+<link rel="alternate" type="application/rss+xml" title="Follow-ups for BrianBurns" href="http://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content"
+      href="http://www.emacswiki.org/full.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content and diff"
+      href="http://www.emacswiki.org/full-diff.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki including minor differences"
+      href="http://www.emacswiki.org/minor-edits.rss" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Changes for CSSPreview only"
+      href="http://www.emacswiki.org/emacs?action=rss;rcidonly=CSSPreview" />
+
+<link rel="alternate" type="application/rss+xml"
+      title="Follow-ups to BrianBurns"
+      href="http://www.emacswiki.org/emacs?action=rss;followup=BrianBurns" />
+
+<meta name="viewport" content="width=device-width" />
+
+<!-- <script type="text/javascript" src="/outliner.0.5.0.62-toc.js"> -->
+<script type="text/javascript" src="outliner.0.5.0.62-toc.js">
+</script>
+
+<script type="text/javascript">
+
+  function addOnloadEvent(fnc) {
+    if ( typeof window.addEventListener != "undefined" )
+      window.addEventListener( "load", fnc, false );
+    else if ( typeof window.attachEvent != "undefined" ) {
+      window.attachEvent( "onload", fnc );
+    }
+    else {
+      if ( window.onload != null ) {
+	var oldOnload = window.onload;
+	window.onload = function ( e ) {
+	  oldOnload( e );
+	  window[fnc]();
+	};
+      }
+      else
+	window.onload = fnc;
+    }
+  }
+
+  // https://stackoverflow.com/questions/280634/endswith-in-javascript
+  if (typeof String.prototype.endsWith !== 'function') {
+    String.prototype.endsWith = function(suffix) {
+      return this.indexOf(suffix, this.length - suffix.length) !== -1;
+    };
+  }
+
+  var initToc=function() {
+
+    var outline = HTML5Outline(document.body);
+    if (outline.sections.length == 1) {
+      outline.sections = outline.sections[0].sections;
+    }
+
+    if (outline.sections.length > 1
+	|| outline.sections.length == 1
+           && outline.sections[0].sections.length > 0) {
+
+      var toc = document.getElementById('toc');
+
+      if (!toc) {
+	var divs = document.getElementsByTagName('div');
+	for (var i = 0; i < divs.length; i++) {
+	  if (divs[i].getAttribute('class') == 'toc') {
+	    toc = divs[i];
+	    break;
+	  }
+	}
+      }
+
+      if (!toc) {
+	var h2 = document.getElementsByTagName('h2')[0];
+	if (h2) {
+	  toc = document.createElement('div');
+	  toc.setAttribute('class', 'toc');
+	  h2.parentNode.insertBefore(toc, h2);
+	}
+      }
+
+      if (toc) {
+        var html = outline.asHTML(true);
+        toc.innerHTML = html;
+
+	items = toc.getElementsByTagName('a');
+	for (var i = 0; i < items.length; i++) {
+	  while (items[i].textContent.endsWith('✎')) {
+            var text = items[i].childNodes[0].nodeValue;
+	    items[i].childNodes[0].nodeValue = text.substring(0, text.length - 1);
+	  }
+	}
+      }
+    }
+  }
+
+  addOnloadEvent(initToc);
+  </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+
+<body class="default dark">
+    
+<div class="header">
+    
+<a href="http://www.emacswiki.org/emacs/SiteMap" class="logo">
+<img src="/emacs_logo.png" alt="[Home]" class="logo" />
+</a>
+
+<div class="menu">
+    
+<span class="gotobar bar">
+<a class="local" href="http://www.emacswiki.org/emacs/SiteMap">SiteMap</a>
+<a class="local" href="http://www.emacswiki.org/emacs/Search">Search</a>
+<a href="http://www.emacswiki.org/emacs/ElispArea" class="local">ElispArea</a>
+<a href="http://www.emacswiki.org/emacs/HowTo" class="local">HowTo</a>
+<a href="http://www.emacswiki.org/emacs/Glossary" class="local">Glossary</a>
+<a class="local" href="http://www.emacswiki.org/emacs/RecentChanges">RecentChanges</a>
+<a class="local" href="http://www.emacswiki.org/emacs/News">News</a>
+<a class="local" href="http://www.emacswiki.org/emacs/Problems">Problems</a>
+<a class="local" href="http://www.emacswiki.org/emacs/Suggestions">Suggestions</a>
+</span>
+
+<form method="get" action="http://www.emacswiki.org/emacs" enctype="multipart/form-data" class="search" accept-charset="utf-8">
+<p>
+<label for="search">Search:</label>
+<input type="text" name="search"  size="20" accesskey="f" id="search" />
+<label for="searchlang">Language:</label>
+<input type="text" name="lang"  size="10" id="searchlang" />
+<input type="submit" name="dosearch" value="Go!" />
+</p>
+</form>
+
+</div>
+
+
+<h1>
+<a href="http://www.emacswiki.org/emacs?search=%22CSSPreview%22" title="Click to search for references to this page" rel="nofollow">
+CSSPreview</a>
+</h1>
+
+</div>
+
+<div class="wrapper">
+<div class="content browse">
+    
+<p>
+This page aims to give a brief preview of the main features of a <a href="http://www.emacswiki.org/emacs/CSS" class="local">
+CSS stylesheet</a>
+ - code blocks, wikilinks, lists, key sequences and function references - for a more complete preview see <a class="local" href="http://www.emacswiki.org/emacs/TextFormattingRules">
+TextFormattingRules</a>. Feel free to edit it, though it was initially set up to use for screenshots, so it was kept fairly short.
+</p>
+
+<h2>Basics</h2>
+<p>Here is a <strong>bulleted list</strong> -</p>
+
+<ul>
+<li>
+Use <code>&#x2018;C-h f&#x2019;</code>
+ (<code>&#x2018;describe-function&#x2019;</code>) and <code>&#x2018;C-h v&#x2019;</code>
+ (<code>&#x2018;describe-variable&#x2019;</code>) to understand commands and <a class="local" href="http://www.emacswiki.org/emacs/variable"> variable</a>s you use.</li>
+<li>
+Code (usually monospaced, plus escaping of wiki processing): <span>&lt;code&gt;foo&lt;/code&gt;</span>
+ &#x2192;&#x00a0;<code>foo</code>
+</li>
+<li>
+For more hash table functions see <a class="url http" href="https://github.com/Wilfred/ht.el">
+https://github.com/Wilfred/ht.el</a>.</li>
+</ul>
+
+<h2>Code Blocks</h2>
+<pre>
+  (<span class="keyword">defun</span> <span class="function">describe-hash-descend</span> (hash)
+    <span class="string">"Recursive describe hash func for nested hash-tables - mangled"</span>
+    (maphash (<span class="keyword elisp">lambda</span> (key value)
+               (pp key) (princ <span class="string">" =&gt; "</span>)
+               (<span class="keyword elisp">if</span> (hash-table-p value)
+                     (describe-hash-descend value))
+             hash))
+</pre>
+
+<h3>A subheading</h3>
+<p>This is a subheading to show the subheading style.</p>
+
+<h2>Tables</h2>
+
+<table class="user">
+<tr class="odd first">
+<td align="left">
+Name                  </td>
+<td align="left">
+Started  </td>
+<td align="left">
+Location  </td>
+</tr>
+<tr class="even">
+<td align="left">
+Lisp 1</td>
+<td align="left">
+1958</td>
+<td align="left">
+MIT       </td>
+</tr>
+<tr class="odd">
+<td align="left">
+Lisp 1.5</td>
+<td align="left">
+1960</td>
+<td align="left">
+MIT       </td>
+</tr>
+<tr class="even">
+<td align="left">
+BBN Lisp              </td>
+<td align="left">
+1964</td>
+<td align="left">
+BBN       </td>
+</tr>
+<tr class="odd">
+<td align="left">
+MacLisp</td>
+<td align="left">
+1966</td>
+<td align="left">
+MIT       </td>
+</tr>
+<tr class="even">
+<td align="left">
+Muddle (MDL)</td>
+<td align="left">
+1971?</td>
+<td align="left">
+MIT       </td>
+<td align="center">
+</td>
+</tr>
+</table>
+
+
+<h2>Cons cells and lists</h2>
+
+<pre>
+          +-------+---+    +------+---+  +-------+-----+
+ list1---&gt;| alpha | *-----&gt;| beta | *---&gt;| gamma | nil |
+          +-------+---+    +------+---+  +-------+-----+
+</pre>
+
+<h2>Quotes</h2>
+
+<dl class="quote">
+<dt />
+<dd>
+“If you have a garden and a library, you have everything you need.” - Cicero</dd>
+</dl>
+
+<hr />
+
+<p><a class="local" href="http://www.emacswiki.org/emacs/CategoryEmacsWikiSite">CategoryEmacsWikiSite</a> </p>
+</div>
+
+<div class="wrapper close">
+</div>
+
+</div>
+
+
+<div class="footer">
+<hr />
+<span class="translation bar">
+<br />
+  <a href="http://www.emacswiki.org/emacs?action=translate;id=CSSPreview;missing=de_es_fr_it_ja_ko_pt_ru_se_uk_zh" rel="nofollow" class="translation new">
+Add Translation</a>
+</span>
+<div class="edit bar">
+<a href="http://www.emacswiki.org/emacs/Comments_on_CSSPreview" accesskey="c" class="comment local">
+Talk</a>
+ <a href="http://www.emacswiki.org/emacs?action=edit;id=CSSPreview" title="Click to edit this page" accesskey="e" rel="nofollow" class="edit">
+Edit this page</a>
+ <a class="history" rel="nofollow" href="http://www.emacswiki.org/emacs?action=history;id=CSSPreview">
+View other revisions</a>
+ <a href="http://www.emacswiki.org/emacs?action=admin;id=CSSPreview" rel="nofollow" class="admin">
+Administration</a>
+</div>
+<div class="time">
+Last edited 2016-01-22 16:55 UTC by <a href="http://www.emacswiki.org/emacs/BrianBurns" title="70.115.157.56" class="author">
+BrianBurns</a>
+ <a rel="nofollow" class="diff" href="http://www.emacswiki.org/emacs?action=browse;diff=2;id=CSSPreview">
+(diff)</a>
+</div>
+<div style="float:right; margin-left:1ex;">
+
+<!-- Creative Commons License -->
+
+<a class="licence" href="https://creativecommons.org/licenses/GPL/2.0/">
+<img alt="CC-GNU GPL" style="border:none" src="/pics/cc-GPL-a.png" />
+</a>
+
+<!-- /Creative Commons License -->
+
+</div>
+
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+<Work rdf:about="">
+
+   <license rdf:resource="https://creativecommons.org/licenses/GPL/2.0/" />
+
+  <dc:type rdf:resource="http://purl.org/dc/dcmitype/Software" />
+
+</Work>
+
+
+<License rdf:about="https://creativecommons.org/licenses/GPL/2.0/">
+
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+
+   <requires rdf:resource="http://web.resource.org/cc/SourceCode" />
+
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+<p class="legal">
+
+This work is licensed to you under version 2 of the
+<a href="https://www.gnu.org/">
+GNU</a>
+ <a href="/GPL">
+General Public License</a>
+.
+Alternatively, you may choose to receive this work under any other
+license that grants the right to use, copy, modify, and/or distribute
+the work, as long as that license imposes the restriction that
+derivative works have to grant the same rights and impose the same
+restriction. For example, you may choose to receive this work under
+the
+<a href="https://www.gnu.org/">
+GNU</a>
+
+<a href="/FDL">
+Free Documentation License</a>
+, the
+<a href="https://creativecommons.org/">
+CreativeCommons</a>
+
+<a href="https://creativecommons.org/licenses/sa/1.0/">
+ShareAlike</a>
+
+License, the XEmacs manual license, or
+<a href="/OLD">
+similar licenses</a>
+.
+</p>
+
+</div>
+
+</body>
+
+</html>
+
