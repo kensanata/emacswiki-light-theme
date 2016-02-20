@@ -365,7 +365,8 @@ div.content {
     border: 1px solid #ccc;
 }
 .toc a {
-    color: #444;
+    /* color: #444; */
+    color: #999;
     /* color: #09d; */
     /* border-bottom: 1px dotted #09c; */
 }
