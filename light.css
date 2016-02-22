@@ -28,7 +28,7 @@ body {
 
 body.dark {
     color: #ccc;
-    background-color: #222;
+    background-color: #181818;
 }
 
 
@@ -47,9 +47,9 @@ code, pre {
     /* increases the size of the text, so need to counteract that here */
     /* font-size: 0.8em; */
 }
-body.dark code, pre {
-    color: #f9f8f8;
-    background-color: #282828;
+body.dark code, body.dark pre {
+    color: #ccc;
+    background-color: #222;
     border: 1px solid #333;
 }
 code {
@@ -85,10 +85,10 @@ a:active, a:hover {
 }
 
 body.dark a {
-    color: #09b;
+    color: #cf8;
 }
 body.dark a:active, body.dark a:hover {
-    color: #0ce;
+    color: #af6;
 }
 
 /* external links */
@@ -229,7 +229,7 @@ a.logo {
     display: block;
     /* just a placeholder for the moment */
     background: url(./images/logo218x38.png);
-    /* background: url(./images/ew.png); */
+    /* background: url(./images/logo218x32dark.png); */
     width: 218px;
     height: 38px;
     top: 22px;
@@ -380,7 +380,7 @@ div.header h1 a {
         border-left: 1px solid #aaa;
         padding: 1em;
     }
-    body.dark div.content, div.rc, div.diff, div.comment {
+    body.dark div.content, body.dark div.rc, body.dark div.diff, body.dark div.comment {
         border-left: 1px solid #444;
     }
 }
@@ -405,7 +405,7 @@ body.dark .toc {
     border: 1px solid #333;
 }
 .toc a {
-    color: #999;
+    color: #666;
     /* color: #09d; */
     /* border-bottom: 1px dotted #09c; */
 }
@@ -542,8 +542,12 @@ div.time a.author, a.diff {
     color: gray;
     border-bottom: 1px dotted #09c;
 }
+body.dark div.time a.author, body.dark a.diff {
+    color: gray;
+    border-bottom: 1px dotted #cf8;
+}
 div.time a.author:hover, a.diff:hover {
-    color: #09d;
+    color: #af6;
 }
 
 
@@ -566,6 +570,13 @@ p.legal a {
 }
 p.legal a:hover {
     color: #09d;
+}
+body.dark p.legal a {
+    color: gray;
+    border-bottom: 1px dotted #cfc;
+}
+body.dark p.legal a:hover {
+    color: #8f8;
 }
 /* also has <div style="float:right; margin-left:1ex;"> */
 a.license {
@@ -595,6 +606,12 @@ a.license {
 }
 .footer .translation a:hover {
     color: #09d;
+}
+body.dark .footer .translation a {
+    border-bottom: inherit;
+}
+body.dark .footer .translation a:hover {
+    color: inherit;
 }
 /* Edit bar (buttons) */
 .footer .edit.bar {
@@ -701,18 +718,19 @@ span.category_3   { color: blue; }
 
 
 /* dark version */
-body.dark span.builtin      { color: red; } /* DarkSlateBlue */
-body.dark span.comment      { color: green; } /* Firebrick */
-body.dark span.constant     { color: blue; } /* DarkCyan */
-body.dark span.function     { color: orange; } /* Blue1 */
-body.dark span.keyword      { color: purple; } /* Purple */
-body.dark span.string       { color: yellow; } /* VioletRed4 */
-body.dark span.type         { color: gray; } /* ForestGreen */
-body.dark span.warning      { color: pink; font-weight: bold; } /* Red1 */
+/* adapted from ample-flat theme */
+body.dark span.builtin      { color: #9fbfdf; } /* light-blue */
+body.dark span.comment      { color: #857575; } /* gray */
+body.dark span.constant     { color: #ab85a3; } /* purple */
+body.dark span.function     { color: #a9df90; } /* green */
+body.dark span.keyword      { color: #91a0b3; } /* blue */
+body.dark span.string       { color: #ddbc91; } /* tan */
+body.dark span.type         { color: #ad8572; } /* red */
+body.dark span.warning      { color: red; }
 body.dark span.comment span,
-span.string  span { color: inherit; }
+body.dark span.string  span { color: inherit; }
 body.dark span.comment span.important.constant,
-span.string  span.important.constant { color: brown; }
+body.dark span.string  span.important.constant { color: #706565; }
 
 
 
