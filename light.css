@@ -229,7 +229,6 @@ a.logo {
     display: block;
     /* just a placeholder for the moment */
     background: url(./images/logo218x38.png);
-    /* background: url(./images/logo218x32dark.png); */
     width: 218px;
     height: 38px;
     top: 22px;
@@ -316,7 +315,7 @@ span.gotobar a:hover {
     color: #09d;
 }
 body.dark span.bar a:hover {
-    color: #aaa;
+    color: #af6;
 }
 
 
@@ -418,7 +417,7 @@ body.dark .toc a {
     color: #999;
 }
 body.dark .toc a:hover {
-    color: #48b;
+    color: #af6;
 }
 
 
@@ -551,6 +550,9 @@ body.dark div.time a.author, body.dark a.diff {
 div.time a.author:hover, a.diff:hover {
     color: #af6;
 }
+body.dark div.time a.author:hover, body.dark a.diff:hover {
+    color: #af6;
+}
 
 
 /* Legal */
@@ -578,7 +580,8 @@ body.dark p.legal a {
     border-bottom: 1px dotted #cfc;
 }
 body.dark p.legal a:hover {
-    color: #8f8;
+    /* color: #8f8; */
+    color: #af6;
 }
 /* also has <div style="float:right; margin-left:1ex;"> */
 a.license {
@@ -613,7 +616,8 @@ body.dark .footer .translation a {
     border-bottom: inherit;
 }
 body.dark .footer .translation a:hover {
-    color: inherit;
+    /* color: inherit; */
+    color: #af6;
 }
 /* Edit bar (buttons) */
 .footer .edit.bar {
@@ -673,6 +677,9 @@ body.dark .footer .translation a:hover {
 }
 .edit.bar a:active, .edit.bar a.active {
     background-color:#cccccc;
+}
+body.dark .edit.bar a:hover {
+    color:#aaa;
 }
 
 
