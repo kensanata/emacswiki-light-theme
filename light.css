@@ -238,7 +238,9 @@ a.logo {
     text-decoration: none;
     float: left;
 }
-
+body.dark a.logo {
+    filter: invert(90%) hue-rotate(150deg) saturate(0.6);
+}
 
 /* Search bar */
 /* don't let search bar overwrite logo */
