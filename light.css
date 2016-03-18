@@ -513,6 +513,8 @@ div.month a.edit {
 div.diff { padding-left: 5%; padding-right: 5%; }
 div.old { background-color: #FFFFAF; color: #000; }
 div.new { background-color: #CFFFCF; color: #000; }
+body.dark div.old { background-color: #a00; color: #000; }
+body.dark div.new { background-color: #8a3; color: #000; }
 
 
 /* Footer */

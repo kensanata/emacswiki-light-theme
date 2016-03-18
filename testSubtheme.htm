@@ -2041,6 +2041,206 @@ More...</a>
 
 
 
+<!-- testDiff -->
+
+
+
+
+<div class="wrapper">
+<div class="diff">
+<p>
+<b>
+Last edit</b>
+</p>
+ <p class="summary">
+Summary: add subheading</p>
+ <p>
+<strong>
+Added:</strong>
+</p>
+
+<div class="new">
+<p>
+&gt; === A subheading ===<br />
+&gt; This is a subheading to show the subheading style. </p>
+</div>
+<p>
+<strong>
+Deleted:</strong>
+</p>
+
+<div class="old">
+<p>
+&lt; ||!InterLisp             ||1972     ||Xerox Parc  || <br />
+&lt; ||Scheme                ||1975     ||MIT       ||  <br />
+&lt; ||Lisp Machine Lisp     ||         ||MIT       ||  <br />
+&lt; ||Common Lisp           ||1981     ||          ||<br />
+&lt; ||Kyoto Common Lisp (KCL) ||1984     ||Kyoto Japan ||<br />
+&lt; ||Gnu Common Lisp (GCL) ||1994     ||Austin ||</p>
+</div>
+</div>
+<hr />
+<div class="content browse">
+<p>
+This page aims to give a brief preview of the main features of a <a class="local" href="https://www.emacswiki.org/emacs/CSS">
+CSS stylesheet</a>
+ - code blocks, wikilinks, lists, key sequences and function references - for a more complete preview see <a class="local" href="https://www.emacswiki.org/emacs/TextFormattingRules">
+TextFormattingRules</a>
+. Feel free to edit it, though it was initially set up to use for screenshots, so it was kept fairly short.</p>
+<h2>
+Basics</h2>
+<p>
+Here is a <strong>
+bulleted list</strong>
+ -</p>
+<ul>
+<li>
+Use <code>
+&#x2018;C-h f&#x2019;</code>
+ (<code>
+&#x2018;describe-function&#x2019;</code>
+) and <code>
+&#x2018;C-h v&#x2019;</code>
+ (<code>
+&#x2018;describe-variable&#x2019;</code>
+) to understand commands and <a class="local" href="https://www.emacswiki.org/emacs/variable">
+variable</a>
+s you use.</li>
+<li>
+Code (usually monospaced, plus escaping of wiki processing): <span>
+&lt;code&gt;foo&lt;/code&gt;</span>
+ &#x2192;&#x00a0;<code>
+foo</code>
+</li>
+<li>
+For more hash table functions see <a class="url http" href="https://github.com/Wilfred/ht.el">
+https://github.com/Wilfred/ht.el</a>
+.</li>
+</ul>
+<h2>
+Code Blocks</h2>
+<pre>
+  (<span class="keyword">
+defun</span>
+ <span class="function">
+describe-hash-descend</span>
+ (hash)
+    <span class="string">
+"Recursive describe hash func for nested hash-tables - mangled"</span>
+
+    (maphash (<span class="keyword elisp">
+lambda</span>
+ (key value)
+               (pp key) (princ <span class="string">
+" =&gt; "</span>
+)
+               (<span class="keyword elisp">
+if</span>
+ (hash-table-p value)
+                     (describe-hash-descend value))
+             hash))</pre>
+<h3>
+A subheading</h3>
+<p>
+This is a subheading to show the subheading style.</p>
+<h2>
+Tables</h2>
+<table class="user">
+<tr class="odd first">
+<td align="left">
+Name                  </td>
+<td align="left">
+Started  </td>
+<td align="left">
+Location  </td>
+</tr>
+<tr class="even">
+<td align="left">
+Lisp 1</td>
+<td align="left">
+1958</td>
+<td align="left">
+MIT       </td>
+</tr>
+<tr class="odd">
+<td align="left">
+Lisp 1.5</td>
+<td align="left">
+1960</td>
+<td align="left">
+MIT       </td>
+</tr>
+<tr class="even">
+<td align="left">
+BBN Lisp              </td>
+<td align="left">
+1964</td>
+<td align="left">
+BBN       </td>
+</tr>
+<tr class="odd">
+<td align="left">
+MacLisp</td>
+<td align="left">
+1966</td>
+<td align="left">
+MIT       </td>
+</tr>
+<tr class="even">
+<td align="left">
+Muddle (MDL)</td>
+<td align="left">
+1971?</td>
+<td align="left">
+MIT       </td>
+<td align="center">
+</td>
+</tr>
+</table>
+<h2>
+Cons cells and lists</h2>
+<pre>
+          +-------+---+    +------+---+  +-------+-----+
+ list1---&gt;| alpha | *-----&gt;| beta | *---&gt;| gamma | nil |
+          +-------+---+    +------+---+  +-------+-----+
+</pre>
+<h2>
+Quotes</h2>
+<dl class="quote">
+<dt />
+<dd>
+“If you have a garden and a library, you have everything you need.” - Cicero</dd>
+</dl>
+<hr />
+<p>
+<a href="https://www.emacswiki.org/emacs/CategoryEmacsWikiSite" class="local">
+CategoryEmacsWikiSite</a>
+</p>
+</div>
+<div class="wrapper close">
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
