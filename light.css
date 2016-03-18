@@ -511,8 +511,10 @@ div.month a.edit {
 
 /* diff */
 div.diff { padding-left: 5%; padding-right: 5%; }
-div.old { background-color: #FFFFAF; color: #000; }
-div.new { background-color: #CFFFCF; color: #000; }
+/* div.old { background-color: #FFFFAF; color: #000; } */
+/* div.new { background-color: #CFFFCF; color: #000; } */
+div.old { background-color: #f87; color: #000; }
+div.new { background-color: #aea; color: #000; }
 body.dark div.old { background-color: #911; color: #000; }
 body.dark div.new { background-color: #393; color: #000; }
 
