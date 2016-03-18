@@ -67,7 +67,7 @@ pre {
 
 /* Links */
 a {
-    color: #07b;
+    color: #06b;
     background-color: inherit;
 
     /* This works on firefox, but just shows as a plain underline in chrome, which looks terrible */
