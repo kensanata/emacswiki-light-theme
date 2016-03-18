@@ -334,6 +334,10 @@ div.message {
 div.message p {
     margin: 0;
 }
+body.dark div.message {
+    background-color: #cdf;
+}
+
 
 
 /* h1 (title) */
