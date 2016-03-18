@@ -85,10 +85,10 @@ a:active, a:hover {
 }
 
 body.dark a {
-    color: #ad6;
+    color: #9c5;
 }
 body.dark a:active, body.dark a:hover {
-    color: #af6;
+    color: #ae6;
 }
 
 /* external links */
@@ -315,7 +315,7 @@ span.gotobar a:hover {
     color: #09d;
 }
 body.dark span.bar a:hover {
-    color: #af6;
+    color: #ae6;
 }
 
 
@@ -417,7 +417,7 @@ body.dark .toc a {
     color: #999;
 }
 body.dark .toc a:hover {
-    color: #af6;
+    color: #ae6;
 }
 
 
@@ -558,7 +558,7 @@ body.dark div.time a.author, body.dark .footer div.time a.diff {
     border-bottom: 1px dotted #cf8;
 }
 body.dark div.time a.author:hover, body.dark .footer div.time a.diff:hover {
-    color: #af6;
+    color: #ae6;
 }
 
 
@@ -587,8 +587,7 @@ body.dark p.legal a {
     border-bottom: 1px dotted #cfc;
 }
 body.dark p.legal a:hover {
-    /* color: #8f8; */
-    color: #af6;
+    color: #ae6;
 }
 /* also has <div style="float:right; margin-left:1ex;"> */
 a.license {
@@ -624,7 +623,7 @@ body.dark .footer .translation a {
 }
 body.dark .footer .translation a:hover {
     /* color: inherit; */
-    color: #af6;
+    color: #ae6;
 }
 /* Edit bar (buttons) */
 .footer .edit.bar {
