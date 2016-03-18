@@ -1441,6 +1441,622 @@ CategoryEmacsWikiSite</a>
 
 
 
+<!-- testPortraits -->
+
+
+
+
+<div class="wrapper">
+<div class="content browse">
+<p>
+This page explains how to use portraits in discussions on this wiki.</p>
+<p>
+Short summary:</p>
+<ol>
+<li>
+Choose an image of your face somewhere on the web. We prefer portrait size 48x48.</li>
+<li>
+Use this image URL on your homepage: Put <code>
+portrait: &lt;url&gt;</code>
+ on a line somewhere on your page. &#x2013; <em>
+Note:</em>
+ This must be the URL of the image itself, not the URL of a Web page where the image might be displayed. In particular, if you upload the image to <a href="http://www.emacswiki.org/emacs/EmacsWiki" class="local">
+EmacsWiki</a>
+, this will not be the URL of the <a class="local" href="http://www.emacswiki.org/emacs/EmacsWiki">
+EmacsWiki</a>
+ page containing the image. Use your browser (command &#x201c;View Image&#x201d; or &#x201c;Copy Image Location&#x201d;) to copy the image URL.</li>
+<li>
+When you save your homepage, you should now see your portrait.</li>
+<li>
+When you use <code>
+[new:AlexSchroeder:2004-12-23 20:09 UTC]</code>
+ on a page somewhere, it will automatically be expanded to <code>
+[new:&lt;username&gt;:&lt;date&gt;]</code>
+ and it will show your portrait.</li>
+<li>
+This only works if your username is also the name of your homepage.</li>
+</ol>
+
+<h2>[new]</h2>
+<p>
+When you are using <a href="http://www.emacswiki.org/emacs/ThreadMode" class="local">ThreadMode</a> instead of <a class="local" href="http://www.emacswiki.org/emacs/DocumentMode">DocumentMode</a>, ie. appending personal statements to a discussion instead of writing pages that could be part of a manual, then you should introduce your statements with <code>[new]</code>. This changes the background color of your statements.
+</p>
+<p>Example:</p>
+<pre>
+    [new]
+    Like this.</pre>
+<p>Result:</p>
+<div class="color one level0">
+<p>Like this.</p>
+</div>
+
+<h2>[new:page:popup]</h2>
+
+<p>
+If you use <code>[new:page:popup]</code>, then <i> page</i> will be searched for a line starting with <code>portrait:</code> and an URL. If such an URL is found, it is inlined as an image. <i>popup</i> will be used as a tooltip for your image.
+</p>
+
+<p>Definition example:</p>
+<pre>
+    portrait<span class="builtin">:http://www</span>.emacswiki.org/alex/pics/alex-furious.jpg
+    Note how text flows around the image.
+</pre>
+
+<p>Result:</p>
+<p>
+<img class="portrait" src="http://www.emacswiki.org/alex/pics/alex-furious.jpg" alt="Foto personal" />
+ Note how text flows around the image.
+</p>
+<hr />
+
+
+<p>Usage example:</p>
+<pre>
+    [new<span class="builtin">:UsingPortraits:Yadda</span>yadda!] 
+    Let your mouse pointer hover over the image!
+</pre>
+
+<p>Result:</p>
+<div class="color one level0">
+<div class="portrait">
+<p>
+<a class="newauthor" title="Yadda yadda!" href="http://www.emacswiki.org/emacs-es/UsingPortraits">
+<img class="portrait" src="http://www.emacswiki.org/alex/pics/alex-furious.jpg" alt="new: Yadda yadda!" />
+</a>
+<br />
+<a class="local" href="http://www.emacswiki.org/emacs-es/UsingPortraits">UsingPortraits</a>
+</p>
+</div>
+<p>Let your mouse pointer hover over the image!</p>
+</div>
+
+
+<h2>[new:page:2004-12-23 20:09 UTC] and [new:AlexSchroeder:2004-12-23 20:09 UTC]</h2>
+<p>
+If you don&#x2019;t specify a page or popup text, this will be expanded to  <code>[new:&lt;username&gt;:&lt;date&gt;]</code> when saving the page.</p>
+<p>
+If you have a portrait defined on your homepage, and the name of your homepage is the same as your username, then the portrait will be inlined as an image. A timestamp  will be used as a popup on the image.</p>
+<p> Example:</p>
+<dl class="quote">
+<dt />
+<dd>
+<tt>
+[new::]</tt>
+</dd>
+<dt />
+<dd>
+<code>More eye-candy!  :)</code>
+</dd>
+</dl>
+<p>Result: </p>
+
+<div class="color one level0">
+<div class="portrait">
+<p>
+<a class="newauthor" title="2004-12-23 20:09 UTC" href="http://www.emacswiki.org/emacs-es/AlexSchroeder">
+<img class="portrait" src="http://alexschroeder.ch/pics/alex-drinking-coffee-48-bw.jpg" alt="new: 2004-12-23 20:09 UTC" />
+</a>
+<br />
+<a class="local" href="http://www.emacswiki.org/emacs-es/AlexSchroeder">
+AlexSchroeder</a>
+</p>
+</div>
+<p>More eye-candy! :)</p>
+</div>
+
+
+<h2>Discussion</h2>
+
+
+<div class="color one level0">
+<div class="portrait">
+<p>
+<a class="newauthor" title="2005-01-10 17:30 UTC" href="http://www.emacswiki.org/emacs-es/AlexSchroeder">
+<img class="portrait" src="http://alexschroeder.ch/pics/alex-drinking-coffee-48-bw.jpg" alt="new: 2004-12-23 20:09 UTC" />
+</a>
+<br />
+<a class="local" href="http://www.emacswiki.org/emacs-es/AlexSchroeder">AlexSchroeder</a>
+</p>
+</div>
+<p>I&#x2019;d prefer it if we didn&#x2019;t use weird icons, avatars, screenshots, or anything like that. I want to enable us to add a human touch to the wiki. We have enough symbolic overload on the web.</p>
+</div>
+
+
+<div class="color two level0">
+<div class="portrait">
+<p>
+<a class="newauthor" title="2013-02-03 16:20 UTC" href="http://www.emacswiki.org/emacs-es/NicFerrier">
+<img class="portrait" src="http://gravatar.com/avatar/e94960f8e47c178e206a869c3b81165d" alt="new: 2013-02-03 16:20 UTC" />
+</a>
+<br />
+<a class="local" href="http://www.emacswiki.org/emacs-es/NicFerrier">NicFerrier</a>
+</p>
+</div>
+<p>I wonder if we should have an index page of all avatars and their locations?</p>
+</div>
+
+
+<div class="color one level0">
+<div class="portrait">
+<p>
+<a class="newauthor" title="2013-02-03 16:31 UTC" href="http://www.emacswiki.org/emacs-es/NicFerrier">
+<img class="portrait" src="http://gravatar.com/avatar/e94960f8e47c178e206a869c3b81165d" alt="new: 2013-02-03 16:20 UTC" />
+</a>
+<br />
+<a class="local" href="http://www.emacswiki.org/emacs-es/NicFerrier">Test</a>
+</p>
+</div>
+<p>Also it seems that we should limit the size of these as we display?</p>
+</div>
+
+</div>
+
+
+<div class="wrapper close">
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- testRecentChanges -->
+
+
+
+<div class="wrapper">
+    
+<div class="content browse">
+    
+<p>Recent changes are added automatically below. By default, only the most recent change is listed for each page. Click <strong> List all changes</strong> to view all the recent changes to a page. </p>
+
+<p>By following the <strong> (diff)</strong> link you can see a page where the difference (removals, additions, changes) between the previously edited revision and the current revision is displayed above the latest formatted version of the page. </p>
+
+<p>By following the <strong> (history)</strong> link you can see a list of all the revisions for a page. Not all revisions are kept, see <a href="http://www.oddmuse.org/cgi-bin/oddmuse/Kept%20Pages" class="inter Oddmuse"> <span class="site"> Oddmuse</span> <span class="separator"> :</span> <span class="interpage"> Kept Pages</span> </a> . </p>
+
+<p>See <strong> <a class="local" href="http://www.emacswiki.org/emacs/OtherRecentChanges"> OtherRecentChanges</a> </strong> for alternatives such as recent changes filtered by language, and recent visitors. </p>
+
+<ul>
+<li> <a href="/emacs-en?action=rc&amp;rclang=en" class="inter English outside"> Pages in English only</a> </li>
+<li> <a class="inter EmacsWiki outside" href="/emacs?action=rss"> RSS feed</a> , <a href="/emacs?action=rc;raw=1" class="inter EmacsWiki outside"> TXT feed</a> </li>
+</ul>
+
+<p>See <a href="http://www.emacswiki.org/emacs/UserName" class="local"> UserName</a> for more information about the user names used in the list below.</p>
+
+</div>
+
+
+
+<div class="rc">
+<hr />
+<h2> Updates in the last 7 days</h2>
+
+<p>
+<a rel="nofollow" href="http://www.emacswiki.org/emacs?action=rc;days=1;all=0;showedit=0"> 1</a>
+ | <a rel="nofollow" href="http://www.emacswiki.org/emacs?action=rc;days=3;all=0;showedit=0"> 3</a>
+ | <a href="http://www.emacswiki.org/emacs?action=rc;days=7;all=0;showedit=0" rel="nofollow"> 7</a>
+ | <a rel="nofollow" href="http://www.emacswiki.org/emacs?action=rc;days=14;all=0;showedit=0"> 14</a>
+ | <a href="http://www.emacswiki.org/emacs?action=rc;days=21;all=0;showedit=0" rel="nofollow"> 21</a>
+ | <a href="http://www.emacswiki.org/emacs?action=rc;days=28;all=0;showedit=0" rel="nofollow"> 28</a>
+ days <br />
+ <a rel="nofollow" href="http://www.emacswiki.org/emacs?action=rc;days=7;all=1;showedit=0"> List all changes</a>
+ <a href="http://www.emacswiki.org/emacs?action=rc;days=7;all=0;rollback=1;showedit=0" rel="nofollow"> Include rollbacks</a>
+ <a href="http://www.emacswiki.org/emacs?action=rc;days=7;all=0;showedit=1" rel="nofollow"> Include minor changes</a>
+ <br />
+ <a rel="nofollow" href="http://www.emacswiki.org/emacs?action=rc;from=1451275512;all=0;showedit=0"> List later changes</a>
+ <a href="http://www.emacswiki.org/emacs?action=rss;days=7;all=0;showedit=0" class="rss nopages nodiff" rel="nofollow"> RSS</a>
+ <a class="rss pages nodiff" rel="nofollow" href="http://www.emacswiki.org/emacs?action=rss;days=7;all=0;showedit=0;full=1"> RSS with pages</a>
+ <a href="http://www.emacswiki.org/emacs?action=rss;days=7;all=0;showedit=0;full=1;diff=1" class="rss pages diff" rel="nofollow"> RSS with pages and diff</a>
+</p>
+
+
+<form method="get" action="http://www.emacswiki.org/emacs" enctype="multipart/form-data" accept-charset="utf-8" class="rc">
+    
+    
+<p> <strong> 2015-12-28</strong> </p>
+
+<ul>
+<li>
+<span class="time">04:05 UTC</span>
+(<a rel="nofollow" class="diff" href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=Comments_on_CSSPreview">diff</a>)
+(<a class="history" rel="nofollow" href="http://www.emacswiki.org/emacs?action=history;id=Comments_on_CSSPreview">history</a>)
+<a href="http://www.emacswiki.org/emacs/Comments_on_CSSPreview" class="local">Comments on CSSPreview</a>
+ . . . . 
+<a class="author" title="127.0.0.1" href="http://www.emacswiki.org/emacs/BrianBurns">BrianBurns</a>
+<span class="dash">&#8211; </span>
+<strong>Thanks! It's still a bit experimental - I just noticed some fonts are a bit small, and the logo is just a placeholder, but any suggestions are . . .</strong>
+</li>
+</ul>
+
+
+<p>
+<strong>
+2015-12-26</strong>
+</p>
+<ul>
+<li>
+<span class="time">
+22:30 UTC</span>
+ (<a href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=Comments_on_RectangleCommands" class="diff" rel="nofollow">
+diff</a>
+) (<a href="http://www.emacswiki.org/emacs?action=history;id=Comments_on_RectangleCommands" rel="nofollow" class="history">
+history</a>
+)  <a href="http://www.emacswiki.org/emacs/Comments_on_RectangleCommands" class="local">
+Comments on RectangleCommands</a>
+  . . . . <a href="http://www.emacswiki.org/emacs/DrewAdams" title="127.0.0.1" class="author">
+DrewAdams</a>
+ <span class="dash">
+ &#8211; </span>
+<strong>
+DeletedPage</strong>
+  </li>
+<li>
+<span class="time">
+22:30 UTC</span>
+ (<a rel="nofollow" class="diff" href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=BannedContent">
+diff</a>
+) (<a href="http://www.emacswiki.org/emacs?action=history;id=BannedContent" class="history" rel="nofollow">
+history</a>
+)  <a class="local" href="http://www.emacswiki.org/emacs/BannedContent">
+BannedContent</a>
+  . . . . <a href="http://www.emacswiki.org/emacs/DrewAdams" title="127.0.0.1" class="author">
+DrewAdams</a>
+  <span class="lang">
+[en]</span>
+ </li>
+<li>
+<span class="time">
+10:01 UTC</span>
+ (<a href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=DelightedModes" rel="nofollow" class="diff">
+diff</a>
+) (<a href="http://www.emacswiki.org/emacs?action=history;id=DelightedModes" rel="nofollow" class="history">
+history</a>
+)  <a class="local" href="http://www.emacswiki.org/emacs/DelightedModes">
+DelightedModes</a>
+  . . . . <a class="author" title="127.0.0.1" href="http://www.emacswiki.org/emacs/AlexKost">
+AlexKost</a>
+ <span class="dash">
+ &#8211; </span>
+<strong>
+Mention 'dim' package</strong>
+ <span class="lang">
+[en]</span>
+ </li>
+<li>
+<span class="time">
+09:59 UTC</span>
+ (<a href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=AlexKost" class="diff" rel="nofollow">
+diff</a>
+) (<a href="http://www.emacswiki.org/emacs?action=history;id=AlexKost" class="history" rel="nofollow">
+history</a>
+)  <a class="local" href="http://www.emacswiki.org/emacs/AlexKost">
+AlexKost</a>
+  . . . . <a href="http://www.emacswiki.org/emacs/AlexKost" title="127.0.0.1" class="author">
+AlexKost</a>
+ <span class="dash">
+ &#8211; </span>
+<strong>
+Add a link to 'dim' package and replace gitorious with gitlab</strong>
+ <span class="lang">
+[en]</span>
+ </li>
+</ul>
+<p>
+<strong>
+2015-12-25</strong>
+</p>
+<ul>
+<li>
+<span class="time">
+18:17 UTC</span>
+ (<a href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=EndOfLineTips" rel="nofollow" class="diff">
+diff</a>
+) (<a rel="nofollow" class="history" href="http://www.emacswiki.org/emacs?action=history;id=EndOfLineTips">
+history</a>
+)  <a class="local" href="http://www.emacswiki.org/emacs/EndOfLineTips">
+EndOfLineTips</a>
+  . . . . <a class="author" title="127.0.0.1" href="http://www.emacswiki.org/emacs/DrewAdams">
+DrewAdams</a>
+  <span class="lang">
+[en]</span>
+ </li>
+<li>
+<span class="time">
+05:52 UTC</span>
+ (<a href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=Comments_on_WebKit" rel="nofollow" class="diff">
+diff</a>
+) (<a href="http://www.emacswiki.org/emacs?action=history;id=Comments_on_WebKit" class="history" rel="nofollow">
+history</a>
+)  <a class="local" href="http://www.emacswiki.org/emacs/Comments_on_WebKit">
+Comments on WebKit</a>
+  . . . . <a class="author" title="127.0.0.1" href="http://www.emacswiki.org/emacs/ZhangHai">
+ZhangHai</a>
+ <span class="dash">
+ &#8211; </span>
+<strong>
+@LaloHao Same here.</strong>
+ <span class="lang">
+[en]</span>
+ </li>
+</ul>
+<p>
+<strong>
+2015-12-24</strong>
+</p>
+<ul>
+<li>
+<span class="time">
+23:58 UTC</span>
+ (<a class="diff" rel="nofollow" href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=CompilationMode">
+diff</a>
+) (<a href="http://www.emacswiki.org/emacs?action=history;id=CompilationMode" class="history" rel="nofollow">
+history</a>
+)  <a href="http://www.emacswiki.org/emacs/CompilationMode" class="local">
+CompilationMode</a>
+  . . . . <a class="author" title="127.0.0.1" href="http://www.emacswiki.org/emacs/SachaChua">
+SachaChua</a>
+ <span class="dash">
+ &#8211; </span>
+<strong>
+Add note about compilation-scroll-output</strong>
+ <span class="lang">
+[en]</span>
+ </li>
+<li>
+<span class="time">
+17:46 UTC</span>
+ (<a class="diff" rel="nofollow" href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=ErcConfiguration">
+diff</a>
+) (<a class="history" rel="nofollow" href="http://www.emacswiki.org/emacs?action=history;id=ErcConfiguration">
+history</a>
+)  <a href="http://www.emacswiki.org/emacs/ErcConfiguration" class="local">
+ErcConfiguration</a>
+  . . . . <a href="http://www.emacswiki.org/emacs/SachaChua" title="127.0.0.1" class="author">
+SachaChua</a>
+ <span class="dash">
+ &#8211; </span>
+<strong>
+Add note about erc-join-buffer</strong>
+ <span class="lang">
+[en]</span>
+ </li>
+<li>
+<span class="time">
+17:05 UTC</span>
+ (<a href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=MozRepl" rel="nofollow" class="diff">
+diff</a>
+) (<a class="history" rel="nofollow" href="http://www.emacswiki.org/emacs?action=history;id=MozRepl">
+history</a>
+)  <a class="local" href="http://www.emacswiki.org/emacs/MozRepl">
+MozRepl</a>
+  . . . . <a class="author" title="127.0.0.1" href="http://www.emacswiki.org/emacs/JohnWiegley">
+JohnWiegley</a>
+ <span class="dash">
+ &#8211; </span>
+<strong>
+Drop some parentheses; edit sent by Rovanion</strong>
+ <span class="lang">
+[en]</span>
+ </li>
+<li>
+<span class="time">
+16:42 UTC</span>
+ (<a href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=InstallingPackages" class="diff" rel="nofollow">
+diff</a>
+) (<a class="history" rel="nofollow" href="http://www.emacswiki.org/emacs?action=history;id=InstallingPackages">
+history</a>
+)  <a href="http://www.emacswiki.org/emacs/InstallingPackages" class="local">
+InstallingPackages</a>
+  . . . . <a href="http://www.emacswiki.org/emacs/SachaChua" title="127.0.0.1" class="author">
+SachaChua</a>
+ <span class="dash">
+ &#8211; </span>
+<strong>
+Add notes about require and eval-after-load and installing packages</strong>
+ <span class="lang">
+[en]</span>
+ </li>
+<li>
+<span class="time">
+06:36 UTC</span>
+ (<a rel="nofollow" class="diff" href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=AndrewSchimmel">
+diff</a>
+) (<a class="history" rel="nofollow" href="http://www.emacswiki.org/emacs?action=history;id=AndrewSchimmel">
+history</a>
+)  <a class="local" href="http://www.emacswiki.org/emacs/AndrewSchimmel">
+AndrewSchimmel</a>
+  . . . . <a class="author" title="127.0.0.1" href="http://www.emacswiki.org/emacs/DrewAdams">
+DrewAdams</a>
+ <span class="dash">
+ &#8211; </span>
+<strong>
+Welcome. Category.</strong>
+  </li>
+</ul>
+<p>
+<strong>
+2015-12-22</strong>
+</p>
+<ul>
+<li>
+<span class="time">
+23:20 UTC</span>
+ (<a class="diff" rel="nofollow" href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=DirectoryVariables">
+diff</a>
+) (<a class="history" rel="nofollow" href="http://www.emacswiki.org/emacs?action=history;id=DirectoryVariables">
+history</a>
+)  <a class="local" href="http://www.emacswiki.org/emacs/DirectoryVariables">
+DirectoryVariables</a>
+  . . . . 127.0.0.1  <span class="lang">
+[en]</span>
+ </li>
+<li>
+<span class="time">
+22:22 UTC</span>
+ (<a href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=RubyLanguage" class="diff" rel="nofollow">
+diff</a>
+) (<a rel="nofollow" class="history" href="http://www.emacswiki.org/emacs?action=history;id=RubyLanguage">
+history</a>
+)  <a class="local" href="http://www.emacswiki.org/emacs/RubyLanguage">
+RubyLanguage</a>
+  . . . . <a href="http://www.emacswiki.org/emacs/SachaChua" title="127.0.0.1" class="author">
+SachaChua</a>
+ <span class="dash">
+ &#8211; </span>
+<strong>
+Add link to RspecMode</strong>
+  </li>
+<li>
+<span class="time">
+21:52 UTC</span>
+ (<a href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=MiniMap" rel="nofollow" class="diff">
+diff</a>
+) (<a rel="nofollow" class="history" href="http://www.emacswiki.org/emacs?action=history;id=MiniMap">
+history</a>
+)  <a href="http://www.emacswiki.org/emacs/MiniMap" class="local">
+MiniMap</a>
+  . . . . <a class="author" href="http://www.emacswiki.org/emacs/sshbio" title="127.0.0.1">
+sshbio</a>
+  <span class="lang">
+[en]</span>
+ </li>
+<li>
+<span class="time">
+16:33 UTC</span>
+ (<a rel="nofollow" class="diff" href="http://www.emacswiki.org/emacs?action=browse;diff=1;id=Friend_of_Emacs">
+diff</a>
+) (<a class="history" rel="nofollow" href="http://www.emacswiki.org/emacs?action=history;id=Friend_of_Emacs">
+history</a>
+)  <a href="http://www.emacswiki.org/emacs/Friend_of_Emacs" class="local">
+Friend of Emacs</a>
+  . . . . <a class="author" title="127.0.0.1" href="http://www.emacswiki.org/emacs/DrewAdams">
+DrewAdams</a>
+   </li>
+</ul>
+<p class="more">
+<a href="http://www.emacswiki.org/emacs?action=rc;from=1450129047;upto=1450733847" rel="nofollow" class="more">
+More...</a>
+</p>
+</form>
+
+
+
+<!-- Filters -->
+
+<form method="get" action="http://www.emacswiki.org/emacs" enctype="multipart/form-data" accept-charset="utf-8" class="filter">
+    
+<p>
+<strong> Filters</strong>
+<input value="rc" type="hidden" name="action" />
+</p>
+
+<table>
+    
+<tr>
+<td> <label for="match"> Title:</label> </td>
+<td> <input type="text" name="match"  size="20" id="match" /> </td>
+</tr>
+
+<tr>
+<td> <label for="rcfilteronly"> Title and Body:</label> </td>
+<td> <input type="text" name="rcfilteronly"  size="20" id="rcfilteronly" /> </td>
+</tr>
+
+<tr>
+<td> <label for="rcuseronly"> Username:</label> </td>
+<td> <input type="text" name="rcuseronly"  size="20" id="rcuseronly" /> </td>
+</tr>
+
+<tr>
+<td> <label for="rchostonly"> Host:</label> </td>
+<td> <input type="text" name="rchostonly"  size="20" id="rchostonly" /> </td>
+</tr>
+
+<tr>
+<td> <label for="followup"> Follow up to:</label> </td>
+<td> <input type="text" name="followup"  size="20" id="followup" /> </td>
+</tr>
+
+<tr>
+<td> <label for="rclang"> Language:</label> </td>
+<td> <input type="text" name="lang"  size="10" id="rclang" /> </td>
+</tr>
+
+</table>
+
+<p> <input type="submit" name="dofilter" value="Go!" /> </p>
+
+</form>
+
+</div>
+<div class="wrapper close"> </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="footer">
 <hr />
@@ -1477,67 +2093,26 @@ BrianBurns</a>
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--
 <rdf:RDF xmlns="http://web.resource.org/cc/"
  xmlns:dc="http://purl.org/dc/elements/1.1/"
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-
 <Work rdf:about="">
-
    <license rdf:resource="https://creativecommons.org/licenses/GPL/2.0/" />
-
   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Software" />
-
 </Work>
-
-
 <License rdf:about="https://creativecommons.org/licenses/GPL/2.0/">
-
    <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
-
    <permits rdf:resource="http://web.resource.org/cc/Distribution" />
-
    <requires rdf:resource="http://web.resource.org/cc/Notice" />
-
    <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
-
    <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
-
    <requires rdf:resource="http://web.resource.org/cc/SourceCode" />
-
 </License>
-
 </rdf:RDF>
-
 -->
 
-
 <p class="legal">
-
 This work is licensed to you under version 2 of the
 <a href="https://www.gnu.org/">
 GNU</a>
@@ -1567,10 +2142,7 @@ License, the XEmacs manual license, or
 similar licenses</a>
 .
 </p>
-
 </div>
-
 </body>
-
 </html>
 

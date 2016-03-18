@@ -541,16 +541,16 @@ div.footer span.edit {
 
 div.time a.author, a.diff {
     color: gray;
-    border-bottom: 1px dotted #09c;
+    /* border-bottom: 1px dotted #09c; */
 }
 div.time a.author:hover, a.diff:hover {
     color: #09d;
 }
-body.dark div.time a.author, body.dark a.diff {
+body.dark div.time a.author, body.dark .footer a.diff {
     color: gray;
     border-bottom: 1px dotted #cf8;
 }
-body.dark div.time a.author:hover, body.dark a.diff:hover {
+body.dark div.time a.author:hover, body.dark .footer a.diff:hover {
     color: #af6;
 }
 
