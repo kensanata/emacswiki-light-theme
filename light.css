@@ -543,18 +543,21 @@ div.footer span.edit {
     white-space: nowrap;
 }
 
-div.time a.author, a.diff {
+div.time a.author, div.time a.diff {
     color: gray;
-    /* border-bottom: 1px dotted #09c; */
+    border-bottom: 1px dotted #09c;
 }
-div.time a.author:hover, a.diff:hover {
+body.dark div.time a.author, body.dark div.time a.diff {
+    border-bottom: none;
+}
+div.time a.author:hover, div.time a.diff:hover {
     color: #09d;
 }
-body.dark div.time a.author, body.dark .footer a.diff {
+body.dark div.time a.author, body.dark .footer div.time a.diff {
     color: gray;
     border-bottom: 1px dotted #cf8;
 }
-body.dark div.time a.author:hover, body.dark .footer a.diff:hover {
+body.dark div.time a.author:hover, body.dark .footer div.time a.diff:hover {
     color: #af6;
 }
 
