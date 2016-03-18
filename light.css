@@ -844,11 +844,23 @@ div.color.one {
     border: 1px solid #ddd;
     /* border: 1px dotted #999; */
 }
+.dark div.color.one {
+    color: #ccc;
+    background-color: #282828;
+    border: 1px solid #333;
+}
 /* news text */
 /* make text match the top margin of the portrait */
 div.page div.portrait + p {
     margin-top: 0.5ex;
 }
+
+
+
+
+
+
+
 
 
 
