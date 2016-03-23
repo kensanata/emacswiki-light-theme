@@ -34,6 +34,11 @@ though note that some files may have extra whitespace here and there - this is
 just due to globally adding a linefeed after '>' characters to make the HTML
 more readable.
 
+The basic test page is testPage.htm - the others are just different pages
+encountered in the wiki, though testSubtheme.htm exercises the dark subtheme by
+merging all of the test pages together. The wiki implements subthemes by just
+adding a class like 'dark' to the <body> element.
+
 
 ### Discussion ###
 
