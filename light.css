@@ -7,6 +7,8 @@ A combination of some of the existing themes on the EmacsWiki at
 http://emacswiki.org, with various other additions.
 The base theme was the cali2.css theme - question marks indicate things left
 over which might be removable.
+A dark subtheme is implemented by an additional 'dark' class on the main 
+<body> element.
 Released under the MIT License.
 ----------------------------------------------------------------------------
 */
@@ -21,11 +23,8 @@ body {
     padding: 1em 1em;
     color: #111;
     background-color: #fffefe;
-    font-size: 1.2em;
-    line-height: 1.3em;
+    font-size: 100%;
 }
-
-
 body.dark {
     color: #ccc;
     background-color: #181818;
@@ -41,8 +40,6 @@ code, pre {
 
     font-family: monospace;
 
-    font-size: 1.1em;
-    
     /* For some reason, using a different font than the default monospace */
     /* increases the size of the text, so need to counteract that here */
     /* font-size: 0.8em; */
@@ -58,7 +55,6 @@ code {
 pre {
     margin: 1em 0;
     padding: 1em 2em;
-    line-height: 1.4em;
     overflow: auto; /* add horizontal scrollbar if necessary */
 }
 
