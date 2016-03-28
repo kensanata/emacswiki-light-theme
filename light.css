@@ -7,7 +7,7 @@ A combination of some of the existing themes on the EmacsWiki at
 http://emacswiki.org, with various other additions.
 The base theme was the cali2.css theme - question marks indicate things left
 over which might be removable.
-A dark subtheme is implemented by an additional 'dark' class on the main 
+A dark subtheme is implemented by an additional 'dark' class on the main
 <body> element.
 Released under the MIT License.
 ----------------------------------------------------------------------------
@@ -86,13 +86,10 @@ body.dark a {
 body.dark a:active, body.dark a:hover {
     color: #ae6;
 }
-
 /* external links */
 /* a.url:before { content: "\2197"; } */
 /* .safari a.url:before { content: url(http://www.emacswiki.org/alex/pics/arrow.png); } */
-
-
-/* Images */
+/* image links */
 a.image img {
     border: none;
 }
@@ -104,6 +101,12 @@ a.right {
     float: right;
     margin: 20px;
 }
+
+
+/* Images */
+/* dim images for dark theme */
+body.dark img {filter: brightness(50%);}
+body.dark img:hover {filter: brightness(100%);}
 
 
 /* Headers */
@@ -518,7 +521,7 @@ div.new { background-color: #aea; color: #000; }
 body.dark div.old { background-color: #911; color: #000; }
 body.dark div.new { background-color: #393; color: #000; }
 /* inner shadow */
-body.dark div.old, body.dark div.new { 
+body.dark div.old, body.dark div.new {
    -moz-box-shadow:    inset 0 0 5px #000;
    -webkit-box-shadow: inset 0 0 5px #000;
    box-shadow:         inset 0 0 5px #000;
