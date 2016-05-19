@@ -105,7 +105,7 @@ a.right {
 
 /* Images */
 /* dim images for dark theme */
-body.dark img {filter: brightness(50%);}
+body.dark img {filter: brightness(70%);}
 body.dark img:hover {filter: brightness(100%);}
 
 
