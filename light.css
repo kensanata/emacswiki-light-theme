@@ -325,7 +325,7 @@ div.message {
     top: 1em;
     height: 1.4em;
     margin: 0;
-    padding: 0 2em;
+    padding: 5px 2em 2px;
     background-color: MediumTurquoise;
     color: #000;
     box-shadow: 2px 2px 2px 0 #888;
