@@ -334,7 +334,9 @@ div.message p {
     margin: 0;
 }
 body.dark div.message {
-    background-color: #08f;
+    border: solid 1px #08f;
+    background-color: black;
+    color: #08f;
     box-shadow: none;
 }
 
