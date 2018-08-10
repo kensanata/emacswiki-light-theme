@@ -30,6 +30,10 @@ body.dark {
     background-color: #181818;
 }
 
+/* Screenshots, Images */
+img {
+    max-width: 100%;
+}
 
 /* Code - used for keysequences, function references (anything in `...') */
 /* Pre - used for blocks of code */
