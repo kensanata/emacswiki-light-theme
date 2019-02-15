@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>EmacsWiki: Edit Denied</title><link type="text/css" rel="stylesheet" href="light.css" /><meta name="robots" content="INDEX,FOLLOW" /><link rel="alternate" type="application/rss+xml" title="EmacsWiki" href="https://www.emacswiki.org/emacs?action=rss" /><link rel="alternate" type="application/rss+xml" title="EmacsWiki: Alex_Schroeder" href="https://www.emacswiki.org/emacs?action=rss;rcidonly=Alex_Schroeder" />
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content"
+      href="https://www.emacswiki.org/full.rss" />
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki with page content and diff"
+      href="https://www.emacswiki.org/full-diff.rss" />
+<link rel="alternate" type="application/rss+xml"
+      title="Emacs Wiki including minor differences"
+      href="https://www.emacswiki.org/minor-edits.rss" />
+<link rel="alternate" type="application/rss+xml"
+      title="Changes for Alex Schroeder only"
+      href="https://www.emacswiki.org/emacs?action=rss;rcidonly=Alex_Schroeder" /><meta content="width=device-width" name="viewport" />
+<script type="text/javascript" src="/outliner.0.5.0.62-toc.js"></script>
+<script type="text/javascript">
+
+  function addOnloadEvent(fnc) {
+    if ( typeof window.addEventListener != "undefined" )
+      window.addEventListener( "load", fnc, false );
+    else if ( typeof window.attachEvent != "undefined" ) {
+      window.attachEvent( "onload", fnc );
+    }
+    else {
+      if ( window.onload != null ) {
+	var oldOnload = window.onload;
+	window.onload = function ( e ) {
+	  oldOnload( e );
+	  window[fnc]();
+	};
+      }
+      else
+	window.onload = fnc;
+    }
+  }
+
+  // https://stackoverflow.com/questions/280634/endswith-in-javascript
+  if (typeof String.prototype.endsWith !== 'function') {
+    String.prototype.endsWith = function(suffix) {
+      return this.indexOf(suffix, this.length - suffix.length) !== -1;
+    };
+  }
+
+  var initToc=function() {
+
+    var outline = HTML5Outline(document.body);
+    if (outline.sections.length == 1) {
+      outline.sections = outline.sections[0].sections;
+    }
+
+    if (outline.sections.length > 1
+	|| outline.sections.length == 1
+           && outline.sections[0].sections.length > 0) {
+
+      var toc = document.getElementById('toc');
+
+      if (!toc) {
+	var divs = document.getElementsByTagName('div');
+	for (var i = 0; i < divs.length; i++) {
+	  if (divs[i].getAttribute('class') == 'toc') {
+	    toc = divs[i];
+	    break;
+	  }
+	}
+      }
+
+      if (!toc) {
+	var h2 = document.getElementsByTagName('h2')[0];
+	if (h2) {
+	  toc = document.createElement('div');
+	  toc.setAttribute('class', 'toc');
+	  h2.parentNode.insertBefore(toc, h2);
+	}
+      }
+
+      if (toc) {
+        var html = outline.asHTML(true);
+        toc.innerHTML = html;
+
+	items = toc.getElementsByTagName('a');
+	for (var i = 0; i < items.length; i++) {
+	  while (items[i].textContent.endsWith('✎')) {
+            var text = items[i].childNodes[0].nodeValue;
+	    items[i].childNodes[0].nodeValue = text.substring(0, text.length - 1);
+	  }
+	}
+      }
+    }
+  }
+
+  addOnloadEvent(initToc);
+  </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head><body class="default"><div class="header"><a class="logo" href="https://www.emacswiki.org/emacs/SiteMap"><img alt="[Home]" class="logo" src="https://www.emacswiki.org/images/logo218x38.png" /></a><div class="menu"><span class="gotobar bar"><a class="local" href="https://www.emacswiki.org/emacs/SiteMap">SiteMap</a> <a class="local" href="https://www.emacswiki.org/emacs/Search">Search</a> <a class="local" href="https://www.emacswiki.org/emacs/ElispArea">ElispArea</a> <a class="local" href="https://www.emacswiki.org/emacs/HowTo">HowTo</a> <a class="local" href="https://www.emacswiki.org/emacs/Glossary">Glossary</a> <a class="local" href="https://www.emacswiki.org/emacs/RecentChanges">RecentChanges</a> <a class="local" href="https://www.emacswiki.org/emacs/News">News</a> <a class="local" href="https://www.emacswiki.org/emacs/Problems">Problems</a> <a class="local" href="https://www.emacswiki.org/emacs/Suggestions">Suggestions</a> </span><form method="get" action="https://www.emacswiki.org/emacs" enctype="multipart/form-data" accept-charset="utf-8" class="search"><p><label for="search">Search:</label> <input type="text" name="search"  size="15" accesskey="f" id="search" /> <label for="searchlang">Language:</label> <input type="text" name="lang"  size="5" id="searchlang" /> <input type="submit" name="dosearch" value="Go!" /></p></form></div><h1>Edit Denied</h1></div><div class="wrapper"><p>You did not answer correctly.</p><form method="post" action="https://www.emacswiki.org/emacs" enctype="multipart/form-data" accept-charset="utf-8" class="form"><div class="question"><p>To save this page you must answer this question:</p> <blockquote><p>What is the greatest editor out there?</p> <p><input name="answer" type="text" /> <input name="question_num" type="hidden" value="0" /> <input type="submit" name=".submit" value="Go!" /></p></blockquote></div><input name="title" type="hidden" value="Alex_Schroeder" /><input name="text" type="hidden" value="I'm an editor of the EmacsWiki. I invite all Emacs and XEmacs users to
+take up editing responsibilities as well. All you need to do is edit
+new pages, correct typos, add categories, rework pages. A good rule of
+thumb I try to follow is to make all pages potential sections in a
+printed book or info manual.
+
+I usually don't sign my contributions because I think that encourages
+other people to rework the page. Signing contributions would not
+make sense in a traditional book, either.
+
+You can contact me [mailto:kensanata@gmail.com using mail].
+
+I use Emacs.
+I am [http://member.fsf.org FSF Member] #894, joined on 2003-03-06,
+I am [http://www.fsfe.org/ FSFE Member] #372, joined 2005-05-22,
+and I am an [http://www.eff.org/ EFF Member], joined 2006-03-14.
+It's sad how I need to support foreign NGOs because policy in the USA and the EU
+will end up affecting me whether I like it or not.
+
+* [http://alexschroeder.ch/wiki/Contact Contact]
+* [http://alexschroeder.ch/wiki/ Blog]
+* [http://alexschroeder.ch/pics/pink-bliss.png Emacs Screenshot]
+* [http://www.oddmuse.org/ Oddmuse] is the wiki engine used for this wiki.
+
+If you think that Emacs Wiki is a mess and needs to be based on a different
+technology, feel free to read a blog post of mine, [http://alexschroeder.ch/wiki/2012-03-24_How_Emacs_Wiki_Works How Emacs Wiki Works].
+
+I am also known as [::kensanata] on IRC.
+&quot;Kensanata&quot; doesn't mean anything. It was the name of my character
+when I started [http://alexschroeder.ch/wiki/J%C3%BCnger_des_Blauen_Mondes playing PBEM games].
+I started my first homepage for this game on Geocities and needed an account name.
+Instead of alex4365472432009 I chose a name related to the game. And
+since Geocities and Yahoo and AOL started to cooperate, &quot;kensanata&quot;
+turned out to be the name of my Yahoo mailbox and my AIM handle.
+Later, I also used it on ICQ. And now I'm using it on IRC.
+
+== Code ==
+
+* https://alexschroeder.ch/cgit/emacs-setup/about -- my new setup, inspired by EmacsLife
+* https://github.com/kensanata/ggg -- my Gmail Gnus GPG Guide (GGGG)
+
+== RSI ==
+
+RepeatedStrainInjury -- saw a doctor, started physiotherapy on
+2002-02-05. I bought a Kinesis keyboard. I used little programs that
+forced me to take a lot of breaks. It didn't help. I stopped therapy
+2002-10-21 and decided to work less, get up more often, started
+practicing Aikido, and no longer work in long shifts. That helped.
+
+----
+CategoryHomepage
+" /><input name="oldtime" type="hidden" value="1550234392" /><input name="summary" type="hidden" value="" /><input name="recent_edit" type="hidden" value="on" /><input name="aftertext" type="hidden" value /></form><div class="wrapper close"></div></div><div class="footer"><hr /><div class="edit bar"><a class="admin" href="https://www.emacswiki.org/emacs?action=admin" rel="nofollow">Administration</a></div><div style="float:right; margin-left:1ex;">
+<!-- Creative Commons License -->
+<a class="licence" href="https://creativecommons.org/licenses/GPL/2.0/"><img alt="CC-GNU GPL" style="border:none" src="/pics/cc-GPL-a.png" /></a>
+<!-- /Creative Commons License -->
+</div>
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <license rdf:resource="https://creativecommons.org/licenses/GPL/2.0/" />
+  <dc:type rdf:resource="http://purl.org/dc/dcmitype/Software" />
+</Work>
+
+<License rdf:about="https://creativecommons.org/licenses/GPL/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+   <requires rdf:resource="http://web.resource.org/cc/SourceCode" />
+</License>
+</rdf:RDF>
+-->
+
+<p class="legal">
+This work is licensed to you under version 2 of the
+<a href="https://www.gnu.org/">GNU</a> <a href="/GPL">General Public License</a>.
+Alternatively, you may choose to receive this work under any other
+license that grants the right to use, copy, modify, and/or distribute
+the work, as long as that license imposes the restriction that
+derivative works have to grant the same rights and impose the same
+restriction. For example, you may choose to receive this work under
+the
+<a href="https://www.gnu.org/">GNU</a>
+<a href="/FDL">Free Documentation License</a>, the
+<a href="https://creativecommons.org/">CreativeCommons</a>
+<a href="https://creativecommons.org/licenses/sa/1.0/">ShareAlike</a>
+License, the XEmacs manual license, or
+<a href="/OLD">similar licenses</a>.
+</p>
+<p class="legal" style="padding-top: 0.5em">Please note our <a href="/emacs/Privacy">Privacy Statement</a>.</p>
+</div>
+</body>
+</html>
