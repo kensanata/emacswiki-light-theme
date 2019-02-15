@@ -381,27 +381,29 @@ div.header h1 a {
 
 /* Content */
 @media (max-width: 580px) {
-    div.content, div.rc, div.diff, div.comment {
+    div.wrapper {
         clear: both;
     }
 }
 @media (min-width: 580px) {
-    div.content, div.rc, div.diff, div.comment {
+    div.wrapper {
         margin-left: 160px; /* see gotobar */
         border-left: 1px solid #aaa;
         padding: 1em;
     }
-    body.dark div.content, body.dark div.rc, body.dark div.diff, body.dark div.comment {
+    body.dark div.wrapper {
         border-left: 1px solid #444;
     }
 }
-div.content, div.rc, div.diff, div.comment {
+div.wrapper {
     min-height: 14em; /* so gotobar won't overwrite footer on small pages */
 }
-div.content {
+div.wrapper {
     padding-top: 0.5em;
 }
-
+div.close {
+    display: none;
+}
 
 /* Table of contents */
 .toc {
