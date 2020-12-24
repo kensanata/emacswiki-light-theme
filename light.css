@@ -214,9 +214,9 @@ dt {
 
 
 /* Header - includes logo, search bar, goto bar, and article title */
-div.header {
+header {
 }
-div.header .specialdays {
+header .specialdays {
     display: block;
     position: absolute;
     top: 10px;
@@ -251,7 +251,7 @@ body.dark a.logo {
         margin-top: 0.5em;
     }
 }
-.header .menu {
+header nav {
     float: right;
     height: 2.5em;
 }
@@ -259,7 +259,7 @@ form.search {
     float: right;
     clear: both;
 }
-.menu p {
+nav p {
     margin: 0;
     margin-top: 0.1em;
     padding: 0;
@@ -348,7 +348,7 @@ body.dark div.message {
 
 /* h1 (title) */
 @media (max-width: 580px) {
-    div.header h1 {
+    header h1 {
         margin-top: 1em;
         float: left;
         clear: both;
@@ -356,22 +356,22 @@ body.dark div.message {
     }
 }
 @media (min-width: 580px) {
-    div.header h1 {
+    header h1 {
         margin-left: 160px;
         border-left: 1px solid #aaa;
         border-top: 1px solid #aaa;
         padding-left: 20px;
         font-size: 2.5em;
     }
-    body.dark div.header h1 {
+    body.dark header h1 {
         border-left: 1px solid #444;
         border-top: 1px solid #444;
     }
 }
-div.header h1 {
+header h1 {
     padding-top: 30px;
 }
-div.header h1 a {
+header h1 a {
     color: inherit;
     background-color: inherit;
     border-bottom: none;
@@ -538,22 +538,22 @@ body.dark div.old, body.dark div.new {
 
 
 /* Footer */
-div.footer {
+footer {
     clear: both;
     font-size: 0.9em;
 }
-div.footer hr {
+footer hr {
     margin: 0;
     padding: 0;
     margin-bottom: 1em;
     border-bottom: 1px solid #aaa;
 }
-body.dark div.footer hr {
+body.dark footer hr {
     border-bottom: 1px solid #444;
 }
 
 /* Footer edit bar */
-div.footer span.edit {
+footer span.edit {
     display: block;
     position: absolute;
     top: 30px;
@@ -617,45 +617,45 @@ a.license {
 /* Center lower menu items and add border*/
 
 /* Translation bar */
-.footer span.translation.bar {
+footer span.translation.bar {
     display: block;
     text-align: center;
     font-size: 0.9em;
 }
 /* hide the br element, which we don't need */
-.footer .translation br {
+footer .translation br {
     display: none;
 }
 /* add a little space between languages */
-.footer .translation a + a {
+footer .translation a + a {
     margin-left: 0.5ex;
 }
-.footer .translation a {
+footer .translation a {
     border-bottom: 1px dotted #09c;
 }
-.footer .translation a:hover {
+footer .translation a:hover {
     color: #09d;
 }
-body.dark .footer .translation a {
+body.dark footer .translation a {
     border-bottom: inherit;
 }
-body.dark .footer .translation a:hover {
+body.dark footer .translation a:hover {
     /* color: inherit; */
     color: #ae6;
 }
 /* Edit bar (buttons) */
-.footer .edit.bar {
+footer .edit.bar {
     display: block;
     text-align: center;
     padding: 5px 0px 15px 0;
 }
 /* account for missing translation bar in testEdit.htm */
-.footer hr + .edit.bar {
+footer hr + .edit.bar {
     padding-top: 2em;
     padding-bottom: 1.5em;
 }
 /* Last edit */
-.footer div.time {
+footer div.time {
     display: block;
     text-align: center;
     margin-bottom: 1em;
@@ -716,7 +716,7 @@ body.dark .edit.bar a {
 
 /* Printing */
 @media print {
-    div.diff, div.diff+hr, div.refer, div.near, div.sister, div.cal, div.footer,
+    div.diff, div.diff+hr, div.refer, div.near, div.sister, div.cal, footer,
     span.specialdays, span.gotobar, a.edit, a.number span,
     div.rc form, div.definition { display: none; }
     body { font: 12pt "Neep", "Arial", sans-serif; color: #000; }
@@ -858,7 +858,7 @@ div.commentshown hr {
 div.journal {
     padding-top: 1em;
 }
-div.page {
+article {
     padding-top: 1em;
     border-top: 1px solid #ccc;
     padding-bottom: 1em;
@@ -892,7 +892,7 @@ div.color.one {
 }
 /* news text */
 /* make text match the top margin of the portrait */
-div.page div.portrait + p {
+article div.portrait + p {
     margin-top: 0.5ex;
 }
 
