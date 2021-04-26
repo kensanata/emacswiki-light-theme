@@ -25,9 +25,11 @@ body {
     background-color: #fffefe;
     font-size: 100%;
 }
-body.dark {
-    color: #ccc;
-    background-color: #181818;
+@media (prefers-color-scheme: dark) {
+    body {
+	color: #ccc;
+	background-color: #181818;
+    }
 }
 
 /* Screenshots, Images */
@@ -48,10 +50,12 @@ code, pre {
     /* increases the size of the text, so need to counteract that here */
     /* font-size: 0.8em; */
 }
-body.dark code, body.dark pre {
-    color: #ccc;
-    background-color: #222;
-    border: 1px solid #333;
+@media (prefers-color-scheme: dark) {
+    code, pre {
+	color: #ccc;
+	background-color: #222;
+	border: 1px solid #333;
+    }
 }
 code {
     padding: 1px;
@@ -84,11 +88,13 @@ a:active, a:hover {
     color: #09d;
 }
 
-body.dark a {
-    color: #9c5;
-}
-body.dark a:active, body.dark a:hover {
-    color: #ae6;
+@media (prefers-color-scheme: dark) {
+    a {
+	color: #9c5;
+    }
+    a:active, a:hover {
+	color: #ae6;
+    }
 }
 /* external links */
 /* a.url:before { content: "\2197"; } */
@@ -109,9 +115,10 @@ a.right {
 
 /* Images */
 /* dim images for dark theme */
-body.dark img {filter: brightness(70%);}
-body.dark img:hover {filter: brightness(100%);}
-
+@media (prefers-color-scheme: dark) {
+    img {filter: brightness(70%);}
+    img:hover {filter: brightness(100%);}
+}
 
 /* Headers */
 h1, h2, h3, h4 {
@@ -240,8 +247,10 @@ a.logo {
     text-decoration: none;
     float: left;
 }
-body.dark a.logo {
-    filter: invert(90%) hue-rotate(150deg) saturate(0.9);
+@media (prefers-color-scheme: dark) {
+    a.logo {
+	filter: invert(90%) hue-rotate(150deg) saturate(0.9);
+    }
 }
 
 /* Search bar */
@@ -274,8 +283,10 @@ span.bar a {
     font-size: 1em;
     color: #444;
 }
-body.dark span.bar a {
-    color: #888;
+@media (prefers-color-scheme: dark) {
+    span.bar a {
+	color: #888;
+    }
 }
 
 /* Goto bar (SiteMap, HowTo, etc) */
@@ -299,8 +310,10 @@ body.dark span.bar a {
         padding-top: 30px;
         border-top: 1px solid #aaa;
     }
-    body.dark span.gotobar {
-        border-top: 1px solid #444;
+    @media (prefers-color-scheme: dark) {
+	span.gotobar {
+            border-top: 1px solid #444;
+	}
     }
     span.gotobar a {
         display: block;
@@ -317,8 +330,10 @@ span.gotobar a {
 span.gotobar a:hover {
     color: #09d;
 }
-body.dark span.bar a:hover {
-    color: #ae6;
+@media (prefers-color-scheme: dark) {
+    span.bar a:hover {
+	color: #ae6;
+    }
 }
 
 
@@ -337,11 +352,13 @@ div.message {
 div.message p {
     margin: 0;
 }
-body.dark div.message {
-    border: solid 1px #08f;
-    background-color: black;
-    color: #08f;
-    box-shadow: none;
+@media (prefers-color-scheme: dark) {
+    div.message {
+	border: solid 1px #08f;
+	background-color: black;
+	color: #08f;
+	box-shadow: none;
+    }
 }
 
 
